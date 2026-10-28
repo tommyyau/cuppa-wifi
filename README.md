@@ -30,12 +30,11 @@ The cup steams when you are.
 2. **Cuppa reads the sign-in page.** Simple rules first; Apple's on-device AI for the awkward bits, before you're online.
 3. **It checks real internet access.** When the checks pass, the cup steams.
 
-<table>
-  <tr>
-    <td align="center"><img src="docs/images/live-activity.png" width="380" alt="Activity tab showing connection progress"><br>Activity: see what happened, and what needs a hand.</td>
-    <td align="center"><img src="docs/images/live-help.png" width="370" alt="Help tab: questions such as how automatic sign-in works and whether the Apple model works before you're online"><br>Help: short answers to the common questions.</td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/images/live-activity.png" width="380" alt="Activity tab showing connection progress">
+  <img src="docs/images/live-help.png" width="370" alt="Help tab: questions such as how automatic sign-in works and whether the Apple model works before you're online">
+</p>
+<p align="center"><b>Activity</b> shows what happened, and what needs a hand. <b>Help</b> answers the common questions.</p>
 
 ## What it won't do
 
