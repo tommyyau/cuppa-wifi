@@ -1,0 +1,10 @@
+<!doctype html>
+<h1>Connecting to guest Wi-Fi</h1>
+<a href="https://promotion.example/">Continue to our website</a>
+<form id="loginform" method="get" action="https://gateway.example/splash/session/grant">
+  <input name="duration" type="hidden" value="360">
+  <input name="continue_url" type="hidden" value="https://promotion.example/">
+  <input name="client_mac" type="hidden" value="02:00:00:00:00:01">
+  <button type="submit">Login</button>
+</form>
+<script>setTimeout(function() { document.getElementById('loginform').submit(); }, 4000);</script>

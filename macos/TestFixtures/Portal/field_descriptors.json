@@ -1,0 +1,160 @@
+[
+  {
+    "descriptor": {
+      "name": "firstName",
+      "label": "Your details"
+    },
+    "intent": "first_name"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "section-guest shipping given-name"
+    },
+    "intent": "first_name"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "section-login username"
+    },
+    "intent": "username"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "current-password",
+      "type": "password"
+    },
+    "intent": "account_password"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "new-password",
+      "type": "password"
+    },
+    "intent": "password"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "one-time-code"
+    },
+    "intent": "verification_code"
+  },
+  {
+    "descriptor": {
+      "label": "Date of birth"
+    },
+    "intent": "date_of_birth"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "bday-day",
+      "type": "select"
+    },
+    "intent": "birth_day"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "bday-month",
+      "type": "select"
+    },
+    "intent": "birth_month"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "bday-year",
+      "type": "select"
+    },
+    "intent": "birth_year"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "tel-country-code"
+    },
+    "intent": "phone_country_code"
+  },
+  {
+    "descriptor": {
+      "label": "Job title"
+    },
+    "intent": "occupation"
+  },
+  {
+    "descriptor": {
+      "label": "Postcode",
+      "description": "Use your home postal code"
+    },
+    "intent": "postcode"
+  },
+  {
+    "descriptor": {
+      "type": "email",
+      "label": "Contact"
+    },
+    "intent": "email"
+  },
+  {
+    "descriptor": {
+      "type": "tel",
+      "label": "Contact"
+    },
+    "intent": "phone"
+  },
+  {
+    "descriptor": {
+      "id": "addressLine2"
+    },
+    "intent": "address_line_2"
+  },
+  {
+    "descriptor": {
+      "ariaLabel": "Country"
+    },
+    "intent": "country"
+  },
+  {
+    "descriptor": {
+      "label": "Unrecognised reference xyz"
+    },
+    "intent": null
+  },
+  {
+    "descriptor": {
+      "type": "email",
+      "autocomplete": "given-name"
+    },
+    "intent": "email"
+  },
+  {
+    "descriptor": {
+      "type": "tel",
+      "autocomplete": "given-name"
+    },
+    "intent": "phone"
+  },
+  {
+    "descriptor": {
+      "type": "password",
+      "autocomplete": "given-name"
+    },
+    "intent": "password"
+  },
+  {
+    "descriptor": {
+      "autocomplete": "section-guest tel-local"
+    },
+    "intent": "phone"
+  },
+  {
+    "descriptor": {
+      "type": "tel",
+      "autocomplete": "tel-country-code"
+    },
+    "intent": "phone_country_code"
+  },
+  {
+    "descriptor": {
+      "type": "tel",
+      "autocomplete": "one-time-code"
+    },
+    "intent": "verification_code"
+  }
+]

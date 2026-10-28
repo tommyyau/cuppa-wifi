@@ -1,0 +1,2408 @@
+[
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_encodes_raw_space",
+    "source": "wifi-autologin/tests/test_base_url_sanitize.py",
+    "line": 53,
+    "sha256": "52a05df9d155f11660f09240b0d95acdd23eb8e31903453f6805e14e37f9d3dc"
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_preserves_existing_percent_encoding",
+    "source": "wifi-autologin/tests/test_base_url_sanitize.py",
+    "line": 58,
+    "sha256": "190d6ed18310060fae9a64f6d882a105aa4d4a6e3b99924125627e2e8a81806f"
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_preserves_reserved_delimiters",
+    "source": "wifi-autologin/tests/test_base_url_sanitize.py",
+    "line": 64,
+    "sha256": "a43d2656530ce027190f3dc2abe0c2c83b2cee165fee6815605f5e6df0528c22"
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_idempotent",
+    "source": "wifi-autologin/tests/test_base_url_sanitize.py",
+    "line": 70,
+    "sha256": "9a25f4668616fe93eba97c2d4e6d177ee5f49a421e4eb34711b7200410d4530e"
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.HandlerGetSanitizesTests.test_get_hands_transport_a_space_free_url",
+    "source": "wifi-autologin/tests/test_base_url_sanitize.py",
+    "line": 76,
+    "sha256": "db8ba4a0df7dd4710d7f662546394cad20809d6fb610d024af34080251438fef"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_authenticated_tunnel_preserves_bytes_in_both_directions",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 38,
+    "sha256": "22037b5af3f8e9f7615273dd6357b1f4e7b09eb8cb11441fbb8b33c8d3aa5d72"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_unauthenticated_loopback_clients_cannot_connect",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 49,
+    "sha256": "596f245f5f7d01abb0ba5f9b29599d79838fb355667a41bc14ce1716066d3c4d"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_non_portal_private_addresses_and_unrelated_ports_are_rejected",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 55,
+    "sha256": "48c28d7af331de7ca31fde050cee66f152070c51c93ca874339df7a030913432"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_private_portal_and_explicit_port_are_allowed_only_for_that_portal",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 62,
+    "sha256": "56ebd1c53a97c0113a0ebe18b0dc27621c336e5d709b2669619bae535e64b4c6"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_connector_uses_scoped_dns_and_the_selected_interface",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 69,
+    "sha256": "2685b693fd6254e252b3273afa8ca26d993bf9cf932b69a94af97a9317b2362b"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_non_portal_dns_cannot_redirect_the_relay_to_local_services",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 80,
+    "sha256": "55bce32031e0a409348c6b5d2ebc343bdd20e7300414f132908305eb0f9851df"
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_verified_gateway_callback_is_allowed_but_other_lan_hosts_are_not",
+    "source": "wifi-autologin/tests/test_browser_proxy.py",
+    "line": 91,
+    "sha256": "0382496ddf6261dda9f497314928b233c9d0d4f7fe8ef65b34f250202628deb1"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_submits_bt_ajax_protocol_and_declines_marketing",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 177,
+    "sha256": "01bff0958b0e63bf60bf16e95c594732eea4b0aa4e81d82987eca0f0045ebb57"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_unchanged_registration_page_fails_without_reposting",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 225,
+    "sha256": "f7fa1b85a685a2c6a7ac00325081b861f0e3108a147329b9331c826aa5ffa909"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_explicit_json_rejection_does_not_retry",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 252,
+    "sha256": "05c72d12f59265216f84b62d3b7e0e6939f098a7ec1c98c6e29115cb2a293771"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_untrusted_redirect_is_not_requested",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 282,
+    "sha256": "33800bbe820ac975eedefff2c9723a6251f673b1c821fd643c289d7cfd1445fe"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_legacy_picturehouse_stops_at_connected_page",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 312,
+    "sha256": "b064aaff35d241f0f21a5d443a58af20ead24b045fe4c2b74a28641cae7af54a"
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_generic_redirect_hands_legacy_bt_to_provider",
+    "source": "wifi-autologin/tests/test_bt_wifi_handler.py",
+    "line": 362,
+    "sha256": "29cf0a3ed7e6c0b8e7117ef24b2f849f5e071915602be54a1b3e236c7207ef03"
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_failure_reason_is_written_beside_manifest",
+    "source": "wifi-autologin/tests/test_capture.py",
+    "line": 13,
+    "sha256": "25fabeda2113b02a9150a474eb4d22927480b6bb923d838e2bdf5129a848b914"
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_safe_report_contains_structure_but_no_session_data",
+    "source": "wifi-autologin/tests/test_capture.py",
+    "line": 73,
+    "sha256": "5d9edf135e76d298deab5ce52d49c6a2398a40b320a1ba2d5a04eee3565f85c6"
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_safe_report_extracts_provider_schema_and_rejected_field_only",
+    "source": "wifi-autologin/tests/test_capture.py",
+    "line": 142,
+    "sha256": "b7717f8fd0ba55edda4187acde8db76e1d4498e8a8d5af9575680480ea667ed7"
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_failure_capture_does_not_count_as_success_capture",
+    "source": "wifi-autologin/tests/test_capture.py",
+    "line": 205,
+    "sha256": "9ded3a53e650d25e207d1bacb5142422987295310a3034a4722886d4ffc92100"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_recovers_observed_wireless_social_fortinet_contract",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 33,
+    "sha256": "246e6c48e639e724c5235021019337c90cc6a0cae4a6919d04a99167133ce45f"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_rejects_callback_for_another_gateway",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 47,
+    "sha256": "130b65bb5895bbb2b3693f6e6dd23fde62ef5a3de15b8275481b2eea046aaf7b"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_rejects_wrong_provider_port_path_or_token",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 55,
+    "sha256": "80cae5ced24e9e0553a78bd7b295b230ef67dfdace84897b9b207bf3b02cc8d3"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_uses_newest_matching_url",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 73,
+    "sha256": "bd2cfdf1fcf453f6e14094734ad68c537d0cc2776523d28ddb3271ed0b6e9d9b"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestDiscoverRecentPortalUrl.test_runs_bounded_log_query",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 86,
+    "sha256": "50ae630214a376522d9f4031de6aa96d52353f7b0c62148406c65f0a1f64d1d5"
+  },
+  {
+    "legacy_id": "test_cna_portal.TestDiscoverRecentPortalUrl.test_command_failure_returns_none",
+    "source": "wifi-autologin/tests/test_cna_portal.py",
+    "line": 104,
+    "sha256": "2d6eccc3f85b93c25d89909446e278472c3e7ea7e52c48360b29db7ac0eecab4"
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_detects_fills_and_verifies_fresh_registration",
+    "source": "wifi-autologin/tests/test_cold_join_integration.py",
+    "line": 265,
+    "sha256": "fa51e1dfc5aacd64feb5fa14bc56e117983740c07ce7c82c95e2262d85279ad3"
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_completes_strict_multistep_portal_journey",
+    "source": "wifi-autologin/tests/test_cold_join_integration.py",
+    "line": 295,
+    "sha256": "12c00e440233c9c927740bcdf0fcdd3ed8d4981e9b6ca2d71653e83b344d6d00"
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_full_engine_records_automatic_login_after_strict_journey",
+    "source": "wifi-autologin/tests/test_cold_join_integration.py",
+    "line": 336,
+    "sha256": "ca7592195926090341ca9e408bf6bd7ea45d675c6403b67010cdf1bf8a6feb4b"
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_ladder_is_bounded",
+    "source": "wifi-autologin/tests/test_correction_ladder.py",
+    "line": 14,
+    "sha256": "216134a3b39ef0a475dc4f85c25f86231fa9c97ab119980ee1bcc69506e56179"
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_phone_formats_preserve_the_same_reserved_number",
+    "source": "wifi-autologin/tests/test_correction_ladder.py",
+    "line": 18,
+    "sha256": "697fa82061faa0d4090760bb49708e987162798072abccfb788149502d769fc3"
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_postcode_and_date_variants_are_format_only",
+    "source": "wifi-autologin/tests/test_correction_ladder.py",
+    "line": 24,
+    "sha256": "18b44e3ff7e4f650af21efb488478ca9c2eab7c21f96c70f34ea64a72095fba8"
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_rejections_never_invent_different_identity_details",
+    "source": "wifi-autologin/tests/test_correction_ladder.py",
+    "line": 34,
+    "sha256": "a98c49e6dfbd64117a8aa58d688e3db243233b1101162e2fd529b42698f617ff"
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_emission_and_masking",
+    "source": "wifi-autologin/tests/test_diagnostics.py",
+    "line": 25,
+    "sha256": "d0e89e836c3c3f8799ba7c6adc985b9c7fa0c04e478a5c194ea69de82efe624b"
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_real_form_preparation",
+    "source": "wifi-autologin/tests/test_diagnostics.py",
+    "line": 35,
+    "sha256": "f2fbbd14840c553227f74bc69da22a0088d24686acf801c834f5a81875dfbd19"
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_http_events_omit_values_and_url_tokens",
+    "source": "wifi-autologin/tests/test_diagnostics.py",
+    "line": 43,
+    "sha256": "c22bb6c8bc56053dbed18082a9cd54cb95900760c8e2ed92aaad5613a9d45beb"
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_no_events_outside_attempt",
+    "source": "wifi-autologin/tests/test_diagnostics.py",
+    "line": 60,
+    "sha256": "387f29853e02d06dedf84049081cf391b944dedaf24ddf854b985c14aa2d1ca5"
+  },
+  {
+    "legacy_id": "test_field_intent.TestPhoneIdentity.test_phone_formats_preserve_contact",
+    "source": "wifi-autologin/tests/test_field_intent.py",
+    "line": 6,
+    "sha256": "2b414b52e4c783c2ab92ba0f17a2cc91b223c6be5ccdc9fa5481f6cf3d8f9fa3"
+  },
+  {
+    "legacy_id": "test_forensics.TestShouldSweep.test_first_sweep_is_allowed_and_then_rate_limited",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 50,
+    "sha256": "62f47535367e76374ac29068ebe13b1296bc914e921f7e042871229465628622"
+  },
+  {
+    "legacy_id": "test_forensics.TestShouldSweep.test_no_fingerprint_never_sweeps",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 66,
+    "sha256": "807de6875e88efb578b62dd80d37eb81b90225c08fb46df2949fe7b7523b1852"
+  },
+  {
+    "legacy_id": "test_forensics.TestAnalyzeHtml.test_static_form_is_not_flagged_js_rendered",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 72,
+    "sha256": "9914c55085cee9ee04fa6be4c1a6658769bbbd683be64ad36e50683053893e0e"
+  },
+  {
+    "legacy_id": "test_forensics.TestAnalyzeHtml.test_script_only_shell_is_flagged_js_rendered",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 81,
+    "sha256": "9232911019f3de7e74e5ba457a3c8c4ce7c00d328a1de1a6e59ca48deddff8e4"
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_cross_host_redirect_is_interception",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 90,
+    "sha256": "491ae9e742f4c3fed17e876d35880ed602079c85113aafda914c503378f69287"
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_same_host_scheme_upgrade_is_not_interception",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 97,
+    "sha256": "c3fcabc507696105c3a0244b27321579e6986c1513e9f40b83790210a64a82b2"
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_missing_location_is_not_interception",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 102,
+    "sha256": "7d98e3ab012a6a4121f2154bb5c103d58734e8e51b0c073af2384393f8a26b28"
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_purple_jsrd_shim_appends_marker_to_current_url",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 117,
+    "sha256": "a901b90952a1906d3b05164e74c9bf67360b47178c958fc13b9c4fc7fb96c2ed"
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_jsrd_shim_does_not_loop_once_marker_present",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 126,
+    "sha256": "44dbe18c880d9b2c373542ec9227b2c5bac74b955a2c303256574fd3a7c262a2"
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_string_literal_location_assignment_is_followed",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 134,
+    "sha256": "026e8914f58ee6d589978d1092defaa968cecc5f7a801341bd03286da1f98ad7"
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_dynamic_redirect_is_not_followed",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 143,
+    "sha256": "f11c1541efbb4fcd82fdde8c8efe9d6df2ab613faa0074f0c162da1830c5c5f7"
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_dead_dns_with_http_interception_discovers_portal",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 169,
+    "sha256": "e8d786580f0dc4422ec1905df8c1434126fe590c8623fd3452f1241e04f4fafc"
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_gateway_hosted_portal_is_followed_to_login_form",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 223,
+    "sha256": "1a67b49bdd1d485dffe4be1da7e34c5efd66c8687e45251a40fea6c91d5ae5cb"
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_portal_chain_follows_jsrd_shim_to_real_app",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 264,
+    "sha256": "1ed5732ddaa30295353dbf01ac98e0766cd48ffb6b069aefb9d37585ad2328c2"
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_everything_dead_still_produces_summary",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 303,
+    "sha256": "b71942a98d3fa4ddf04d072b94494f8ffde3439d7bb4fcd3914d2a298063f112"
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_sweep_writes_marker_and_prunes_old_sweeps",
+    "source": "wifi-autologin/tests/test_forensics.py",
+    "line": 315,
+    "sha256": "ded25fee81f8e9fe13b7f56a4d2a136811c81d5e5b4a9648db338955671bb6fe"
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_description_word_without_physical_address_evidence_needs_review",
+    "source": "wifi-autologin/tests/test_form_semantics.py",
+    "line": 9,
+    "sha256": "a98726400f7d98a39be257f54bfd16a73d45606b65df3c60de678dc1c6a18757"
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_compound_and_specific_meanings",
+    "source": "wifi-autologin/tests/test_form_semantics.py",
+    "line": 14,
+    "sha256": "21e26bd778f9b694261931608a43032051a5e7ddbfd9978ea62384f650b5bd37"
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_linked_description_and_group_use_actual_choice_values",
+    "source": "wifi-autologin/tests/test_form_semantics.py",
+    "line": 31,
+    "sha256": "6dcada517aec60fd935e9daadcde27cadcb9225e224e8882c2690d974cb70af1"
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_split_phone_constraints_and_external_alert",
+    "source": "wifi-autologin/tests/test_form_semantics.py",
+    "line": 42,
+    "sha256": "6ca0caaa0f5d27b06c48cbe03593d03a84d5704d2af59cb94ecaf2e5487999d9"
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_authorization_is_exact_origin_and_password_is_not_repr",
+    "source": "wifi-autologin/tests/test_form_semantics.py",
+    "line": 49,
+    "sha256": "1550397eaeb8de9a0671bb6099187405f4bb6a0fe022edecf3b62269d67bff03"
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_completes_marketing_reject_path_and_localises_uk_phone",
+    "source": "wifi-autologin/tests/test_fydelia_handler.py",
+    "line": 104,
+    "sha256": "eda3c949ac82d7099062c1b937f4623e7e3687f00d9fa25598263ec7d0725da5"
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_reports_when_provider_post_does_not_restore_access",
+    "source": "wifi-autologin/tests/test_fydelia_handler.py",
+    "line": 145,
+    "sha256": "c8e9976c997783bdd3c6784e4973f20d727fd329966e26f1f234ff3afdcf35bb"
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_unifi_params_preserved_and_continue_url_completes",
+    "source": "wifi-autologin/tests/test_fydelia_handler.py",
+    "line": 176,
+    "sha256": "5caa74b920092e63090264cc3af3384ebce3164b5cacf678461f1956e2aac230"
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_post_grant_settles_until_controller_authorizes",
+    "source": "wifi-autologin/tests/test_fydelia_handler.py",
+    "line": 221,
+    "sha256": "023b2c4a8fde277de3ee8164fe909d3d66e36b969ae98eb54398eaea7a8d40c3"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_parses_all_forms",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 80,
+    "sha256": "53aa6ee8ef02aa8ab3e2751fb826aa08173d143b9f119dba30c7f26b3af09198"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_chooses_the_richer_login_form",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 84,
+    "sha256": "d3aa0991fa846ed4a1693daf5e24edaa5572f682bb2945ea2b42524f6c23e8c1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_visible_email_form_beats_empty_javascript_template",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 94,
+    "sha256": "6d512886ac1427455d2f4fa4c2c01fa3e6123ee8cb5c2111027fe08d3632c45c"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_field_mapping",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 112,
+    "sha256": "c0a2fcfa706f76f6b0ebf18722cafba8eab2bac2f50a329bb3102398115533d1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_hidden_fields_preserved",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 119,
+    "sha256": "7d7a5773ef36ea91ec89de156d69300991165f6a36da21b09a2205ebd481bb76"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_abbreviated_terms_do_not_enable_marketing",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 124,
+    "sha256": "88ba162ad59fb023672809f72bca473be4c7122bca5fa531e373585ffaabbd47"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_terms_checkbox_ticked",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 133,
+    "sha256": "30f43f304473972f16094d0f4d01708db031840fab659f5ade72a31c07e28c5e"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_marketing_checkbox_left_unticked",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 137,
+    "sha256": "dc845426bc604bc416add8dfe41615d3e8d1e545f1ac552e09d42b9bb15d5447"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_named_submit_button_is_included",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 141,
+    "sha256": "d9321db882ee1be3e80c5c3f74fb3a0513ba934ee8a06ebbf658b1618fc6ef84"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_named_button_element_is_included",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 145,
+    "sha256": "f80c41f6dd6c8f07f02db6032bac46f63439c2787ebd8c482dd8fed8d21c1122"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_positive_submit_button_is_preferred_over_back",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 156,
+    "sha256": "111019dd3f301d9a51b7616e7af9034dc6451236ed366d6cdfbfd32ae50142c3"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_placeholder_is_used_for_field_mapping",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 169,
+    "sha256": "d16d1cdadb6c95cfc20f6c32987d626f9f3f0f5cb5457abe47ef8a3f7127bf25"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_label_is_used_for_opaque_field_names_and_dob_format",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 179,
+    "sha256": "8ba79c4710ed9ef27cfb7aca710d35bd46ce3c02da8346d1c59d59b33cc77e23"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_split_dob_fields_are_populated",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 194,
+    "sha256": "322403894e6362471f3cbac11d1b755186e05b8e3612829e9bb64d78c5b01f24"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_nested_labels_and_autocomplete_metadata_are_used",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 209,
+    "sha256": "d700610f03b38de9ceb8e716805dd65d4369e46247c15cc832a4b0833abbdd94"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_aria_metadata_readonly_and_disabled_match_browser_rules",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 230,
+    "sha256": "aa1bfed8308228c3854b2fd8b7f5841cf79255b48ac3ea28911455b9dca294d0"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_standard_address_autocomplete_and_select_ranges",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 250,
+    "sha256": "0a61cf51d6b3b811370cff53ec8c4e010208810b74b4338727ec9635f8ebf85c"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_extended_persona_fills_address_and_visit_fields",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 274,
+    "sha256": "9c6896ac019f7fade27acd48df9313222a8ef65252629b5329ff0844594354c5"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_selects_privacy_preserving_country_gender_and_title",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 297,
+    "sha256": "ef3ced55cb7b5e717d4af24caecaf9464abeae7a690b6e967dcec802e8163019"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_type_aware_values",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 326,
+    "sha256": "49fb08bc3730aeb744757607f4ca87c4c8aea33bd678c60f21a7a213e956f38a"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_required_date_type_uses_dob_within_bounds",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 343,
+    "sha256": "6b1036f1d813b803e1fa5343e075d238752912b35f63bdb53a8e4f83dba64fa9"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_numeric_constraints",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 350,
+    "sha256": "5587e2b1181702de82a3e6e679a356ec918777822680abeda7294ccabb946529"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_text_constraints_and_best_effort_pattern",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 365,
+    "sha256": "72315f26fadf86688cc197da2cd6ee28ca55a464bc4ee76098ae5b7a90e388f5"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_select_policy",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 380,
+    "sha256": "ee70f7e3919987df0d6e9d7abe2dbe0d682838c6ab1f388f5a2a5eddf529131f"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_radio_policy",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 404,
+    "sha256": "58e7fdd26e69d6abda5ea39f42cdbea57a606732fb4e3d221d87a071cb041ae9"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_optional_marketing_and_server_values_are_not_invented",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 423,
+    "sha256": "f6f6bb90ae9b53343eaf36a70395350a915b02ae29291105f6708f88fe8912ce"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_gateway_grant_form_wins_over_promotion_links_and_stops_online",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 437,
+    "sha256": "a1191bdf9c157fd7354688c9c4bd1d0a12dfe59afaa77e3a2981b4005a0758a4"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_consent_only_portal_posts_once_preserving_server_fields",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 456,
+    "sha256": "d5ec1ffd9e43151bf3854d54afb0dda95cc4e21cf52682caed30cf9118aecac1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_redirected_wireless_social_page_uses_provider_journey",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 476,
+    "sha256": "417f9104e0a0b0d1cd89d9d242c5da7b8a86e9c5747636563f62fba57982508e"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_dns_failure_is_not_misclassified_as_unsupported_form",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 522,
+    "sha256": "c230ffa6035084f57cfc343ba5ba796be424107f313fab328bc353cccc71afff"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_successful_single_hop_login",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 544,
+    "sha256": "9c0330acb49336299fb926730a239041c63bb26fca5a6ec9236d24f74a874c29"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_login_verification_fails_when_reprobe_stays_captive",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 575,
+    "sha256": "5659a78a30274649677426fce9f738547ba06e5b5de71d571c51b42157be6cbc"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_manual_success_is_not_credited_after_rejected_submission",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 596,
+    "sha256": "c9b2e59646db69ae23042c7f39c3ef8c098cc9b14404cecd67d1c6cd1100725f"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_http_200_json_rejection_is_not_credited",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 630,
+    "sha256": "0a76e51ffb1feec868a97b5517834cd66740f358be6eafea0316f1cd60521df4"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_national_phone_retries_as_plus_44",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 663,
+    "sha256": "2db6e49365489207b5cedc2c0b6edeca67233bab1ba3fabda1bffd860bc50b06"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_compact_postcode_retries_with_space",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 716,
+    "sha256": "c18b5f27dc6f38a9e96ab2c2bb1d49b5e0308c5ab16a633f42630cf7423652c8"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_iso_date_retries_as_day_month_year",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 771,
+    "sha256": "1f80c048aecad9930afc72218e3d2762cfcbe2adeee11227a1a8e44346e791b8"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_retry_preserves_an_accepted_existing_field",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 823,
+    "sha256": "943a16cfc9596be356aa566208359f271d0cd65c8c5ee078d5276f0d4d92e970"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_retry_stops_when_phone_correction_reveals_otp",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 874,
+    "sha256": "2e5e393dd2d42d8ee327fd0ab60369cced0b903eb4b3d6b00ea7ca7786a05b21"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_name_stops_without_inventing_another_identity",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 932,
+    "sha256": "5023c70d3a668df37d606da5d9b211d9b3318ce6451d33b34978583caca11ecc"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_attempt_budget_stops_more_portal_requests",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 947,
+    "sha256": "a2bfdc6650cf69c6e94aeb9c0799a59c787e2ad9ef04b125885078ae7d5f1c4c"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_phone_retry_is_bounded_and_value_free",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 978,
+    "sha256": "90f84ae73affecf2f1bb03b57919e7afe5468ccde3b14470ae50132f768b0b8d"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_give_up_reports_only_fields_still_failing",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1034,
+    "sha256": "359ab56f341168f9003abb214bf9e83bc1e77c9ab2fc22b0afecf5b33923ff4d"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_meta_refresh_after_form_submission",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1107,
+    "sha256": "ca2ab9798e11c1ae5a1ab11b24aa7681fd9d6a96d02a0035460981bd4679bf36"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_unchanged_form_escalates_after_one_submission",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1147,
+    "sha256": "91b0798ed82b4fa87b000cb8ad89bfdf3a3ce353a33c105a73ad158a7f125771"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_get_form_is_submitted_as_query_string",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1168,
+    "sha256": "744fa789c63ed1265960edfb310810397c6c87fe770d63ed24996dfd883bae29"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_chained_meta_and_javascript_redirects",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1198,
+    "sha256": "3ef2071c6eac78400d2db2f5930e872770cc494a716b6cec37e546a30a53a06f"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_visible_connect_link_but_not_terms_link",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1228,
+    "sha256": "b89e10c35469d5c8a04f916bb75437e8f045451d79b64b6b2b40efc5b630a9d1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_meraki_grant_settles_until_gateway_authorizes",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1262,
+    "sha256": "6ebdb819cd7c97eb96dc69457859946aae5303863afaa09d8226131948cb53f3"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_costa_null_grant_response_is_an_explicit_ambiguous_action",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1310,
+    "sha256": "c80659eb3fe9d6033973dba0765c76a2c8a026eb94764bb2d7ffed28d482c1fc"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_arbitrary_timed_out_connect_link_is_not_meraki_ambiguous",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1354,
+    "sha256": "f9daa16b5f56ca3e87b635e2178b058bbed3aa53b77565e7ee808dcd1d948f7e"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_grant_without_budget_does_not_settle",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1381,
+    "sha256": "296da4d5406d05625b242ef55a4a992bd78f36aae87afb65ba906af9532790fb"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_terms_document_link_alone_is_not_treated_as_connect",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1413,
+    "sha256": "09322a83fdc96f05bd366c048c3ad34e17a6ed4c818a2269da24fad8bd7d7e63"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_sms_verification_code",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1437,
+    "sha256": "0d02b422c669e1ab9205ff0fc51f793d86b2f8e3764e80749f37477defbd5afb"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_bare_otp_field_name",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1466,
+    "sha256": "f4f5af24427541dc36ef4f0036c8e621b295af2734f63143415f2baa2bf823d1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_passcode_label",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1484,
+    "sha256": "19f9b4728cfac7ff8b9355d6c06df7c17672121d2d148417afd17e7cd7531fd7"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_when_page_says_code_sent_to_phone",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1503,
+    "sha256": "e5b70aa135cda2e952a1a209c4662c2033f7aad3e827755b24c6cda0f02844c3"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_lone_short_digit_code_field",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1525,
+    "sha256": "5e1f5b577e5ea512491505afcbda1bb32a95709e2744224268018ef59d9eb956"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_short_digit_field_without_code_name_is_not_flagged",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1549,
+    "sha256": "513a036119237d35962344e1fc59ebfa13e03f868ec52dd97860d46845ec1803"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_lone_postcode_field_is_not_flagged_as_otp",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1577,
+    "sha256": "0e3b9ee318c5cf494199001fd273d4fe1203c64ebe45449d62c2f288e2d217f1"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_captcha_form",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1612,
+    "sha256": "c9c802b59d88b5b1e94c5da2c2f64d3e6b3e66be65de057d3d33f1cf0c3d2607"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_dormant_captcha_source_does_not_block_js_handoff",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1638,
+    "sha256": "4ed7d4116367ca9f1001e37e953b862a5e633628a5ff804a0ae686b1b23d10e4"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_inventing_government_identity",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1674,
+    "sha256": "08407e82231a0264844b3c40db87e7f8a6110cc847f29f5e5bb9732fcc554f20"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_fake_sponsor_approval",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1696,
+    "sha256": "a5c1dc559fa567101350ce5d2602bcecf8893da72946d6afb5e7cc2fd4a2fd47"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_unknown_required_custom_field_escalates_without_guessing",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1716,
+    "sha256": "7d1ff39b17fe1792948a56086963a4a9d936c05e41cb78d40e22f98705dd09ee"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_required_marketing_consent_is_not_accepted",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1742,
+    "sha256": "aa0988bbac203dc5674dd1f79da8bd2e743967ac02d1dfd4a4c17f334e68be02"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_public_cross_origin_submission_allowed",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1770,
+    "sha256": "7db87444a61c25c69d7dd1d5cf257663a9f545ea5c1391ee3283d423be021096"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_https_to_http_downgrade_blocked",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1786,
+    "sha256": "d4005eaa3ca2ebf9e86fa32e89ce38f4f878e8052fd466b09780afded0b60d0b"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_pivot_to_local_or_lan_blocked",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1795,
+    "sha256": "d50200143bf62b00a384dd19c2552dc008a4644e56a3a20e19a31684a8679571"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_portal_posting_to_its_own_gateway_allowed",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1811,
+    "sha256": "10dbaa44725227f34feff498f25d62570a4447fc929601479889178b29395484"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_non_http_scheme_blocked",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1820,
+    "sha256": "42845f4d806dbcac4f31949601f37890070292404a6d469e5830c458fdf72a38"
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_login_refuses_lan_pivot_without_sending",
+    "source": "wifi-autologin/tests/test_generic_handler.py",
+    "line": 1829,
+    "sha256": "17c0b7cd73aba57bd8741682a78d235a9ebfbffaf59f3ebd95ec91b2987d8e08"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_ssid_matches_tim_hortons",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 14,
+    "sha256": "4cedcfa2c31364933c224d101ae2237d78eac4ccc66250d7233f74981852b569"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_ssid_matches_case_and_spacing_variants",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 19,
+    "sha256": "3d9f502db82bc8a5aa339e9f0bbec273ed2db19e70d45ef4110e3c8ddbd50c39"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_unknown_network_falls_back_to_generic_with_ssid_name",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 25,
+    "sha256": "e1821e6a9dceb41908f7f1109ce9d543bc0e504d700e0b85e3dc28c7409bc69c"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_unknown_network_falls_back_to_generic_with_domain_name",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 30,
+    "sha256": "51f963b183b0c251163c413c658fa7616c423c9174521649f1d26519fb926580"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_fully_unknown_falls_back_to_generic_unknown_name",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 35,
+    "sha256": "6c4a1314003e28b5d20aa0c39d0fa380af575ad87586aa83442607d20040a49f"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_portal_domain_takes_precedence_over_ssid",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 40,
+    "sha256": "c7e0dce52e2a4ba9b3fad263f942f9ec4f486ca299eb55a1380b5216af3933c9"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_wireless_social_domain_uses_provider_handler",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 50,
+    "sha256": "90679e04903efb316bac138f12220166b5f263b20fbd2e8e0821ff26ba1db2b7"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_bt_wifi_domain_uses_provider_handler",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 59,
+    "sha256": "d4fbf6e3736dccacac87eecf4e36fa9d7eaae4b4e56ef3633f53c43a3c07284c"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_fydelia_domain_uses_provider_handler",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 73,
+    "sha256": "b671968717ad176b96a3cf2b66fcfb48407a290fd944350446b3ea0eb32dce70"
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_gateway_mac_used_only_when_domain_and_ssid_do_not_match",
+    "source": "wifi-autologin/tests/test_handlers_registry.py",
+    "line": 82,
+    "sha256": "a554e8cbac43962323a55d5262308f9039a5a033d5eef6843befd9a3cc8ce342"
+  },
+  {
+    "legacy_id": "test_http_transport.TestInterfaceBoundConnection.test_ipv4_socket_is_bound_before_connect",
+    "source": "wifi-autologin/tests/test_http_transport.py",
+    "line": 10,
+    "sha256": "d61e9a1ebe83de6764b460a8f28e9543b6fab0f34eafd5602adbd85ea257ee9b"
+  },
+  {
+    "legacy_id": "test_http_transport.TestInterfaceBoundConnection.test_uses_scoped_resolver_before_connecting",
+    "source": "wifi-autologin/tests/test_http_transport.py",
+    "line": 54,
+    "sha256": "dd9b7968b516f7403af032873d8efbf92abdd87c70ceef94f53bde3c584cc003"
+  },
+  {
+    "legacy_id": "test_identity.TestParseEnv.test_quotes_and_comments",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 9,
+    "sha256": "4aa24220bd07b046465e9ebf56c989dc6aa329368e3d986c662752fbadb1f701"
+  },
+  {
+    "legacy_id": "test_identity.TestParseEnv.test_missing_equals_raises",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 25,
+    "sha256": "2e0e1547869d937bd57b5fb061f53839e7c68e0f7286e39416f4dac15ddccf67"
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_missing_file_raises_clear_error",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 38,
+    "sha256": "7de4ff930cf71ec7c974f07d761532bd7c62e1f0c20e27c45f1fad12c6ce78f6"
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_missing_required_key_raises",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 45,
+    "sha256": "8a6acd68018f9e0361ad87894bb7d754d8ce0eec182b8b1be8f0db539366f56c"
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_full_load_with_defaults",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 51,
+    "sha256": "96af26f5557bbb6a6a013c3d92956408ae6f83e94b01479b41bd971772294347"
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_defaults_when_optional_keys_absent",
+    "source": "wifi-autologin/tests/test_identity.py",
+    "line": 92,
+    "sha256": "256a048fb4a9e3b87d4a0aee4ca936bea0497126ea38fe2308a551d37e8d3c0b"
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_missing_file_is_empty",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 16,
+    "sha256": "853b6b02e6a2cd0ae26013c454d6f0e166968d56255e55af9ed1dc1e028628e3"
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_parses_macs_labels_comments_and_case",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 19,
+    "sha256": "cea191fd83ce823526e811389f570e8cb3bf81b5662698eb4392962bcd888d18"
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_is_ignored_mac_case_insensitive_and_none_safe",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 32,
+    "sha256": "fc4927d7a4cfcc65981c27428891cff78482e0d7c67c3158145090ff92eed00e"
+  },
+  {
+    "legacy_id": "test_ignore.TestAddIgnore.test_append_then_duplicate_is_idempotent",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 42,
+    "sha256": "339b535426737b776e3745647d84eaadcd0c95abaf5dc2e174cda57d1b911116"
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_iphone_hotspot_range",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 52,
+    "sha256": "4db1ffe7379d0a6aa41b5bce07b3528ba0c5568240bfb9db76ddf079938a7669"
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_android_hotspot_gateway",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 58,
+    "sha256": "2655cec25a4d6eb78139d1475645a192b4320221e70dcf4790934bedd89932f5"
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_normal_and_invalid_gateways",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 62,
+    "sha256": "decffd44ca144bdf3ca479f70fff987a4177dc80361d5a106fb2c376f8c277d7"
+  },
+  {
+    "legacy_id": "test_ignore.TestIgnoreCurrentCommand.test_idempotent_add_of_current_gateway",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 69,
+    "sha256": "690ae4108391e821f634e6dbb09d2844e7b387dd9baee1a71485207706920da0"
+  },
+  {
+    "legacy_id": "test_ignore.TestIgnoreCurrentCommand.test_fails_cleanly_without_gateway",
+    "source": "wifi-autologin/tests/test_ignore.py",
+    "line": 82,
+    "sha256": "ef625271734d21bed43d1afcd90755d93af78bc5489a598a09e03670c43cbf82"
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_constructs_restricted_network_auth_grant",
+    "source": "wifi-autologin/tests/test_nandos_handler.py",
+    "line": 60,
+    "sha256": "1f398b3e930fb7bf4fde3abee81ce4c9cf7087c4636697726f0e87f93dd68c52"
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_rejects_untrusted_grant_host",
+    "source": "wifi-autologin/tests/test_nandos_handler.py",
+    "line": 78,
+    "sha256": "04001f43ccb69474a18b0602f967e072d72537107b7a06c88baf6edc79d7fde9"
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_rejects_non_nandos_landing_page",
+    "source": "wifi-autologin/tests/test_nandos_handler.py",
+    "line": 86,
+    "sha256": "bd08c5870edb3e3d6dff5b53ddbe26239df298dc5d20827d3a81774f99d9fe1a"
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_generic_handler_completes_nandos_connect_flow",
+    "source": "wifi-autologin/tests/test_nandos_handler.py",
+    "line": 94,
+    "sha256": "7560ae3e5bc0645387da517f25a5493abfa3b2be18f015a8c658220ca952ca75"
+  },
+  {
+    "legacy_id": "test_netinfo.TestGatewayMac.test_pads_arp_octets_to_canonical_mac",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 10,
+    "sha256": "d22295fa5f033cc5b1479ef9a06103fee162f5763df8f093917cee2787248d46"
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_reads_waiting_captive_state_from_dynamic_store",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 22,
+    "sha256": "054e9dd695a08c2b2188b9baf6727f8fec69ee3c917df7026d3d7618155e9723"
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_online_dynamic_store_state_is_not_captive",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 42,
+    "sha256": "7f49f8f8fdcd45b295f07b97b7501a4bc80317082247093adba8ddfa95c055f7"
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_evaluate_without_waiting_ui_is_not_captive",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 59,
+    "sha256": "b024a140ede62bfa68d32ea4c8a224859bd6be6a7b00478c6291a55baa3d763e"
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_active_wifi_can_be_found_without_default_route",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 67,
+    "sha256": "d6e1a9feaceb5ebd64f32cc930b21182c1da393a13c5ec7fa6c5d18e5db65efe"
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_stale_captive_key_does_not_make_inactive_wifi_active",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 80,
+    "sha256": "52eae9401e5a6af4a1508af0fe7b190604ccdcce09415a158efa9b5769d167c2"
+  },
+  {
+    "legacy_id": "test_netinfo.TestScopedRoute.test_requests_interface_scoped_default_route",
+    "source": "wifi-autologin/tests/test_netinfo.py",
+    "line": 96,
+    "sha256": "c5453256f472278ef6439d18d95c0b3024af678fffa6eef3a04ae0f656bb0f00"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_no_wifi_does_not_probe",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 26,
+    "sha256": "55e5e8ada2e1c8f43c47fc84c6d4c7045d37b907f6552fd7d38a2b7cbd5f1bf5"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_self_assigned_address_is_not_a_proven_router_fault",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 33,
+    "sha256": "5476f6100337c78bd96d7c22547136484b333421398fa5bce28d1b01274aa6db"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_gateway_and_direct_checks_report_live_progress_and_preserve_uncertainty",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 40,
+    "sha256": "ab0eda08c514c8ea43112abce621b718cc7b7fa06ffab3cc51087bc873799e8c"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_filtered_ping_with_http_response_is_not_an_unreachable_gateway",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 56,
+    "sha256": "a3fb55f969e511a1ad3e2d8712103df6cb1bb003d20fc3f52bf0d53ebec2a4c8"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_direct_response_distinguishes_dns_or_probe_filtering",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 61,
+    "sha256": "773c031eb8825af470c8be10eb7bd05a2675b302976fcc3af19ef639215f0a59"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_literal_ip_redirect_is_recovered_without_resolving_target_or_saving_token",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 68,
+    "sha256": "a8fb5f45d44eef784325f0aaca533b670d769053d692402a7d517d93510e410b"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_ordinary_endpoint_redirect_and_router_admin_are_not_captive_evidence",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 82,
+    "sha256": "b2144d9db1bb3ab9c93a04284105b2c78e5c654fe1712cc377654ae7b86f8b6e"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_timeout_has_a_small_request_budget",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 88,
+    "sha256": "96b12c062e4cb2f39409eaf1a8aa7c31c9568b6c26817b7d5f473723cb0d63f7"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_dribbling_headers_do_not_extend_the_deadline",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 97,
+    "sha256": "871cd81d0cd760c82b97dc5e2828b1017344f4eb49a985a929b56afe10d05b34"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_damaged_previous_diagnostics_do_not_break_a_check",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 105,
+    "sha256": "a7f4b2ddf89461d7113767411b68592c6b73b9efe4e5ba7b9adade105d7898f9"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_permission_denial_is_not_blame_on_the_network",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 111,
+    "sha256": "0115f6a8a9d1cb6eda0772104eb8fc09e60e665f2bae0afd5f299f51df5f7e17"
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_real_http_redirect_is_discovered_even_when_dns_is_unavailable",
+    "source": "wifi-autologin/tests/test_network_diagnostics.py",
+    "line": 119,
+    "sha256": "54fce7c1762e0627262b409ca49454929f37b85a10706d4c62a04f86124497ef"
+  },
+  {
+    "legacy_id": "test_notify.TestPrivateLog.test_log_stays_private_when_created_reopened_and_rotated",
+    "source": "wifi-autologin/tests/test_notify.py",
+    "line": 12,
+    "sha256": "9858dc9b1737bb91b56142f863dbac1086fdc0b3a5e34ff268f8d9523ccaeb6e"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_env_override_wins_over_everything",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 24,
+    "sha256": "5bcd548d836099714cfd4e8056acfa7a711addc7dea33e71fd98bddbb7d84330"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_env_override_expands_user",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 33,
+    "sha256": "2b9ddd5064d0c59ad0bf70235136ed89682e606db2d0376d148342497fd807dc"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_empty_env_override_falls_through_to_shared_dir",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 42,
+    "sha256": "e18b4cd7fdd25eb612ddaac1018473f6d96830c70fd44d7bf1af0e90acb2421a"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_default_is_shared_home_based_dir",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 48,
+    "sha256": "e49d2ed739df4d7e054038ce725020e2de22fd9011c5864d331cf13f36ddb4aa"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_unresolvable_home_falls_back_to_repo_local",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 52,
+    "sha256": "9671a1022c9a8e86200e4bb4fbfd105c1826cc7b15656c7dfbe1afd7767b5b34"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_does_not_touch_disk",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 56,
+    "sha256": "e1baebf127d0cd90574bc260ad3dfdc92981ee76d21dd4cc7f823d40a906be4c"
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_real_environ_is_used_when_env_not_passed",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 63,
+    "sha256": "bbbaf58ae1af2bd12fe37f120176e62302fbf04cef299be74726b5e3b060e433"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_copies_legacy_when_shared_target_missing",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 85,
+    "sha256": "821961b5ef11965fe2cc0ebe0ea3a4a71dbf316cb8210c55bf111e642afcfde4"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_does_not_delete_the_original",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 94,
+    "sha256": "8ab10c51f3219874ff711554e6c73abe096c8f727debc50005c3f6e15faf556e"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_sets_owner_only_permissions_on_migrated_copy",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 99,
+    "sha256": "a2e28749dbc01ef9fcb494b152b02c2a7618f955bbdefdebbacbb7e7ddb4acf4"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_no_legacy_file_is_a_no_op",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 105,
+    "sha256": "f6a961ef9e4bd2bfb2d33ffe95cdb824c06a4b11bbdf3256a345810347470636"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_existing_shared_target_is_never_overwritten",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 110,
+    "sha256": "2e639e28c31ec1b741cdf2d341605f637992106a4a968b319bb6c9b5515e889a"
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_same_path_for_legacy_and_target_is_a_no_op",
+    "source": "wifi-autologin/tests/test_paths.py",
+    "line": 123,
+    "sha256": "d90a7a93ebbcf52fd1f2c431bdb224ef1c080f7267abaa931238340cd96cd5f9"
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_unknown_until_remembered_then_persists",
+    "source": "wifi-autologin/tests/test_phone_policy.py",
+    "line": 10,
+    "sha256": "3bc36d4fac935d25557ad4a097e0b2e97d2bd245bdbb5a6f15db3c37e6f252b1"
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_remember_is_idempotent",
+    "source": "wifi-autologin/tests/test_phone_policy.py",
+    "line": 21,
+    "sha256": "571d7dc4023fcf8ae5c77b2422f85d3b46b92f4cf988d9400699e8eb1eac613a"
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_empty_key_is_never_stored",
+    "source": "wifi-autologin/tests/test_phone_policy.py",
+    "line": 27,
+    "sha256": "be7497c90544d984f458f29237cc5ef07f630410d4a15b8b9865290fc1ef88e2"
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_missing_or_corrupt_file_reads_as_empty",
+    "source": "wifi-autologin/tests/test_phone_policy.py",
+    "line": 34,
+    "sha256": "547c8bd87dcbee2a567572ac41ca971f55e8a55033c64c338da0acb925a23cde"
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_unspecified_identifier_requires_help_but_described_details_do_not",
+    "source": "wifi-autologin/tests/test_portal_policy.py",
+    "line": 8,
+    "sha256": "010bf3fa07021b15dc39e63978304ffdc4ded01fe7c9aa7699833174a5aa5dc7"
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_issued_numbers_never_become_customer_status",
+    "source": "wifi-autologin/tests/test_portal_policy.py",
+    "line": 16,
+    "sha256": "ab15eb6583241f53d460d47a447dab98fd323b313aeb8633ae558cb71567f797"
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_social_labels_wrappers_and_redirects_are_blocked_before_navigation",
+    "source": "wifi-autologin/tests/test_portal_policy.py",
+    "line": 24,
+    "sha256": "ab3e0aadd6066d8edce1f62a272cd28e24d753211e68dadfabd8fb135e8a9aed"
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_unavailable_portal_can_be_retried_after_provider_repair",
+    "source": "wifi-autologin/tests/test_portal_progress.py",
+    "line": 10,
+    "sha256": "cb546e177cd95b91311a38d8214f5624c6d903bc10f591dec116da3f7cbc3d69"
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_network_recovery_finishes_progress_and_routine_polls_leave_it_unchanged",
+    "source": "wifi-autologin/tests/test_portal_progress.py",
+    "line": 19,
+    "sha256": "7053e8ffcfd8d079e0334c0e4797f41b53188a7eada584afe04f65e9f3b1c7f5"
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_online_poll_preserves_portal_journey_and_tolerates_missing_or_invalid_progress",
+    "source": "wifi-autologin/tests/test_portal_progress.py",
+    "line": 37,
+    "sha256": "a65e0bb6216ff3604e105468d098d342425aa5f23e67f6d432c05ec23560afce"
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_new_attempt_resets_history_and_does_not_store_arbitrary_details",
+    "source": "wifi-autologin/tests/test_portal_progress.py",
+    "line": 52,
+    "sha256": "72324c92a5be1daf9fe8170d1d616aced2cdfe2ea7d993c9054a0743d1aa9454"
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_bounded_history_and_browser_handoff_remains_active",
+    "source": "wifi-autologin/tests/test_portal_progress.py",
+    "line": 66,
+    "sha256": "1914a549847c0b7e20a079329e96eeb7025c2c52a7eb78253cdfc958bedf468b"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_shared_descriptor_corpus",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 19,
+    "sha256": "05d533c5d96eda5f644e0d5a29d7b699b9b210dbc338212cdca6297b4c406765"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_provider_matching_is_domain_bounded",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 27,
+    "sha256": "88666c3c7fd210402ccebcfacada33eb7dd44025b73021a80006a3694dfb4d71"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_provider_aliases",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 31,
+    "sha256": "0aaee76ed113f58397bd86c542d405a6f510bf328697c149179e0fc7f87e58dc"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_rotating_csrf_does_not_change_schema",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 34,
+    "sha256": "da695cacbaa827500a04ec1d28373f36c1a6388c26da76f6105a418ab8d67a70"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_optional_otp_and_payment_copy_does_not_block_identity_form",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 41,
+    "sha256": "8eaccfca1d0c37745164be6003d510740d6a84d7cdbe9aaf53618b08b26ef095"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_required_challenge_still_blocks",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 45,
+    "sha256": "267bbed900b5f23f1f118b1359403279dfc9a1963c823f78d07355d344dc619e"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_opt_out_is_not_required_marketing",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 49,
+    "sha256": "003f89c29e14b735d05d710fd60e50eb1db6962ac6a2b6a145b75bade1518752"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_landing_never_submits_search_or_follows_signup_links",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 54,
+    "sha256": "7bebd17d8c87061d4d291972608efac253a48f6fd8dfb256785503d685066e6d"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_search_only_page_is_not_a_portal_but_search_sidebar_does_not_hide_real_form",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 65,
+    "sha256": "03bc55ae72419e20a53b4915b237aa473bfbc18a1a2e49a4b5a050f1eb374734"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_after_submission_is_not_treated_as_another_form",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 78,
+    "sha256": "b1c4a56bb55b038173411860159878de6c08583d78949652822e94abbaf211f2"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_soft_error_after_grant_requires_independent_internet_confirmation",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 85,
+    "sha256": "774d52a3fac7ea46d6cfb77dca2de0f731000a6b9740c6ee6998a6b069ab148e"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_after_validation_correction_stops_without_more_fields",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 95,
+    "sha256": "046b98cc76a22a10616e1338ab868af55c895917c0d16b2bc090c0fc7a8f0959"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_airport_escalates_before_any_submission",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 111,
+    "sha256": "b3f0587276465e5cf1bb4e00dfc56a5eee3ed5d81ad78ed81c7c7b23d7a51e20"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_unfamiliar_javascript_form_escalates",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 120,
+    "sha256": "0c31d07e3ee74179fb2ade2a8d133d888f3adef8461d0712c8652aa62c3a6341"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_normal_get_form_and_inline_validation_remain_static",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 126,
+    "sha256": "e7a1bbd3d20246e901db2a8a5a95f597f05d6f8399a79799d50ba5cb409e5e63"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_six_distinct_static_steps_and_fresh_tokens",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 134,
+    "sha256": "5a1196f3367cfdc0b1356f6ce42be188b67f13d2af175498c9c7699903610ad1"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_verified_browser_strategy_reused_on_unfamiliar_venue",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 144,
+    "sha256": "7e92cbe73256cb970ee3f31bd0cef7d35696f6d4331307cb2397b061c0f7b202"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_learning_requires_verification_and_expires",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 157,
+    "sha256": "c460100d881ec8019d1fe2bff4faab9dcbaa1e074264017d54f3985bbbf42fff"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_local_reasoning_metrics_are_bounded_and_value_free",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 170,
+    "sha256": "f8d08ab93726f4a3529f4b86de4bfad12d0e318a4e2e01c2673c4e6c015e99b5"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_cookie_handoff_is_private_and_bounded",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 186,
+    "sha256": "403f336b48a2c3e1a3507c670e3614c2611ad39f42a4d7f777ac69ee09fba68a"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_reports_keep_manual_separate_and_strip_values",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 196,
+    "sha256": "e8ddb96267a28f361e68f9cad5d35e68115f6debd819b844739bdf450bdab5ed"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVisitMeasurements.test_first_visit_and_returning_verified_counts",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 210,
+    "sha256": "fcf1b2fdf4a69cee193cd80da4a1a1ae8e375f236e15461408f1d0af9174d720"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVisitMeasurements.test_structural_report_preserves_action_timing_and_rejection",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 223,
+    "sha256": "ba6ebe8d6b3ccf45f3bae28c06b6b2d357d0123f05be1f5267b72b86807066e4"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestMetadataCompatibility.test_native_types_win_over_conflicting_identity_hints",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 236,
+    "sha256": "5732a425ff50c45e3ee8179cb96958d001d7702ee6a17a43a20aa31a8b538cd1"
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestMetadataCompatibility.test_telephone_autocomplete_variants_still_resolve",
+    "source": "wifi-autologin/tests/test_portal_robustness.py",
+    "line": 241,
+    "sha256": "5a87a736450f2ffc72dbee1b51491096fbf5a84c57f0068acd540060b111cded"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_response_failure_after_headers_falls_back_and_closes",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 40,
+    "sha256": "c23014632f7f77dc92f1fec534cb3c0700fd0aebc8518816de5d048bfa041a19"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_large_intercepted_page_is_bounded_but_still_captive",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 55,
+    "sha256": "c0fd4ecaa03bd160873fd714588ffdadb229409ce49724339bb00d9945640920"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_captive_copy_containing_success_is_not_internet_access",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 65,
+    "sha256": "e2be20d711cc3dee5b647035bda54018fe2c68d574706654263efb3f81386178"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_success_body_is_online",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 76,
+    "sha256": "b934d96eca6754e632c5d498e51850bbb0a5b863064ca37d90cb47d79f0c0b6a"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_204_is_online_via_secondary",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 85,
+    "sha256": "45707601bb8441db118742f5cce464992c0127edb730652534f16393b5ed41fb"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_redirect_is_captive",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 96,
+    "sha256": "c0c78db2aec45ef198f8cc84192e3ce4e67856e14e37464e5c1ed624f7a0f573"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_real_urllib_no_redirect_http_error_is_captive",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 108,
+    "sha256": "177bb14ebbdd86cc8d2b33c4f372a28c58afea0ea49c1a765c905eb5e34fd6b8"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_intercepted_200_without_success_marker_is_captive",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 128,
+    "sha256": "51cb2b5a26e317d4d0f0f288aeb978336bd3b0738312ecfad3ef51d3716142c4"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_timeout_on_both_is_no_network",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 138,
+    "sha256": "30ac0e86a47e349f3ee53d38f94f1c2dc0f38c01cec6476c6bf8c9eead4dc6bd"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_macos_captive_hint_prevents_false_no_network",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 149,
+    "sha256": "2badb7873327c6839c9c7e58ad5fc35a4f555c276a70997eb9caa97ae70ced12"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_websheet_keeps_captive_when_google_redirects",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 161,
+    "sha256": "8ce533078ef54559d55ddcf35bb7a9659ab2a2a04364c38f7f344ed11ea009e0"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_yields_to_two_online_probes",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 182,
+    "sha256": "001244b22d271a562157eaa8c63101e6f6d2d396348a07f98e9d6a14aee47adc"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_requires_reachable_confirmation",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 195,
+    "sha256": "95605cdebe2febb7911fac201cede4ef4c655a36c25a3d54c39ec783cffdb205"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_cannot_be_overridden_by_secondary_alone",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 208,
+    "sha256": "6a5e54fb5ed7a9ed58a7177897d575f07e1f1524977f9ce8529e4fea77740d03"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_post_login_verification_requires_two_online_probes",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 221,
+    "sha256": "f60eb6cf19c8be4009c54a4ff8e8bac8fbcd1aaaab858bd40ec7e2dac2aa9669"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_post_login_verification_rejects_one_optimistic_endpoint",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 242,
+    "sha256": "4c81bdffa4d45db73cf43672add0e05c9c3606ae65a8145f7faad33530052338"
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_secondary_success_alone_does_not_satisfy_consensus",
+    "source": "wifi-autologin/tests/test_probe.py",
+    "line": 266,
+    "sha256": "832ccfb1fc177fc4a4c09f1b031fb09b170b244ae19f549292ac29116b292394"
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_uses_posix_spawn_with_absolute_executable",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 10,
+    "sha256": "341a2e819a2676a1679d14ea66e582babe61b476852d3e9a2df6f16f5ce4ca82"
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_rejects_path_lookup_that_could_fall_back_to_fork",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 24,
+    "sha256": "185b30e2b14c3fb4c2e650cbb5808641af952ec965deac683bac0483c1f4e095"
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_timeout_kills_and_reaps_child",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 28,
+    "sha256": "df3c7bd710ec63d0d724c54b5584a68718eb69372d12f2030af956199dc0beec"
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_captures_stdout_from_real_spawn",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 52,
+    "sha256": "8c5e3bc3aa7258e9beff2edef2b21971058c6c0fe453eeefd6842e9d667b0df5"
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_feeds_stdin_and_reports_nonzero_exit",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 60,
+    "sha256": "4e0cafeade6536702495acbf53f0fa7fd2a4705c586eaf89e2d521f8674b58be"
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_timeout_is_reported_not_raised",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 71,
+    "sha256": "caa49680d3a5550568866f680e2996ea16c717da4d64969cefc911983b864975"
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_missing_executable_raises_oserror",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 76,
+    "sha256": "6141f3d106a601ed216551dda243fd19c98f492f4e1ce8fe0f8f049fe9d0bdbc"
+  },
+  {
+    "legacy_id": "test_safe_process.TestNotificationPromptSafety.test_notification_does_not_spawn_osascript",
+    "source": "wifi-autologin/tests/test_safe_process.py",
+    "line": 84,
+    "sha256": "4d643cfc67800134a2df53987cfbc09c5811896b8d9e3044e690e3b95207cb6d"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_reads_servers_for_matching_interface",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 11,
+    "sha256": "0498e34db41156d9811776fe0777a49cb8995810caa91f7f74fc3e855d9bb00c"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_dhcp_router_is_appended_as_last_resort",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 31,
+    "sha256": "b67fddf7974be17f0e2d5996889e2f7b0829f459189fb65fdc0998a494b19c7f"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_router_not_duplicated_when_already_advertised",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 57,
+    "sha256": "5ba4bb742b4c5752d29fe81bebcbbcae92e10eaa99447b276389e0f9d5d29df2"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestDNSPacketParsing.test_extracts_ipv4_answer",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 74,
+    "sha256": "8ee93863281519e406ffbebd753ea2131afe9435745736f94ffbef295fad249e"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedResolver.test_falls_back_after_system_dns_failure",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 97,
+    "sha256": "fe8159b05c99328b3a56570842d7ae4a8aa7ebabbeaab49cdcc989d69139d93a"
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedResolver.test_reports_scoped_dns_failure_truthfully",
+    "source": "wifi-autologin/tests/test_scoped_dns.py",
+    "line": 115,
+    "sha256": "a3fa0542c8aa76049c8c676c916c7eaed85fd59b7309a9c7bf9af985d2b4a424"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_online_join_records_check_and_connection_once",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 160,
+    "sha256": "d6dc5a93606a327af8488edcc29b8defff6d1c32bcab5004a897d5e14f56916e"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_network_fingerprint_is_persisted",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 179,
+    "sha256": "008257f80f5b18a67eef2d4214058af41cc2092f8f45ed825de77765d6648ba6"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_changed_dhcp_domain_clears_venue_state",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 191,
+    "sha256": "69f4e5dff78e5f9975cfbae23f321d5cacd17adf17672191816fdee1aa87cfad"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_new_gateway_clears_previous_venue_state",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 219,
+    "sha256": "3ce827db24cc706cc68b6262a8a8e4570bf4d005c02eba62df36b194af1ee260"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_new_ssid_clears_stale_venue_when_gateway_is_unavailable",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 250,
+    "sha256": "631bb84b35ce74ab1c63f2a7c398a80f99db70f154abb4e0493ac72641c1ce3a"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_transient_missing_ssid_does_not_clear_known_venue",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 281,
+    "sha256": "90c03efba16c0b89c33b0b1786412044167494b60ac46a63be447b18a8c36951"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_handler_can_identify_venue_after_landing_page",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 300,
+    "sha256": "ae65dae56e2fd143d5dceb6be35aca09d753a0c4e56084c8bd68b3703bad143e"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_cold_join_uses_scoped_wifi_route_and_transport",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 328,
+    "sha256": "c1b60539d39bd3232bff3af9711af48e5ac69aebdfdf300b7d1e35ef8a9791c4"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_verified_login_not_vetoed_by_open_websheet",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 372,
+    "sha256": "35b96d02851484f88f72786819c673b1c3c37a40522d617e0abc669c6dd72406"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_success_survives_late_gateway_discovery_and_stale_websheet",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 388,
+    "sha256": "d5a74b95856278f51e78981cd580c5f96584ec0090b00fc36f092f9ab12dff77"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_notify_while_staying_online",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 439,
+    "sha256": "e04d5db51c4c805979bb2adb46c07ab7f075417c37f2597fc9607ede3fc50456"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_notifies_on_captive_transition_and_success",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 445,
+    "sha256": "e24e0121f47ea2b30b04e058b91cf8ebcfd10953d1db2c290b0d777bf32646e0"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_repeat_notify_once_already_online_again",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 456,
+    "sha256": "a5eefdc7b1b55b23fd0893a0d01aac17df1f006d8de30044238417eb2609420b"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_network_never_notifies",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 464,
+    "sha256": "ead3d6561fa8ee01248431bd5a66e6279841af03f3a8783c9c8a4401c0198b19"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_online_recovery_appears_in_activity_without_spamming_healthy_polls",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 470,
+    "sha256": "00e6089f277e1dce30d7cb770d98b68f47a26d637c1f507ae973177991e6d9ce"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_online_probe_completes_activity_after_join_recovery_or_stale_check",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 482,
+    "sha256": "58ffb2e5fae8e5a316ceef32eefdf47a10c61f8bbc961ca6ff1f7b8d874d7c92"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_unreachable_network_reports_evidence_without_starting_form_or_radio_recovery",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 501,
+    "sha256": "c45e3a1007bb1130da52f75b1b0309a8cf9d893f44994df16a1309af95e4a160"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_a_portal_discovered_without_dns_enters_normal_login_and_verification",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 520,
+    "sha256": "28b51236c76bad30e4ac629b1bde72c5b61712e0bf912a2e083577aa0b48236c"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_network_switch_discards_the_old_redirect_and_evidence",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 531,
+    "sha256": "6a5544ea1540f0d880b875f387bfa434038b11536066025074cbd8e589fb89b8"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_consecutive_failures_increment",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 542,
+    "sha256": "691effa91f4fda7cc1f80475d71df1ce9a1df3350b367804a4092786264a6248"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_handler_exception_is_captured_with_actionable_reason",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 553,
+    "sha256": "2bb3efdb7766a9565f650c8448d1b6722970ce5eeefeb00f317ed90b9028432d"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_give_up_notification_fires_once_at_threshold",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 583,
+    "sha256": "720bf7d52f771daebc665b0e4482d4be81fd535dea7dd896a079ac1afd621886"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_success_resets_failure_count",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 595,
+    "sha256": "5a6538a1571db6fab6fc4393900185f1fa8a1898b5a247f7b882bdd36abafb0a"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_failure_runs_sweep_when_rate_limit_allows",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 610,
+    "sha256": "7768650fd013d99eaea3be5c87bc9024d5978a23bfa78dd35992d215801d4502"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_transient_first_failure_skips_forensic_sweep",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 637,
+    "sha256": "e940b6b55fb27e659bbd1131d3a979fd1a53b8bf471542fd33a4753c91e6bda0"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_transient_failure_sweeps_once_clearly_stuck",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 643,
+    "sha256": "9169a98c2c2954d95481f06d13dcb51fdd65464c0b0d32910642e16b48b65a4d"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_js_portal_discovered_by_sweep_is_handed_to_webview",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 657,
+    "sha256": "47b49ba676a29f9397f4a31063648946c4103e035e28a38ea65d181d8b6ca99e"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_cna_portal_discovered_by_sweep_is_handed_to_webview",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 688,
+    "sha256": "664fc5cce504f9c2de7a440fcae4557185c3f5dec601f42869e0b2604352553c"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_failure_skips_sweep_when_rate_limited",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 712,
+    "sha256": "a0a5838b5ebb563ba144fc57ee3c63df6828d999bc6bcfe99c7dea8129e2ef1f"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_sweep_failure_does_not_crash_the_cycle",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 716,
+    "sha256": "5a983e9ca717db4e702f4e592f8185f4b6fe94ea5a7779bda2093b9674c0ea7b"
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_success_never_sweeps",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 726,
+    "sha256": "35f80c253ef5f24452fd812103dc2cce2fe41c73872fbba8433a63c69cce7f78"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_first_success_for_new_fingerprint_is_captured",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 737,
+    "sha256": "f063da0971a2cbc94af115545b2a76cbce3944ff7ffbd8d1f3d1ebc63f6858dd"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_failure_capture_dir_does_not_suppress_success_capture",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 749,
+    "sha256": "d035eb6503b812e98ca299b40903c2d76e662af171f31c8ac0eb2732726856cb"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_existing_success_capture_is_not_recaptured",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 757,
+    "sha256": "cad7d2e064d371739ebe151d85406da3cefbd395574a292dcc04cbcb617aeec1"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_gateway_discovered_portal_is_passed_to_handler",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 776,
+    "sha256": "44cfeeaee6f3c6de9524771440bdea8ec1beae6885df8c6808e85e3b88e74781"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_cna_discovery_resolves_wireless_social_before_handler",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 807,
+    "sha256": "e5f69f5da2f599e22cafa70432ec20711e01c738f2c956300349d97dec45d49a"
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_failure_still_captured_even_with_existing_capture_dir",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 847,
+    "sha256": "000b3b8cf96beafa99a0af481d03625ad13fe394cb19b5c3762aa7178a2e1520"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_is_distinct_without_failure_count_or_reassociation",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 895,
+    "sha256": "b1c659f0d17eb127dc819808e3d68cf790b465a5be91900ef9829a2438223982"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_unavailable_page_stays_terminal_on_followup_checks_without_radio_reset",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 905,
+    "sha256": "6065a84a5a67c5b9ec567fa5d507914cd0282a9dcffcafd381445ec0d03d918d"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_notifies_portal_and_unsupported_only_once_per_fingerprint",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 918,
+    "sha256": "64bf78d6b42f345b51ed14b25f43f798e8f99b2b4fbfede73c1b55263061491d"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_new_fingerprint_notifies_again",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 945,
+    "sha256": "48f702be565a09ddcfccddf04bc9f1ce77d061c9dd126c3be4ea694c0b7bbfab"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_captures_once_per_venue_fingerprint",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 956,
+    "sha256": "ca891370bff37e1f8623f101fcd8199bfa9c9588c841b792760c2ce56c8e1077"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_recovery_notifies_back_online",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 976,
+    "sha256": "d6f0bb6ebea8699a6fa1145f2cdd41b3b217f908eb66dbd84d1bcc93bfae9a28"
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_captcha_and_other_reasons_also_map_to_unsupported",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 985,
+    "sha256": "a34b8e0e094eb11be6fd94682f323e1c780b415feb0254658d16a264c3a76ea0"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_gateway_mac_in_ignore_list_is_dormant_without_probe",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1020,
+    "sha256": "275c8a80bb394e5bec7dc54d39370772e900d2b7c6ecff55bdb629f7f180f973"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_iphone_hotspot_gateway_is_dormant",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1024,
+    "sha256": "14948fe9c9d165258a5a69021f78e217f6fecf16c8fa4028f7028a55fcdd3b4b"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_android_hotspot_gateway_is_dormant",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1030,
+    "sha256": "cecb38462565b56d0ca861be23a0ff5945b94277e14cb13525a5d95be829a895"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_ignore_hotspots_false_probes_normally",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1036,
+    "sha256": "586ed53c5099de55e19daeb343d98db2494e3fdc985cad02dc3a0649159a9c2c"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_non_wifi_default_route_is_dormant",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1047,
+    "sha256": "e7f44287c63175854278bd39e4c5f8c576b5c3059a326acd39e3d3b819da29df"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_wifi_detection_failure_does_not_go_dormant",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1051,
+    "sha256": "ceaa6193840f94ed8d22e04a9af06b876c86916a13a75646c70dca160e274d2c"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_ignored_does_not_disturb_transition_notifications",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1061,
+    "sha256": "028701f588320f71f222782e8d5a38060d0bd3f6a9d5e138faa7dbe0195e4fbd"
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassocRateLimit.test_fires_at_threshold_then_rate_limited_then_rearms",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1074,
+    "sha256": "ff784d02953262733d23f99a9dd722a1984670e99a0d723ef83fa7f863c90820"
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassocRateLimit.test_disabled_by_identity_flag",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1112,
+    "sha256": "b2f65054b50357fed2df5b2ae7a5a3c5536e6470e099df3320e77129c4c46b95"
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassociateFunction.test_power_cycles_via_posix_spawn_runner",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1126,
+    "sha256": "8467b5092c9e5234e92ced736f461401015647f3ca11624e35eb62c1ffc16204"
+  },
+  {
+    "legacy_id": "test_state_machine.TestLockSingleInstance.test_second_acquire_fails_while_first_held",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1157,
+    "sha256": "6c35370c27fe486c971c3d41ffbb74dbb46ac6b098897389a343a18ac4f22738"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_shared_mac_classification",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1174,
+    "sha256": "a24a3f54f5edd6cd4f963bd43019f9143b1efb340b3fc0d885abe725199cb8dc"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_unique_mac_still_wins_over_shared_provider_domain",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1197,
+    "sha256": "a6eb412a9d08adb9290ecee7cfe818411797e6a8a07bf1ace28417bb4217442d"
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_shared_mac_defers_to_portal_then_ssid",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1207,
+    "sha256": "97c23fcefbef57089102cbba91960a2a4ac8ff1f9d9a7460f3e97e3803ef0994"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_retries_while_captive_then_stops_on_online",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1276,
+    "sha256": "4cd70eefd62adfb87ec6922450c17a2d384895fa62d962915b0be2224d6ba581"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_no_retry_when_first_result_is_terminal",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1283,
+    "sha256": "01f06429332b7b89ba763ce7c3c4058a5fcb5a8825c68395b2fa89ba5ed1ade9"
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_no_retry_on_unsupported_portal",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1288,
+    "sha256": "2f78342c25637a134ae3872d8eea72704d8968413beb6a3c0505ac1d08208c23"
+  },
+  {
+    "legacy_id": "test_state_machine.TestPhonePolicyLearning.test_phone_history_never_changes_configured_identity",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1319,
+    "sha256": "c321ff75115eeb79e7a135cd3c27e236b60ec98c0b94c01f966fe19680094414"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_follows_gateway_redirect_to_login",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1365,
+    "sha256": "f8b91e044c0e993693182a4ae8d5bad5867f0a1c317e58e52584af489a4c0407"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_no_gateway_ip_returns_none",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1378,
+    "sha256": "1c0be5e8a7882de1efa3a231acacc685ffccea1f403b5e15c9d794f1b8c4f128"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_silent_gateway_returns_none",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1383,
+    "sha256": "2c6236d742d66ad60592255fb1d7f00d5822204bb73feb6738c1efbde9ed3b25"
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_unfollowed_redirect_uses_location_header",
+    "source": "wifi-autologin/tests/test_state_machine.py",
+    "line": 1391,
+    "sha256": "274fb56f11c6ed957c6c4cd462cacaf5713822113ed5a5ae086f1f8ad6610d1f"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_report_gathers_reason_hops_forensics_and_log",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 42,
+    "sha256": "2924f01f916ddd916922198bcfc193843cfd8f3dd6b53b3b4c99ff157b35885c"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_substring_selector_matches_venue",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 58,
+    "sha256": "e2fec6c2a210972076fe360c920d0369b9e82e7fbddc81be885e791e95b815b4"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_venue_name_resolves_via_log",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 68,
+    "sha256": "d77f762415189def5adbe88fdb6ae27f6fe6bdaeb9f317542416a476479f7dd3"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_no_match_lists_known_venues",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 81,
+    "sha256": "cb0b414ae7cfde5fa0e5a8f8f5f0f1686461963c935cb6c69d8afe37677a0c45"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_list_failures_is_one_row_per_venue_newest_first",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 92,
+    "sha256": "15266047a190f81b9dc0ded7ebd502091e0c30836134d16b583ebb534e323ffc"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_list_failures_empty_is_graceful",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 111,
+    "sha256": "80587f95925d245c684844cc16f2ffef92023975bc2271f1972101c588087086"
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_empty_state_is_graceful",
+    "source": "wifi-autologin/tests/test_triage.py",
+    "line": 118,
+    "sha256": "ec6be5fa28a6f28ddee751c4456a0f74068877fcfe6e8b11aa7d6255f14951fa"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_pret_contract",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 138,
+    "sha256": "86400ba1a6236ff17463849f760d9ba1942319fe950f8d910d4b904ede3b123e"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_boots_contract",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 141,
+    "sha256": "16777efceaa3b39756339ae684f64d00528bf38cdc5ba07b5120a83c34265bbf"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_black_sheep_contract",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 144,
+    "sha256": "f3aaa0d59b29d54cc59fb81a5f1a59cd08156d7cfc2d610dda16c0bad9833232"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_picturehouse_contract",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 147,
+    "sha256": "beaa5bff034770f82cbbc96c062e32fbbb850ca0e619187c58657df34a4d9eaf"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_nandos_contract",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 150,
+    "sha256": "92be6be1929d17060c07e32623a80e8036c981807dbabd9754e95d9e3bd190e6"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_pret_routes_to_static_handler",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 209,
+    "sha256": "cbd62211d49130040b35a419aaf306f884fa1291af90dee62bd2f1b44b1359f6"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_boots_routes_to_static_handler",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 212,
+    "sha256": "fb428098645ed67b0cd7033a369b1dde075c832db9b16e24d3b3267c2cca0a9e"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_black_sheep_routes_to_static_handler",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 215,
+    "sha256": "e6a406b10cb19bc5a87ac20d929c625b15b202281235941a6f7ee1c6404fce6c"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_picturehouse_routes_to_static_handler",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 218,
+    "sha256": "f7c10ea21cbbda4eeeadad833630baf6e2283b56655355e5860aa3e637221d01"
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_nandos_routes_to_static_handler",
+    "source": "wifi-autologin/tests/test_venue_contracts.py",
+    "line": 221,
+    "sha256": "380b29761aae04cace54e167f42a3fd2f70cf65a2da4d18a8c4fc34e42be924b"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_writes_expected_json_shape",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 31,
+    "sha256": "e66f038317307b1c37e392159ff6d0f08badc4995b95792c129d5d6397ffde2c"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_write_creates_private_file_without_temporary_leftover",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 57,
+    "sha256": "2a84bbe6e46a3bffb41ac0355089dffda25608e7502c3d93b67771391856b296"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_browser_deadline_starts_after_slow_http_attempt",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 71,
+    "sha256": "eaee844c6df1ac7649a8e7334c900da19797f768aee983e0d8b06d2838ce753a"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_none_fingerprint_and_capture_path_round_trip_as_null",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 84,
+    "sha256": "6cc7f964deae5b658ec1477109dcf92a8560264a6665da9ba27bcfade4d952c8"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_overwrite_replaces_previous_record",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 95,
+    "sha256": "c2d7bb0e41e7974e89cd01bea15bd72670872ac1e0f0d289fbc0bd203338ed8b"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_active_handoff_is_fresh_reviewed_and_fingerprint_scoped",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 112,
+    "sha256": "7c18c5987a52254e81c41132f6019b6c18a1eedee75e916bdfbcdc1dec3f0ed3"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_unsupported_record_matches_only_fresh_fingerprint",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 145,
+    "sha256": "4ae8e8d300232247c3d67b0525df6f29e2f5adc3ffd67d2d8b42cd5f867a3601"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_js_render_failure_writes_handoff",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 234,
+    "sha256": "68953dbc66571449607d392f57838a912e4e69e3738c272eb39c5a3f91bcc74a"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_optimistic_redirect_without_form_routes_to_webview",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 246,
+    "sha256": "a4bbccce829da44e2d31490a70aae2cfaea7461b1d7d7627cb22929f58290acd"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_other_failure_reasons_do_not_write_handoff",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 268,
+    "sha256": "b3a78d343a3d5819b09ab0b19ac6a0de1a9d7359eb9acb8acfd22c7aabee2606"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_ambiguous_meraki_grant_writes_reviewed_handoff",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 272,
+    "sha256": "b811f09ce6418c8cfb0b4c0c914608b303e0b5e6053a927290e1581b1c60ff87"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_fresh_handoff_suppresses_duplicate_static_action",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 282,
+    "sha256": "73650b9b261a6912ef7238fe2ae650b18949adb3f43488b1613d88964bd8419d"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_unsupported_failure_prepares_assistance_without_automation",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 296,
+    "sha256": "d502bae8e9ecb1aa83e63097dcc48ea2693889a562a920991d6482fef509a262"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_js_render_failure_still_increments_consecutive_failures",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 310,
+    "sha256": "825278d66c6723b7d47c1b6d4c05429f04d3f971c10b6193fc249fff8ddf186b"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_pending_browser_journey_is_not_rebuilt_by_scheduler",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 323,
+    "sha256": "c175417bda7aa14dfe505d8b548876ce4267b000cc208ce79ce467cf679641a8"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_success_after_js_render_clears_stale_handoff",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 333,
+    "sha256": "514bd1ee6f80c58ec9d523a4c2cd74c088c807920e55c335428c87baf788b671"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_matching_webview_unsupported_record_stops_static_retries",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 344,
+    "sha256": "fa65dc65913a27bd967c3aa19635238507373e29de0cfc2d348c9771a81458d0"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_shared_provider_decision_does_not_cross_gateways",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 367,
+    "sha256": "9fb4db82df180fff27c4aa6cb84026dab0b3cce82822de071961865e6afe1a0e"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_static_unsupported_result_blocks_the_next_cycle",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 390,
+    "sha256": "6433517be36f01dfff74a376e4f6e6be58f502d35eb550c80c8cf86e98d0e030"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_assisted_completion_never_gets_auto_login_credit",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 453,
+    "sha256": "fdeb6b5a97ca58a9e6aebd5c3e5c187ff33a63d17e211ae7dd4a27a1021bf1b0"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_browser_learning_requires_verified_matching_signature",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 461,
+    "sha256": "b7d2bfb6969f15d0de584ec90a101be4332cb63c51e08030dedebc78077b62a8"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_requires_independent_online_probe",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 479,
+    "sha256": "d67ec6858aef0dae0d0d7bdd97f4ed16ca47a938d25dddf2c3e4a8a67c72fca2"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_persists_verified_success_and_clears_handoff",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 518,
+    "sha256": "082b612ebc0a53a07e3076ef91d21611975ac98c5661b7738a713d371be7a4a8"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_rejects_stale_fingerprint_or_changed_gateway",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 547,
+    "sha256": "90c0e524ca4da9ff3175768065c9c3a322bc248a9bc25ed7a6537fdc9aa881a7"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_unsupported_outcome_is_fingerprint_scoped",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 577,
+    "sha256": "5e242faf6598d587741e51f0f31b0ce4b01e3d5928b6c2d56e370e2b82ab878e"
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_unknown_unsupported_reason_is_rejected",
+    "source": "wifi-autologin/tests/test_webview_handoff.py",
+    "line": 609,
+    "sha256": "cd19b43a1a3c6fb7dba0df3e9cce35c59a7d4e80ea7fe15af599e4b9fdd6667e"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_extracts_embedded_journey_and_venue",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 103,
+    "sha256": "8886c07523b8d0bf04c2a3e604606c800509a0622f2d161341a022c17356a8a1"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_venue_name_falls_back_to_provider_venue",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 108,
+    "sha256": "21e7fb9c20ba7aeff636f72494385e7149283a37f3a9e6fca593c915473fd2f0"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_reserved_addresses_require_private_relay",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 118,
+    "sha256": "08fda029f7778e9683c3d478a8773adba386a130cf591b70f23dcd549dd772a5"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_profile_field_aliases_are_provider_wide_not_venue_specific",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 128,
+    "sha256": "7dafa380e1b6996a8d9d305cd2cd344aca39822f6f4e39fb1bc0eb2dfc76af55"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_profile_fields_use_provider_metadata_not_only_known_names",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 144,
+    "sha256": "8c292160d6da89a0a7b9dedcaf321c2eb6352502b6b98435b222a9f94830b838"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_validation_errors_support_wireless_social_list_shape",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 161,
+    "sha256": "c011037c03f1b8fb550d4f02189dcafc09f33b9fc96c04d55870a27e1a3a63dc"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_phone_matches_provider_e164_serialisation",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 180,
+    "sha256": "d0eb883a3c75aa6d37f8f075b12ad7317474b5ab912063ec2a4c2e20fc754a19"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_postauth_progress_includes_poststart_node",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 193,
+    "sha256": "f312aba41e5cde324ebcbdef8ed6ad3eb086f7004cb6ea8410a6d5e23b580cde"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_extracts_meraki_external_grant_form",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 203,
+    "sha256": "33dde8dc71191a0ba8a4afc5e4f9db49591f7344391eafd0c23922cd19fae665"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_profile_retries_only_safe_formats_from_same_identity",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 224,
+    "sha256": "5011a9c053306e7ce6b28febad5667bcba6fc8e04c7823c003c09eb4c9b29876"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_profile_reports_rejected_safe_phone_without_inventing_digits",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 288,
+    "sha256": "724867b8e8765ecba936c91fb4f1e5e963ffec38d7dd0373c0f2799d9d37f678"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_rejected_phone_never_replaced_by_generated_digits",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 359,
+    "sha256": "5c13b3412b29962390ed2831b8a8068d20318e7db619e8ab593e0091a635fc9f"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_old_real_phone_preference_cannot_change_identity",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 418,
+    "sha256": "f88e8f74cb3f4ec3da088b429a4f9c51664d8cbaffdeb94f5d4b48c566adfdad"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_reserved_default_fails_before_identity_submission",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 454,
+    "sha256": "fce1955a571fef5cf1c57835f402aa2dcd5480816811dca447589fcd262ea34c"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_completes_new_user_without_marketing_or_optional_postcode",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 475,
+    "sha256": "2ecb0ba4de09848c90c7ce0c2b8af0633c1bf1efdc06e1f4a78b22da550bac0b"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_unknown_required_field_fails_closed",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 547,
+    "sha256": "8f3b867497f59c2a0f9bb6f0c7037dd9982f3c65103ef0028c71079f2b8594be"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_existing_user_skips_registration_and_consent",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 593,
+    "sha256": "0b7ef9d2ac8995ddfc507104db3a74fc34457db10b8052e902c77e99dc8b8eb1"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_relative_meraki_grant_redirect_is_followed",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 644,
+    "sha256": "c02725710aef0eb17c9b1cae39f477e3bb88f25af882da0bf8010dcbcbf6a752"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_meraki_external_grant_form_is_submitted",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 707,
+    "sha256": "831189db224f99c3f6b515842256a2f0702e0d395963cd72c88ad42141c23a7f"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_untrusted_external_grant_form_is_rejected",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 788,
+    "sha256": "68a0ab983a7d7d167df72387fd8d97aa120a07cb2f53ff32ef2d45876a0cfea5"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_cross_origin_grant_redirect_is_rejected",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 851,
+    "sha256": "e77ec3a8b06de7ce068fc88934f1db99d0e831bf1b995cc6e649612f60840790"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_provider_email_validation_is_actionable",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 903,
+    "sha256": "8b1c04a491f0d153017ca600d6ad44befde480c9318aa42d6a41ab1fb1590103"
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_explicit_postauth_rejection_stops_before_end",
+    "source": "wifi-autologin/tests/test_wireless_social_handler.py",
+    "line": 936,
+    "sha256": "7211e10c5127f2b6406a9c1686098303cbe70380a3796adbca1f9777fe7d9e51"
+  }
+]

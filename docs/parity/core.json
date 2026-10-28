@@ -1,0 +1,160 @@
+[
+  {
+    "legacy_id": "test_identity.TestParseEnv.test_quotes_and_comments",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testQuotesCommentsAndWhitespaceAreData"
+    ],
+    "rationale": "Asserts parsed first and last names, postcode, phone, matching quotes, comments and trailing whitespace."
+  },
+  {
+    "legacy_id": "test_identity.TestParseEnv.test_missing_equals_raises",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMalformedLineErrorDoesNotExposeItsValue"
+    ],
+    "rationale": "Asserts the malformed-line error identifies line 1 while never including secret source text."
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_missing_file_raises_clear_error",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMissingFileHasActionableError"
+    ],
+    "rationale": "Asserts a missing Persona file produces an actionable not-found error."
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_missing_required_key_raises",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMissingRequiredPersonaValueRejected"
+    ],
+    "rationale": "Rejects incomplete Persona files and independently removes each of the seven required keys."
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_full_load_with_defaults",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testFullPersonaAndExplicitFlags"
+    ],
+    "rationale": "Asserts all provided optional fields, full name and email plus explicit marketing, reassociation and hotspot flags."
+  },
+  {
+    "legacy_id": "test_identity.TestLoad.test_defaults_when_optional_keys_absent",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testAbsentOptionalPersonaUsesLegacyDefaults"
+    ],
+    "rationale": "Asserts the legacy optional string defaults and the three boolean defaults when omitted."
+  },
+  {
+    "legacy_id": "test_notify.TestPrivateLog.test_log_stays_private_when_created_reopened_and_rotated",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testLogPrivateWhenCreatedReopenedAndRotated"
+    ],
+    "rationale": "Asserts 0600 on creation, reopening and rotation after externally widening to 0644; backup retains the first message and the new file receives subsequent output."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_env_override_wins_over_everything",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testEnvironmentOverrideWinsOverHome"
+    ],
+    "rationale": "Injected environment directory takes precedence over the injected home directory."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_env_override_expands_user",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testOverrideExpandsTilde"
+    ],
+    "rationale": "The actual Foundation tilde expansion resolves an override beneath the current account home."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_empty_env_override_falls_through_to_shared_dir",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testEmptyOverrideUsesSharedDirectory"
+    ],
+    "rationale": "An empty injected override falls through to the shared home-based directory."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_default_is_shared_home_based_dir",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testDefaultIsSharedHomeDirectory"
+    ],
+    "rationale": "An absent override selects the same .local/state/wifi-autologin home path."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_unresolvable_home_falls_back_to_repo_local",
+    "status": "retired",
+    "native_tests": [],
+    "rationale": "The signed native application has no repository-local runtime directory and Foundation provides a nonoptional account home URL. The Python-only home=None fallback to repo/.local-data is removed; explicit root/environment overrides remain tested."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_does_not_touch_disk",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testPathResolutionDoesNotCreateDirectories"
+    ],
+    "rationale": "Resolves paths beneath a nonexistent temporary home and asserts the home remains absent."
+  },
+  {
+    "legacy_id": "test_paths.TestResolveDataDir.test_real_environ_is_used_when_env_not_passed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/SelfTest.swift::testProductionPathOverrideFromEnvironment"
+    ],
+    "rationale": "The normal Swift test runner starts a separate native process with a distinct temporary data-root override. The production no-argument constructor must consume it and must not fall back to the real home path."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_copies_legacy_when_shared_target_missing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMigrationCopiesExactBytesWhenTargetMissing"
+    ],
+    "rationale": "Production migration reports a copy and preserves the complete original byte sequence in the new target."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_does_not_delete_the_original",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMigrationPreservesOriginal"
+    ],
+    "rationale": "Production migration leaves the original legacy Persona present with identical bytes."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_sets_owner_only_permissions_on_migrated_copy",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMigrationCreatesPrivateCopyAndDirectory"
+    ],
+    "rationale": "A world-readable legacy Persona is copied into a 0600 target under a 0700 directory."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_no_legacy_file_is_a_no_op",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMissingLegacyIdentityIsNoOp"
+    ],
+    "rationale": "Absent source returns false and does not create the target or its directory."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_existing_shared_target_is_never_overwritten",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMigrationNeverReplacesSavedPersona"
+    ],
+    "rationale": "Existing shared Persona wins over different legacy bytes and migration reports no copy."
+  },
+  {
+    "legacy_id": "test_paths.TestMigrateLegacyIdentity.test_same_path_for_legacy_and_target_is_a_no_op",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/CoreMigrationParityTests.swift::testMigrationSamePathIsNoOp"
+    ],
+    "rationale": "Same source and target returns false while preserving all source bytes."
+  }
+]

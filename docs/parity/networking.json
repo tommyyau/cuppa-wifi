@@ -1,0 +1,661 @@
+[
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_authenticated_tunnel_preserves_bytes_in_both_directions",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testAuthenticatedRelayTunnelsBytesWithoutInterpretingTLS"
+    ],
+    "rationale": "Actual authenticated CONNECT returns 200, preserves exact opaque request and echo bytes and increments accurate telemetry."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_unauthenticated_loopback_clients_cannot_connect",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testRelayAuthenticationAndDestinationPolicy"
+    ],
+    "rationale": "Actual unauthenticated loopback connection receives 407; no authenticated connection is counted."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_non_portal_private_addresses_and_unrelated_ports_are_rejected",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testRelayExplicitPortalAndGatewayExceptionsAreNarrow"
+    ],
+    "rationale": "Explicit matrix rejects localhost, loopback, unrelated private destinations, unrelated portal ports and SSH."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_private_portal_and_explicit_port_are_allowed_only_for_that_portal",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testRelayExplicitPortalAndGatewayExceptionsAreNarrow"
+    ],
+    "rationale": "Exact private portal host and explicit 8080 allowed; neighboring private host and port 22 rejected."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_connector_uses_scoped_dns_and_the_selected_interface",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testIPv6PortalRelayTunnelsAuthenticatedBytes",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testRelayRejectsDNSRebindingBeforeConnecting"
+    ],
+    "rationale": "Actual lo0-bound IPv6 CONNECT preserves payload; injected resolver local rebinding is rejected before connecting."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_non_portal_dns_cannot_redirect_the_relay_to_local_services",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testRelayRejectsDNSRebindingBeforeConnecting",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testIPv6PortalRelayTunnelsAuthenticatedBytes"
+    ],
+    "rationale": "Nonportal name resolving to loopback receives 502 and zero upstream connections; exact IPv6 portal loopback succeeds."
+  },
+  {
+    "legacy_id": "test_browser_proxy.BrowserProxyTests.test_verified_gateway_callback_is_allowed_but_other_lan_hosts_are_not",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testRelayExplicitPortalAndGatewayExceptionsAreNarrow"
+    ],
+    "rationale": "Verified gateway ports 80/1000 allowed; unrelated LAN callback and gateway port 22 rejected."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_recovers_observed_wireless_social_fortinet_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Exact observed unescaped nested Fortinet callback, magic and SSID URL recovered byte-for-byte."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_rejects_callback_for_another_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Callback gateway differing from current gateway rejected."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_rejects_wrong_provider_port_path_or_token",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Individually rejects wrong provider, callback port 80, admin path and nonhex magic."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestExtractRecentPortalUrl.test_uses_newest_matching_url",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Two valid log URLs return newest magic token."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestDiscoverRecentPortalUrl.test_runs_bounded_log_query",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Injected commands assert exactly one /usr/bin/log query with timeout at most 6 and correct discovered URL."
+  },
+  {
+    "legacy_id": "test_cna_portal.TestDiscoverRecentPortalUrl.test_command_failure_returns_none",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testCaptiveDiscoveryExactContractRejectsEachMismatchAndChoosesNewest"
+    ],
+    "rationale": "Nonzero log status returns nil even if output contains a valid URL."
+  },
+  {
+    "legacy_id": "test_forensics.TestShouldSweep.test_first_sweep_is_allowed_and_then_rate_limited",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicFirstSweepRateLimitExactBoundaryAndNoFingerprint"
+    ],
+    "rationale": "First run allowed, marker blocks before 900 seconds and permits exact 900 second boundary."
+  },
+  {
+    "legacy_id": "test_forensics.TestShouldSweep.test_no_fingerprint_never_sweeps",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicFirstSweepRateLimitExactBoundaryAndNoFingerprint"
+    ],
+    "rationale": "Empty native fingerprint returns false without creating artifacts."
+  },
+  {
+    "legacy_id": "test_forensics.TestAnalyzeHtml.test_static_form_is_not_flagged_js_rendered",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicStaticFormAndScriptShellAnalysis"
+    ],
+    "rationale": "Asserts title Guest WiFi, one form, one input and looks_js_rendered false."
+  },
+  {
+    "legacy_id": "test_forensics.TestAnalyzeHtml.test_script_only_shell_is_flagged_js_rendered",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicStaticFormAndScriptShellAnalysis"
+    ],
+    "rationale": "External script-only shell has zero forms and looks_js_rendered true."
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_cross_host_redirect_is_interception",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicCrossHostInterceptionCapturesScriptsAndPrivateBodyDespiteDeadDNS"
+    ],
+    "rationale": "Actual injected sweep identifies cross-host raw-IP redirect and records interception URL."
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_same_host_scheme_upgrade_is_not_interception",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicSameHostSchemeUpgradeIsNotInterception"
+    ],
+    "rationale": "Raw-IP HTTP to same-host HTTPS upgrade leaves interception unset and chain empty."
+  },
+  {
+    "legacy_id": "test_forensics.TestIsInterception.test_missing_location_is_not_interception",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicMissingLocationAndEverythingDeadStillWriteSummary"
+    ],
+    "rationale": "302 without Location yields no interception and zero portal chain hops."
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_purple_jsrd_shim_appends_marker_to_current_url",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicPurpleShimAppendsMarkerPreservesQueryAndStopsLoop"
+    ],
+    "rationale": "Purple shim preserves ap_mac and appends &jsrd=1; chain stores exact js_redirect."
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_jsrd_shim_does_not_loop_once_marker_present",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicPurpleShimAppendsMarkerPreservesQueryAndStopsLoop"
+    ],
+    "rationale": "Second page retains same shim with marker present; marked URL requested once and chain stops at two."
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_string_literal_location_assignment_is_followed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicLiteralLocationIsFollowedAndDynamicExpressionIsNot"
+    ],
+    "rationale": "Relative quoted location assignment resolves /welcome and produces two-hop chain."
+  },
+  {
+    "legacy_id": "test_forensics.TestJsRedirectTarget.test_dynamic_redirect_is_not_followed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicLiteralLocationIsFollowedAndDynamicExpressionIsNot"
+    ],
+    "rationale": "buildUrl expression is not evaluated; entry remains final URL and no expression-shaped request occurs."
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_dead_dns_with_http_interception_discovers_portal",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicCrossHostInterceptionCapturesScriptsAndPrivateBodyDespiteDeadDNS"
+    ],
+    "rationale": "All injected DNS queries fail yet raw-IP redirect captures final JS shell, exact script index URL, one chain hop and 0600 body."
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_gateway_hosted_portal_is_followed_to_login_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicGatewayHostedLoginFormIsFollowedAndExplained"
+    ],
+    "rationale": "Same-host gateway redirect seeds /login directly, finds one form, looks_js_rendered false and gateway-serves-portal note."
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_portal_chain_follows_jsrd_shim_to_real_app",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicPurpleShimAppendsMarkerPreservesQueryAndStopsLoop"
+    ],
+    "rationale": "Two-hop shim chain, exact js_redirect field and marked final URL asserted."
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_everything_dead_still_produces_summary",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicMissingLocationAndEverythingDeadStillWriteSummary"
+    ],
+    "rationale": "Dead HTTP and DNS still produce summary, zero chain hops, no interception and no-portal explanatory note."
+  },
+  {
+    "legacy_id": "test_forensics.TestRunSweep.test_sweep_writes_marker_and_prunes_old_sweeps",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NetworkingForensicParityTests.swift::testForensicMarkerAndOldSweepPruningKeepNewestEight"
+    ],
+    "rationale": "Eleven stale directories are pruned to eight including newest; private marker suppresses next sweep."
+  },
+  {
+    "legacy_id": "test_http_transport.TestInterfaceBoundConnection.test_ipv4_socket_is_bound_before_connect",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testSelectedInterfaceIsRequiredBeforeTCPStart",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testScopedLoopbackAndBodyBound"
+    ],
+    "rationale": "Before NWConnection.start, requiredInterface is lo0; real IPv4 HTTP then succeeds on that interface. Native NWParameters replaces legacy IP_BOUND_IF setsockopt."
+  },
+  {
+    "legacy_id": "test_http_transport.TestInterfaceBoundConnection.test_uses_scoped_resolver_before_connecting",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSSystemFailureFallsBackBeforeReturningScopedAddresses",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testSelectedInterfaceIsRequiredBeforeTCPStart"
+    ],
+    "rationale": "Native HTTP first lets Network.framework resolve hostname within requiredInterface; scoped UDP fallback follows failure, retains original TLS hostname. Legacy resolver-before-getaddrinfo call sequence replaced by interface-scoped framework resolution."
+  },
+  {
+    "legacy_id": "test_netinfo.TestGatewayMac.test_pads_arp_octets_to_canonical_mac",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Real inspector path with injected ARP 2:0:0:0:0:1 returns 02:00:00:00:00:01."
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_reads_waiting_captive_state_from_dynamic_store",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Typed DynamicStore reader injection preserves en0, WebSheet and waiting-UI captive hint; native production reader uses SCDynamicStore API rather than scutil text."
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_online_dynamic_store_state_is_not_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Online without waiting UI is not captive."
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_evaluate_without_waiting_ui_is_not_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Evaluate alone is false; Evaluate with waiting UI is true."
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_active_wifi_can_be_found_without_default_route",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "No default route but assigned Wi-Fi address returns en0 with scoped gateway."
+  },
+  {
+    "legacy_id": "test_netinfo.TestCaptiveNetworkState.test_stale_captive_key_does_not_make_inactive_wifi_active",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Inactive link, no address and stale Offline captive record return no active interface."
+  },
+  {
+    "legacy_id": "test_netinfo.TestScopedRoute.test_requests_interface_scoped_default_route",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC"
+    ],
+    "rationale": "Recorded exact /sbin/route -n get -ifscope en0 default arguments and returned gateway/interface asserted."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_no_wifi_does_not_probe",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticNoWiFiAndSelfAssignedAddressPerformNoHTTP"
+    ],
+    "rationale": "No interface returns wifi_not_connected with zero commands and HTTP requests."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_self_assigned_address_is_not_a_proven_router_fault",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticNoWiFiAndSelfAssignedAddressPerformNoHTTP"
+    ],
+    "rationale": "169.254 address returns address_unavailable with no HTTP; summary explicitly preserves IPv6 uncertainty."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_gateway_and_direct_checks_report_live_progress_and_preserve_uncertainty",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFailureEvidenceProgressAndRepeatWindows"
+    ],
+    "rationale": "Exact three progress stages, assigned address, present gateway, no ping, timeout HTTP, sanitized DNS errors, Evaluate stage and repeat/reset/future/short-interval semantics asserted."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_filtered_ping_with_http_response_is_not_an_unreachable_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFilteredPingDirectResponsesAndPermissionReasons"
+    ],
+    "rationale": "403 gateway response despite no ping produces upstream_unavailable instead of blaming local gateway."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_direct_response_distinguishes_dns_or_probe_filtering",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFilteredPingDirectResponsesAndPermissionReasons",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFailureEvidenceProgressAndRepeatWindows"
+    ],
+    "rationale": "Direct 200 response produces dns_or_probe_failure; sanitized errors exclude secret email/URL text."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_literal_ip_redirect_is_recovered_without_resolving_target_or_saving_token",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticPortalTokenOnlyInReturnedURLAndRedirectRejections"
+    ],
+    "rationale": "302 direct response returns token-bearing portal URL only; persisted evidence contains status 302/connected true and no token; requests are literal IP with no redirects and empty Cookie."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_ordinary_endpoint_redirect_and_router_admin_are_not_captive_evidence",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticPortalTokenOnlyInReturnedURLAndRedirectRejections"
+    ],
+    "rationale": "Individually rejects one.one.one.one,1.1.1.1,Cloudflare,file,loopback,userpass and 9000; gateway/admin rejected and gateway/guest/portal accepted."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_timeout_has_a_small_request_budget",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFailureEvidenceProgressAndRepeatWindows",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testDeadlineAndInvalidInterfaceFailClosed"
+    ],
+    "rationale": "Both diagnostic requests have 2 second timeout and zero-body/no-redirect policy; actual socket transport timeout bounded and invalid interface fails closed."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_dribbling_headers_do_not_extend_the_deadline",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testDribblingHTTPHeadersCannotExtendAbsoluteDeadlineAndSocketCloses"
+    ],
+    "rationale": "Real peer dribbles one header byte per 40 ms; absolute 250 ms deadline wins, connected evidence true and peer observes closed socket."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_damaged_previous_diagnostics_do_not_break_a_check",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFailureEvidenceProgressAndRepeatWindows"
+    ],
+    "rationale": "NSNull first_seen_at and string count do not crash or mark repeated."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_permission_denial_is_not_blame_on_the_network",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDiagnosticFilteredPingDirectResponsesAndPermissionReasons"
+    ],
+    "rationale": "Actual POSIX EPERM errors classify network_permission_denied."
+  },
+  {
+    "legacy_id": "test_network_diagnostics.NetworkDiagnosisTests.test_real_http_redirect_is_discovered_even_when_dns_is_unavailable",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testRealLiteralHTTPDiagnosticRedirectAvoidsDNSAndCookies"
+    ],
+    "rationale": "Actual lo0 native HTTP to literal loopback discovers 302 without name resolution; repeated requests contain no saved cookie and token is absent from evidence."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_response_failure_after_headers_falls_back_and_closes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testDribblingHTTPHeadersCannotExtendAbsoluteDeadlineAndSocketCloses"
+    ],
+    "rationale": "Connected request_timeout falls back to Google 204 with one Apple error; actual native timeout closes peer socket."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_large_intercepted_page_is_bounded_but_still_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "100000-byte intercepted response produces CAPTIVE body bounded to 65536 bytes."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_captive_copy_containing_success_is_not_internet_access",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Successfully-loaded copy and Success with injected script both remain captive with original body."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_success_body_is_online",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Exact Apple HTML and BOM+doctype+head/title document report ONLINE from Apple."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_204_is_online_via_secondary",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testProbeOutcomeMatrix",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Failed Apple followed by Google 204 reports ONLINE/gstatic and retains one Apple error."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_redirect_is_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Absolute token/MAC portal Location returned exactly as CAPTIVE redirect."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_real_urllib_no_redirect_http_error_is_captive",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testNoRedirectAndStatusOnlyNeverWaitForBody"
+    ],
+    "rationale": "Native HTTP returns 302 as a normal response rather than urllib HTTPError; no-redirect native socket behavior and relative Location joining asserted."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_intercepted_200_without_success_marker_is_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Sign-in 200 remains captive and body preserved."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_timeout_on_both_is_no_network",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Both timeout results yield NO_NETWORK and two errors."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_macos_captive_hint_prevents_false_no_network",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeExactResponsesRelativeRedirectsBodyLimitAndFallbackErrors"
+    ],
+    "rationale": "Both timeout with captive hint yields CAPTIVE/macOS-captive-state with two errors."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_websheet_keeps_captive_when_google_redirects",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeHintAndConsensusSecondaryInterceptionNeverReportsOnline"
+    ],
+    "rationale": "Optimistic Apple Success plus Google 302 under captive hint remains captive/gstatic with exact redirect."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_yields_to_two_online_probes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testStrictAppleSuccessAndIndependentConsensus",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testProbeOutcomeMatrix"
+    ],
+    "rationale": "Two independent successes override stale captive hint and return apple+gstatic."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_requires_reachable_confirmation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testProbeOutcomeMatrix"
+    ],
+    "rationale": "Apple success plus failed secondary with hint remains captive/macOS-captive-state."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_stale_websheet_cannot_be_overridden_by_secondary_alone",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeHintAndConsensusSecondaryInterceptionNeverReportsOnline"
+    ],
+    "rationale": "Apple failure plus Google 204 under hint remains captive/macOS-captive-state with one error."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_post_login_verification_requires_two_online_probes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testStrictAppleSuccessAndIndependentConsensus",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testProbeOutcomeMatrix"
+    ],
+    "rationale": "Consensus requires both Apple Success and Google 204; two successes return apple+gstatic."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_post_login_verification_rejects_one_optimistic_endpoint",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeHintAndConsensusSecondaryInterceptionNeverReportsOnline"
+    ],
+    "rationale": "Consensus Apple Success plus Google 200 portal remains captive/gstatic with portal body."
+  },
+  {
+    "legacy_id": "test_probe.TestProbeClassification.test_secondary_success_alone_does_not_satisfy_consensus",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testProbeHintAndConsensusSecondaryInterceptionNeverReportsOnline"
+    ],
+    "rationale": "Apple failure plus secondary 204 remains captive/connectivity-consensus with one error."
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_uses_posix_spawn_with_absolute_executable",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeQuietAbsoluteCommandAndRelativeRejection"
+    ],
+    "rationale": "Actual absolute /usr/bin/true native Process succeeds with empty output. Foundation Process owns Darwin spawning instead of Python os.posix_spawn mock inspection."
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_rejects_path_lookup_that_could_fall_back_to_fork",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeQuietAbsoluteCommandAndRelativeRejection"
+    ],
+    "rationale": "Relative osascript rejected before launch; no PATH or shell lookup."
+  },
+  {
+    "legacy_id": "test_safe_process.TestSafeProcess.test_timeout_kills_and_reaps_child",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeTimeoutKillsAndReapsChild"
+    ],
+    "rationale": "Actual TERM-ignoring child receives SIGKILL; kill(pid,0) returns ESRCH and waitpid returns ECHILD, proving termination and reap."
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_captures_stdout_from_real_spawn",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeCaptureStdoutStdinStderrAndNonzeroExit"
+    ],
+    "rationale": "Actual /bin/echo returns hello newline and exit 0."
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_feeds_stdin_and_reports_nonzero_exit",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeCaptureStdoutStdinStderrAndNonzeroExit"
+    ],
+    "rationale": "Actual cat echoes stdin; actual controlled fixture exits 7 and captured stderr is diagnostic."
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_timeout_is_reported_not_raised",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeTimeoutKillsAndReapsChild"
+    ],
+    "rationale": "Actual timed-out capture returns timedOut true/status-1 without throwing. Native unavailable status sentinel replaces optional Python returncode."
+  },
+  {
+    "legacy_id": "test_safe_process.TestRunCapture.test_missing_executable_raises_oserror",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testNativeMissingExecutableThrowsAndRunReportsUnavailable"
+    ],
+    "rationale": "Direct capture of absent absolute executable throws native launch error; SystemCommandRunning adapter intentionally returns unavailable status-1."
+  },
+  {
+    "legacy_id": "test_safe_process.TestNotificationPromptSafety.test_notification_does_not_spawn_osascript",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testCaptiveThenSuccessNotificationsFireOnceAndHealthyPollIsQuiet"
+    ],
+    "rationale": "Legacy notify records DEBUG activity text without spawning osascript; native CuppaEngine directly calls EvidenceStore.log for the same silent transitions. Exact regression asserts two activity log entries (portal detected and back online), then no additional entry on a healthy poll. Source audit confirms direct private file logging, with no notification subprocess or system notification API."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_reads_servers_for_matching_interface",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSConfiguredIPv6DHCPGatewayDedupAndAllFailures"
+    ],
+    "rationale": "Matching en0 IPv4+IPv6 DNS kept and en1 resolver excluded."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_dhcp_router_is_appended_as_last_resort",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSConfiguredIPv6DHCPGatewayDedupAndAllFailures"
+    ],
+    "rationale": "DHCP advertised 8.8.8.8 retained then router 10.0.0.1 appended."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedDNSServers.test_router_not_duplicated_when_already_advertised",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSConfiguredIPv6DHCPGatewayDedupAndAllFailures"
+    ],
+    "rationale": "Advertised gateway DNS not duplicated when gateway fallback is appended."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestDNSPacketParsing.test_extracts_ipv4_answer",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testDNSPacketValidationAndScopedServers"
+    ],
+    "rationale": "Compressed DNS answer parsed to expected IPv4; wrong ID/truncated packets rejected."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedResolver.test_falls_back_after_system_dns_failure",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSSystemFailureFallsBackBeforeReturningScopedAddresses"
+    ],
+    "rationale": "Injected system failure occurs before A query; query asserts en0/current resolver/hostname/type 1 and returns exact scoped address."
+  },
+  {
+    "legacy_id": "test_scoped_dns.TestScopedResolver.test_reports_scoped_dns_failure_truthfully",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testDNSConfiguredIPv6DHCPGatewayDedupAndAllFailures"
+    ],
+    "rationale": "Every scoped query timeout results in dnsFailure and no invented/default-interface address."
+  }
+]

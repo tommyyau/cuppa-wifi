@@ -1,0 +1,19 @@
+<!doctype html>
+<h1>Welcome to guest Wi-Fi</h1>
+<form accept-charset="UTF-8" method="post" name="merakilogin"
+      action="chkemail.php" onsubmit="pleasewait(); return valForm();">
+  <input type="hidden" name="duration" value="360">
+  <input type="hidden" name="baseurl" value="https://gateway.example/grant">
+  <input type="hidden" name="client_mac" value="02:00:00:00:00:01">
+  <input type="hidden" name="email" value="guest@example.com" required>
+  <input type="hidden" name="fname" value="Splash" required>
+  <input type="hidden" name="lname" value="Access" required>
+  <p>By using our Wi-Fi, you agree to the terms of use.</p>
+  <input type="checkbox" name="tnc" id="chkbox" value="tnc"
+         style="display:none" checked required>
+  <button name="Submit" type="submit" id="cb">Accept &amp; connect</button>
+</form>
+<script>
+function pleasewait() { document.getElementById('cb').disabled = true; }
+function valForm() { return document.forms.merakilogin.tnc.checked; }
+</script>

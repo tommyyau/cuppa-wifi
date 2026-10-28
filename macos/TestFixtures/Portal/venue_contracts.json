@@ -1,0 +1,230 @@
+{
+  "format": 1,
+  "contracts": [
+    {
+      "id": "pret",
+      "venue": "Pret",
+      "provisional": true,
+      "source": "Synthetic fixture preserving Evolve/Purple portal branding and form shape.",
+      "portal_domain": "evolve.purpleportal.net",
+      "ssid": "Pret",
+      "entry_url": "https://evolve.purpleportal.net/register",
+      "resolver_name": "Pret",
+      "handler": "GenericFormHandler",
+      "detected_venue": null,
+      "success_criterion": "independent_online_probe_after_two_accepted_posts",
+      "responses": [
+        {
+          "url": "https://evolve.purpleportal.net/register",
+          "status": 200,
+          "body": "<html><head><title>Welcome to Pret</title></head><body><form method=\"post\" action=\"/register\"><label for=\"first\">First name</label><input id=\"first\" name=\"first_name\" required><label for=\"last\">Last name</label><input id=\"last\" name=\"last_name\" required><label for=\"email\">Email address</label><input id=\"email\" name=\"email\" type=\"email\" required><label for=\"terms\">Accept terms and conditions</label><input id=\"terms\" name=\"terms\" type=\"checkbox\" value=\"yes\" required><label for=\"offers\">Send me Pret offers</label><input id=\"offers\" name=\"marketing\" type=\"checkbox\" value=\"yes\"><button name=\"continue\" value=\"profile\" type=\"submit\">Continue</button></form></body></html>"
+        },
+        {
+          "url": "https://evolve.purpleportal.net/register",
+          "status": 200,
+          "body": "<html><body><form method=\"post\" action=\"/connect\"><input type=\"hidden\" name=\"grant\" value=\"fixture-grant\"><button name=\"get_online\" value=\"yes\" type=\"submit\">Get online</button></form></body></html>"
+        },
+        {
+          "url": "https://evolve.purpleportal.net/connect",
+          "status": 200,
+          "body": "<html><body>Connected</body></html>"
+        }
+      ],
+      "expected_requests": [
+        {
+          "index": 1,
+          "method": "POST",
+          "url": "https://evolve.purpleportal.net/register",
+          "fields": {
+            "first_name": "$first_name",
+            "last_name": "$last_name",
+            "email": "$email",
+            "terms": "yes",
+            "continue": "profile"
+          },
+          "absent": ["marketing"]
+        },
+        {
+          "index": 2,
+          "method": "POST",
+          "url": "https://evolve.purpleportal.net/connect",
+          "fields": {
+            "grant": "fixture-grant",
+            "get_online": "yes"
+          },
+          "absent": []
+        }
+      ]
+    },
+    {
+      "id": "boots",
+      "venue": "Boots",
+      "provisional": true,
+      "source": "Boots portal landing structure: terms text and a Continue to the Internet grant link. Identifiers and tokens are synthetic; grant response and connectivity remain test oracles, not a verified automatic cold join.",
+      "portal_domain": "eu.network-auth.com",
+      "ssid": "Boots WiFi",
+      "entry_url": "https://eu.network-auth.com/splash/boots",
+      "resolver_name": "Boots WiFi",
+      "handler": "GenericFormHandler",
+      "detected_venue": null,
+      "success_criterion": "independent_online_probe_after_observed_grant_get",
+      "responses": [
+        {
+          "url": "https://eu.network-auth.com/splash/boots",
+          "status": 200,
+          "body": "<html><head><title>Boots free WiFi</title></head><body><h1>Welcome to Boots free WiFi</h1><p>Any use of our WiFi is subject to Boots free WiFi terms and conditions.</p><p>By using our WiFi you agree to those terms and conditions.</p><a class=\"button\" title=\"Continue to the Internet\" href=\"https://eu.network-auth.com/splash/boots/grant?key=fixture-token&amp;continue_url=https%3A%2F%2Fexample.test%2F\">Continue to the Internet</a></body></html>"
+        },
+        {
+          "url": "https://eu.network-auth.com/splash/boots/grant?key=fixture-token&continue_url=https%3A%2F%2Fexample.test%2F",
+          "status": 200,
+          "body": "<html><body>Connected</body></html>"
+        }
+      ],
+      "expected_requests": [
+        {
+          "index": 1,
+          "method": "GET",
+          "url": "https://eu.network-auth.com/splash/boots/grant?key=fixture-token&continue_url=https%3A%2F%2Fexample.test%2F",
+          "fields": {},
+          "absent": ["guest_email", "newsletter"]
+        }
+      ]
+    },
+    {
+      "id": "black_sheep",
+      "venue": "Black Sheep Coffee",
+      "provisional": true,
+      "source": "Synthesised from the observed Fydelia Black Sheep form and existing restricted-handler evidence.",
+      "portal_domain": "example001.fydelia.com",
+      "ssid": "Black Sheep Coffee Free WiFi",
+      "entry_url": "https://example001.fydelia.com/splash/example/",
+      "resolver_name": "Fydelia",
+      "handler": "FydeliaHandler",
+      "detected_venue": "Black Sheep Coffee",
+      "success_criterion": "independent_online_probe_after_fydelia_marketing_reject_post",
+      "responses": [
+        {
+          "url": "https://example001.fydelia.com/splash/example/",
+          "status": 200,
+          "body": "<html><head><title>Black Sheep Coffee</title></head><body><img src=\"/black-sheep-logo.png\"><form method=\"post\" name=\"form_splash\"><input type=\"hidden\" name=\"loginMethod\" value=\"0\"><input name=\"firstName\" placeholder=\"Name\"><input name=\"lastName\" placeholder=\"Last name\"><input name=\"userEmail\" type=\"email\" placeholder=\"Email address\" required><select name=\"phone_number_prefix\"><option value=\"44\" selected>UK (+44)</option></select><input name=\"phone_number\" type=\"tel\" required><select name=\"dobD\"><option value=\"-\" selected>-</option></select><select name=\"dobM\"><option value=\"-\" selected>-</option></select><select name=\"dobY\"><option value=\"-\" selected>-</option></select><label><input name=\"Offer\" type=\"checkbox\" value=\"Offer\">Marketing offers</label><label><input name=\"terms\" type=\"checkbox\" value=\"terms\">Accept WiFi terms and conditions</label><button name=\"submit\" type=\"submit\">CONNECT</button></form><script>var fod_2_step_marketing_js=true; var marketing_invoke_moment=\"form_submission\";</script></body></html>"
+        },
+        {
+          "url": "https://example001.fydelia.com/splash/example/",
+          "status": 200,
+          "body": "<html><body>Connected</body></html>"
+        }
+      ],
+      "expected_requests": [
+        {
+          "index": 1,
+          "method": "POST",
+          "url": "https://example001.fydelia.com/splash/example/",
+          "fields": {
+            "loginMethod": "0",
+            "firstName": "$first_name",
+            "lastName": "$last_name",
+            "userEmail": "$email",
+            "phone_number_prefix": "44",
+            "phone_number": "7700900123",
+            "terms": "terms",
+            "2_step_marketing_chosen": "true",
+            "dobD": "-",
+            "dobM": "-",
+            "dobY": "-"
+          },
+          "absent": ["Offer"]
+        }
+      ]
+    },
+    {
+      "id": "picturehouse",
+      "venue": "Picturehouse",
+      "provisional": true,
+      "source": "Synthesised from the observed legacy BT Wi-Fi Picturehouse flow and existing restricted-handler evidence. This captured BT registration form presents no separate terms or required-consent control; access consent is implicit in submitting the provider's Get online / Access free wi-fi flow, while the optional Picturehouse marketing control is deliberately omitted.",
+      "portal_domain": "www.btwifi.com",
+      "ssid": "Picturehouse WiFi",
+      "entry_url": "https://www.btwifi.com:8443/home",
+      "resolver_name": "BT Wi-Fi",
+      "handler": "BTWiFiHandler",
+      "detected_venue": "Picturehouse",
+      "success_criterion": "bt_connected_page_plus_independent_online_probe",
+      "responses": [
+        {
+          "url": "https://www.btwifi.com:8443/home",
+          "status": 200,
+          "body": "<html><body class=\"btwf-site--picturehouse\"><form action=\"https://reg.btwifi.com/registration/check\" method=\"post\" id=\"login-form-mac-auth-with-data\"><input type=\"hidden\" name=\"sessionValidation\" value=\"fixture-session\"><input type=\"hidden\" name=\"expiryDate\" value=\"fixture-expiry\"><input type=\"hidden\" name=\"locationId\" value=\"fixture-venue\"><input type=\"hidden\" name=\"macAddress\" value=\"fixture-device\"><input type=\"submit\" value=\"Get online\"></form><div class=\"cookie-banner\"><button>Accept all cookies</button><button>Reject all cookies</button></div></body></html>"
+        },
+        {
+          "url": "https://www.btwifi.com:8443/talRegistration",
+          "status": 200,
+          "body": "<html><body class=\"btwf-site--picturehouse\"><form action=\"https://reg.btwifi.com/registration\" method=\"post\" id=\"registration-form-mac-auth-with-data\"><input type=\"hidden\" name=\"sessionValidation\" value=\"fixture-session\"><input type=\"hidden\" name=\"expiryDate\" value=\"fixture-expiry\"><input type=\"hidden\" name=\"locationId\" value=\"fixture-venue\"><input type=\"hidden\" name=\"macAddress\" value=\"fixture-device\"><label for=\"email\">Email address</label><input id=\"email\" name=\"detail_email\" type=\"email\"><label for=\"first\">First name</label><input id=\"first\" name=\"detail_first_name\"><label for=\"last\">Last name</label><input id=\"last\" name=\"detail_last_name\"><label for=\"partner\">Picturehouse marketing offers</label><input id=\"partner\" name=\"partnerMarketingConsent\" type=\"checkbox\" value=\"yes\"><input name=\"btMarketingConsent\" type=\"hidden\" value=\"false\"><input type=\"submit\" value=\"Access free wi-fi\"></form></body></html>"
+        },
+        {
+          "url": "https://www.btwifi.com:8443/home",
+          "status": 200,
+          "body": "<html><body class=\"btwf-site is-online is-post_auth btwf-site--picturehouse\"><h2>You are now connected</h2></body></html>"
+        }
+      ],
+      "expected_requests": [
+        {
+          "index": 1,
+          "method": "POST",
+          "url": "https://reg.btwifi.com/registration/check",
+          "fields": {
+            "sessionValidation": "fixture-session",
+            "expiryDate": "fixture-expiry",
+            "locationId": "fixture-venue",
+            "macAddress": "fixture-device"
+          },
+          "absent": []
+        },
+        {
+          "index": 2,
+          "method": "POST",
+          "url": "https://reg.btwifi.com/registration",
+          "fields": {
+            "detail_email": "$email",
+            "detail_first_name": "$first_name",
+            "detail_last_name": "$last_name",
+            "btMarketingConsent": "false"
+          },
+          "absent": ["partnerMarketingConsent"]
+        }
+      ]
+    },
+    {
+      "id": "nandos",
+      "venue": "Nando's",
+      "provisional": true,
+      "source": "Synthesised from the observed Nando's Next.js Meraki ConnectButton flow.",
+      "portal_domain": "free-wifi.nandos.co.uk",
+      "ssid": "_Nandos WiFi",
+      "entry_url": "http://captive.apple.com/hotspot-detect.html",
+      "resolver_name": "_Nandos WiFi",
+      "handler": "GenericFormHandler",
+      "detected_venue": "Nando's",
+      "success_criterion": "trusted_meraki_grant_get_plus_independent_online_probe",
+      "responses": [
+        {
+          "url": "https://free-wifi.nandos.co.uk/?base_grant_url=https%3A%2F%2Feu.network-auth.com%2Fsplash%2Fgrant&user_continue_url=https%3A%2F%2Fexample.org%2F&node_mac=aa%3Abb%3Acc%3Add%3Aee%3Aff",
+          "status": 200,
+          "body": "<html><body>Nando's Wi-Fi<script>window.portalData={user_continue_url:'http://captive.apple.com/hotspot-detect.html'};</script></body></html>"
+        },
+        {
+          "url": null,
+          "status": 200,
+          "body": "<html><body>Connected</body></html>"
+        }
+      ],
+      "expected_requests": [
+        {
+          "index": 1,
+          "method": "GET",
+          "url_prefix": "https://eu.network-auth.com/splash/grant?continue_url=",
+          "fields": {},
+          "absent": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1180 @@
+[
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_encodes_raw_space",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testURLSanitizationPreservesEncodedQueryAndIPv6Authority"
+    ],
+    "rationale": "Shared PortalRequestURL sanitizes raw spaces once; fixture checks reserved MAC colons, existing percent encoding, idempotence, and the actual injected HTTP request."
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_preserves_existing_percent_encoding",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testURLSanitizationPreservesEncodedQueryAndIPv6Authority"
+    ],
+    "rationale": "Shared PortalRequestURL sanitizes raw spaces once; fixture checks reserved MAC colons, existing percent encoding, idempotence, and the actual injected HTTP request."
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_preserves_reserved_delimiters",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testURLSanitizationPreservesEncodedQueryAndIPv6Authority"
+    ],
+    "rationale": "Shared PortalRequestURL sanitizes raw spaces once; fixture checks reserved MAC colons, existing percent encoding, idempotence, and the actual injected HTTP request."
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.SanitizeRequestUrlTests.test_idempotent",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testURLSanitizationPreservesEncodedQueryAndIPv6Authority"
+    ],
+    "rationale": "Shared PortalRequestURL sanitizes raw spaces once; fixture checks reserved MAC colons, existing percent encoding, idempotence, and the actual injected HTTP request."
+  },
+  {
+    "legacy_id": "test_base_url_sanitize.HandlerGetSanitizesTests.test_get_hands_transport_a_space_free_url",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testURLSanitizationPreservesEncodedQueryAndIPv6Authority"
+    ],
+    "rationale": "Shared PortalRequestURL sanitizes raw spaces once; fixture checks reserved MAC colons, existing percent encoding, idempotence, and the actual injected HTTP request."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_submits_bt_ajax_protocol_and_declines_marketing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testBTSantanderObservedDropdownValuesAndAjaxShape"
+    ],
+    "rationale": "BT native adapter sends reviewed AJAX endpoint/query/header, chooses actual No and Co-working values, accepts terms and omits marketing."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_unchanged_registration_page_fails_without_reposting",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testBTUnchangedAndExplicitJSONRejectionNeverRepost"
+    ],
+    "rationale": "Both unchanged registration HTML and explicit JSON rejection stop after one POST; no retry request."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_explicit_json_rejection_does_not_retry",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testBTUnchangedAndExplicitJSONRejectionNeverRepost"
+    ],
+    "rationale": "Both unchanged registration HTML and explicit JSON rejection stop after one POST; no retry request."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_untrusted_redirect_is_not_requested",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testBTLoopbackJSONRedirectHasProviderReasonAndNoRequest"
+    ],
+    "rationale": "Unsafe BT JSON continuation yields bt_wifi_untrusted_grant_redirect and only landing plus registration requests."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_legacy_picturehouse_stops_at_connected_page",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testGenericLiteralRedirectTransfersBTLegacyProtocol"
+    ],
+    "rationale": "Generic redirect dispatches legacy BT; server tokens and identity are submitted to exact registration paths, optional marketing omitted, connected page ends flow before promotional navigation."
+  },
+  {
+    "legacy_id": "test_bt_wifi_handler.TestBTWiFiHandler.test_generic_redirect_hands_legacy_bt_to_provider",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testGenericLiteralRedirectTransfersBTLegacyProtocol"
+    ],
+    "rationale": "Generic redirect dispatches legacy BT; server tokens and identity are submitted to exact registration paths, optional marketing omitted, connected page ends flow before promotional navigation."
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_ladder_is_bounded",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCorrectionLadderOnlyReformatsSameIdentity"
+    ],
+    "rationale": "Assertions pin correction limit 3, exact same-number phone encodings, postcode spacing/case, exact date variants and no alternatives for identity/password/unknown fields."
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_phone_formats_preserve_the_same_reserved_number",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCorrectionLadderOnlyReformatsSameIdentity"
+    ],
+    "rationale": "Assertions pin correction limit 3, exact same-number phone encodings, postcode spacing/case, exact date variants and no alternatives for identity/password/unknown fields."
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_postcode_and_date_variants_are_format_only",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCorrectionLadderOnlyReformatsSameIdentity"
+    ],
+    "rationale": "Assertions pin correction limit 3, exact same-number phone encodings, postcode spacing/case, exact date variants and no alternatives for identity/password/unknown fields."
+  },
+  {
+    "legacy_id": "test_correction_ladder.TestCorrectionLadder.test_rejections_never_invent_different_identity_details",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCorrectionLadderOnlyReformatsSameIdentity"
+    ],
+    "rationale": "Assertions pin correction limit 3, exact same-number phone encodings, postcode spacing/case, exact date variants and no alternatives for identity/password/unknown fields."
+  },
+  {
+    "legacy_id": "test_field_intent.TestPhoneIdentity.test_phone_formats_preserve_contact",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCorrectionLadderOnlyReformatsSameIdentity"
+    ],
+    "rationale": "International phone formatting preserves both national UK contact and already international configured contact."
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_description_word_without_physical_address_evidence_needs_review",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCompoundDescriptionsSpecificMeaningsAndConflicts"
+    ],
+    "rationale": "Exact compound wording, physical address description distinction, countries, type precedence, conflicting contact meanings and DOB fieldset tested."
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_compound_and_specific_meanings",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testCompoundDescriptionsSpecificMeaningsAndConflicts"
+    ],
+    "rationale": "Exact compound wording, physical address description distinction, countries, type precedence, conflicting contact meanings and DOB fieldset tested."
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_linked_description_and_group_use_actual_choice_values",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testLinkedDescriptionsDOBActualOptionValues"
+    ],
+    "rationale": "Linked ARIA description and DOB fieldset meanings select observed day-z, month3=April, year-z values instead of fabricated option values."
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_split_phone_constraints_and_external_alert",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testSplitPhoneObservedDialValueAndPattern"
+    ],
+    "rationale": "Observed gb dialing option plus ten-digit phone pattern preserves contact. HTML5 external alert parsing is separately pinned by PortalLegacyAuditTests.testExternalAlertLinksOnlyTheRejectedField."
+  },
+  {
+    "legacy_id": "test_form_semantics.FormSemanticsTests.test_authorization_is_exact_origin_and_password_is_not_repr",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalPersistenceParityTests.swift::testExplicitCredentialsExactOriginAndPrivatePermissions",
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalPersistenceParityTests.swift::testCredentialsWrongPortNeverAuthorizes"
+    ],
+    "rationale": "Private explicit credentials authorize exact HTTPS origin including effective port; HTTP, different host and different port remain blocked. String description of public attempt omits username and password; browser executes authorized credentials."
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_completes_marketing_reject_path_and_localises_uk_phone",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Black Sheep golden contract pins observed Fydelia name/email/national phone/prefix, optional DOB placeholders, terms and two-step marketing decline payload."
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_reports_when_provider_post_does_not_restore_access",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAppleOnlyAfterActionCannotBecomeOnline"
+    ],
+    "rationale": "The engine independently reprobes accepted Fydelia actions; captive consensus cannot earn ONLINE and triggers browser handoff."
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_unifi_params_preserved_and_continue_url_completes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFydeliaRetainsUnifiQueryAndNationalPhone"
+    ],
+    "rationale": "Fydelia preserves entry UniFi query through stripped landing and explicitly follows configured safe continuation before returning a verification candidate."
+  },
+  {
+    "legacy_id": "test_fydelia_handler.TestFydeliaHandler.test_post_grant_settles_until_controller_authorizes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAcceptedStaticGrantSettlesBeforeBrowserHandoffWithoutDuplicateAction"
+    ],
+    "rationale": "Engine-owned bounded settling absorbs controller delay after an accepted static grant with no duplicate portal action."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_parses_all_forms",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testParseAllFormsAndChooseVisibleIdentityForm"
+    ],
+    "rationale": "Parser counts all forms and selects rich guest identity form; visible email beats inert JavaScript template with no meaningful controls."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_chooses_the_richer_login_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testParseAllFormsAndChooseVisibleIdentityForm"
+    ],
+    "rationale": "Parser counts all forms and selects rich guest identity form; visible email beats inert JavaScript template with no meaningful controls."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFormParsingAndChoice.test_visible_email_form_beats_empty_javascript_template",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testParseAllFormsAndChooseVisibleIdentityForm"
+    ],
+    "rationale": "Parser counts all forms and selects rich guest identity form; visible email beats inert JavaScript template with no meaningful controls."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_field_mapping",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_hidden_fields_preserved",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_abbreviated_terms_do_not_enable_marketing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testOptOutCheckboxAndTermsWithoutOptIn"
+    ],
+    "rationale": "Abbreviated tnc is accepted while tnc_marketing remains omitted; explicit marketing opt-out remains distinct."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_terms_checkbox_ticked",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_marketing_checkbox_left_unticked",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_named_submit_button_is_included",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_named_button_element_is_included",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testPositiveSubmitWinsOverBackAndMarketingAcceptance"
+    ],
+    "rationale": "Positive named Connect button is included using its actual value and preferred over Back or marketing acceptance."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_positive_submit_button_is_preferred_over_back",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testPositiveSubmitWinsOverBackAndMarketingAcceptance"
+    ],
+    "rationale": "Positive named Connect button is included using its actual value and preferred over Back or marketing acceptance."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_placeholder_is_used_for_field_mapping",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testNestedLabelsAutocompleteAndExtendedPersona"
+    ],
+    "rationale": "Assertions cover placeholder, wrapping label, autocomplete names/DOB components, ARIA required, readonly server values, disabled controls and configured address/visit fields."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_label_is_used_for_opaque_field_names_and_dob_format",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testDOBRequestedFormatPreservesDate"
+    ],
+    "rationale": "Label-selected DD/MM/YYYY serializes the configured DOB without changing date."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_split_dob_fields_are_populated",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testNestedLabelsAutocompleteAndExtendedPersona"
+    ],
+    "rationale": "Assertions cover placeholder, wrapping label, autocomplete names/DOB components, ARIA required, readonly server values, disabled controls and configured address/visit fields."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_nested_labels_and_autocomplete_metadata_are_used",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testNestedLabelsAutocompleteAndExtendedPersona"
+    ],
+    "rationale": "Assertions cover placeholder, wrapping label, autocomplete names/DOB components, ARIA required, readonly server values, disabled controls and configured address/visit fields."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_aria_metadata_readonly_and_disabled_match_browser_rules",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testNestedLabelsAutocompleteAndExtendedPersona"
+    ],
+    "rationale": "Assertions cover placeholder, wrapping label, autocomplete names/DOB components, ARIA required, readonly server values, disabled controls and configured address/visit fields."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_standard_address_autocomplete_and_select_ranges",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testKnownFieldsAddressAutocompleteAndAgeRangesUseObservedChoices"
+    ],
+    "rationale": "Address autocomplete fields, observed age35_44 and actual month3 option are filled from Persona."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_extended_persona_fills_address_and_visit_fields",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testNestedLabelsAutocompleteAndExtendedPersona"
+    ],
+    "rationale": "Assertions cover placeholder, wrapping label, autocomplete names/DOB components, ARIA required, readonly server values, disabled controls and configured address/visit fields."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestFillForm.test_selects_privacy_preserving_country_gender_and_title",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testDefaultPersonaExtendedFieldsAndPrivacyChoices"
+    ],
+    "rationale": "Actual GB, withheld gender and Mx radio values selected; privacy preserving defaults pinned."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_type_aware_values",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_required_date_type_uses_dob_within_bounds",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_numeric_constraints",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_text_constraints_and_best_effort_pattern",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_select_policy",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_radio_policy",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownRequiredSynthesisIsExplicitlyNotAuthorized"
+    ],
+    "rationale": "Intentional policy tightening: constraints alone do not authorize inventing unknown URL/password/date/number/text/select/radio answers. Native fill refuses each legacy synthesis fixture, while email/tel remain mapped."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestRequiredFieldSynthesis.test_optional_marketing_and_server_values_are_not_invented",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testUnknownOptionalMarketingAndServerValuesRemainUninvented"
+    ],
+    "rationale": "Optional unknown values remain empty/omitted; actual hidden CSRF and readonly server default preserved. Required unsupported marketing text now refuses automatic fill instead of submitting an invalid empty value; no fabricated marketing answer."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_gateway_grant_form_wins_over_promotion_links_and_stops_online",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testGrantFormTakesPrecedenceAndNeverPostsPromotionAccount"
+    ],
+    "rationale": "Consent-only fixture preserves server email/name/baseURL/MAC; explicit GET controller grant wins over promotion links and response account page is not posted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_consent_only_portal_posts_once_preserving_server_fields",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testGrantFormTakesPrecedenceAndNeverPostsPromotionAccount"
+    ],
+    "rationale": "Consent-only fixture preserves server email/name/baseURL/MAC; explicit GET controller grant wins over promotion links and response account page is not posted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_redirected_wireless_social_page_uses_provider_journey",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessVenueFallbackAndReservedEmailSerialization"
+    ],
+    "rationale": "Wireless Social landing is routed to restricted journey parsing; reserved email stops before posting and venue fallback preserved."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_dns_failure_is_not_misclassified_as_unsupported_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testDeadlineAndDNSErrorsAreTransportFailures"
+    ],
+    "rationale": "Injected DNS error remains transport failure, and expired shared deadline prevents the first HTTP request."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_successful_single_hop_login",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFixtureIdentityHiddenAndConsent"
+    ],
+    "rationale": "UK fixture verifies mapped identity fields, actual token/MAC hidden values, terms consent, omitted marketing and named submit payload."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_login_verification_fails_when_reprobe_stays_captive",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAppleOnlyAfterActionCannotBecomeOnline"
+    ],
+    "rationale": "An accepted generic action with captive independent reprobe cannot earn automatic credit or ONLINE."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_manual_success_is_not_credited_after_rejected_submission",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testExplicitPortalRejectionCannotEarnCreditFromIndependentOnline"
+    ],
+    "rationale": "Rejected static action plus externally restored connectivity cannot earn automatic credit; the native engine preserves this causal requirement."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_http_200_json_rejection_is_not_credited",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testJSONExplicitRejectionNeverCandidateSuccess"
+    ],
+    "rationale": "HTTP 200 explicit success:false/ok:false/error/errors never returns submitted candidate; engine cannot grant automatic credit for rejected action."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_national_phone_retries_as_plus_44",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testHTTP422CorrectionsPreserveDOBPostcodePhone"
+    ],
+    "rationale": "Legacy phone, compact-postcode and ISO-DOB fixtures explicitly exercise HTTP 422 and assert exact initial and corrected payloads of the same Persona."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_compact_postcode_retries_with_space",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testHTTP422CorrectionsPreserveDOBPostcodePhone"
+    ],
+    "rationale": "Legacy phone, compact-postcode and ISO-DOB fixtures explicitly exercise HTTP 422 and assert exact initial and corrected payloads of the same Persona."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_iso_date_retries_as_day_month_year",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testHTTP422CorrectionsPreserveDOBPostcodePhone"
+    ],
+    "rationale": "Legacy phone, compact-postcode and ISO-DOB fixtures explicitly exercise HTTP 422 and assert exact initial and corrected payloads of the same Persona."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_retry_preserves_an_accepted_existing_field",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalPersistenceParityTests.swift::testCorrectionRefreshesHiddenTokenAndPreservesAcceptedField"
+    ],
+    "rationale": "Retry changes rejected phone representation while keeping accepted existing choice and current server CSRF token."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_retry_stops_when_phone_correction_reveals_otp",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testPhoneCorrectionStopsAtNewOTP"
+    ],
+    "rationale": "Response boundary evaluated before correction POST when OTP emerges; no issued code is submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_name_stops_without_inventing_another_identity",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRejectedNameDoesNotInventAnotherIdentity"
+    ],
+    "rationale": "Rejected first name stops after onePOST with validation_exhausted; submitted identity remains exact configured name."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_attempt_budget_stops_more_portal_requests",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testDeadlineAndDNSErrorsAreTransportFailures"
+    ],
+    "rationale": "Injected DNS error remains transport failure, and expired shared deadline prevents the first HTTP request."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_rejected_phone_retry_is_bounded_and_value_free",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testPhoneCorrectionExhaustionHasValueFreeLatestFields"
+    ],
+    "rationale": "Same three contact encodings only; latest validation step records phone intent without actual contact. Generic exhausted phone reason is deliberately persona_phone_rejected to feed shared phone policy rather than legacy validation_exhausted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_give_up_reports_only_fields_still_failing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testOnlyStillRejectedFieldsAppearInFinalValidationStep"
+    ],
+    "rationale": "Email plus phone rejection permits safe phone format correction; final rejection metadata lists email alone, preserving latest response rather than historical union."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_meta_refresh_after_form_submission",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testMetaRefreshAfterSubmissionIsFollowedBeforeCandidateReturn"
+    ],
+    "rationale": "Static POST response refresh followed to terms page before final candidate returned."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_unchanged_form_escalates_after_one_submission",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testUnchangedFormHandsOffWithSchemaSignature"
+    ],
+    "rationale": "Unchanged accepted form routes to browser after onePOST with stable schema signature."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_get_form_is_submitted_as_query_string",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testGETFormRetainsExistingQueryAndNeverCreatesPOSTBody"
+    ],
+    "rationale": "GET form preserves venue query, adds exact email once and carries no body."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_chained_meta_and_javascript_redirects",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testMetaAndScriptRedirectsRemainZeroActionBrowserCandidate",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testRedirectChainOnlineRecoveryHasNoAutomaticCreditOrHandoff"
+    ],
+    "rationale": "Exact meta-refresh then literal-JavaScript chain ends with no form, makes three GET requests, retains zero approved actions and no pending submission. Production engine independent consensus marks ordinary ONLINE recovery without automatic timestamp, credit, learning or browser handoff."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_follows_visible_connect_link_but_not_terms_link",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testImageButtonTitleNavigatesAndRetainsCandidateAction"
+    ],
+    "rationale": "Explicit connect navigation uses text/title/imagealt; terms-document link never wins."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_meraki_grant_settles_until_gateway_authorizes",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAcceptedStaticGrantSettlesBeforeBrowserHandoffWithoutDuplicateAction"
+    ],
+    "rationale": "Bounded consensus settling belongs to the native engine after accepted Meraki action; transient captive becomes ONLINE without reissuing grant."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_costa_null_grant_response_is_an_explicit_ambiguous_action",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testReviewedMerakiNullGrantKeepsAmbiguousActionAndHop"
+    ],
+    "rationale": "Reviewed Meraki null grant remains browser fallback with causal action and failed hop; no automatic candidate."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_arbitrary_timed_out_connect_link_is_not_meraki_ambiguous",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testArbitraryFailedConnectLinkDoesNotBecomeTrustedGrant"
+    ],
+    "rationale": "Arbitrary failed connect link is not given reviewed Meraki ambiguity semantics."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_grant_without_budget_does_not_settle",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAcceptedStaticGrantSettlesBeforeBrowserHandoffWithoutDuplicateAction"
+    ],
+    "rationale": "Intentional API relocation: PortalWorkflow always carries a bounded request deadline and never probes. Only the engine settles accepted actions; direct handler construction no longer selects probe behavior."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_terms_document_link_alone_is_not_treated_as_connect",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalNavigationParityTests.swift::testTermsLinkAloneDoesNotAuthorizeGrant"
+    ],
+    "rationale": "Terms-only navigation stops with no portal action or second request."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_sms_verification_code",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_bare_otp_field_name",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_passcode_label",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_when_page_says_code_sent_to_phone",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_lone_short_digit_code_field",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_short_digit_field_without_code_name_is_not_flagged",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testDormantCaptchaShellHandsOffAndUnknownTableNumberNeverBecomesOTP"
+    ],
+    "rationale": "Unknown Table Number is not OTP; native preserves browser handoff without a static POST, leaving bounded browser interpretation available."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_lone_postcode_field_is_not_flagged_as_otp",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_posting_captcha_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_dormant_captcha_source_does_not_block_js_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testDormantCaptchaShellHandsOffAndUnknownTableNumberNeverBecomesOTP"
+    ],
+    "rationale": "Source-only dormant CAPTCHA does not suppress browser handoff; one landing request only."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_inventing_government_identity",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_stops_before_fake_sponsor_approval",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testChallengeAndIdentityBoundariesStopBeforeAnyPOST"
+    ],
+    "rationale": "Exact SMS/OTP/passcode/sent-to-phone/lone-code/CAPTCHA/passport/sponsor fixtures stop before POST; lone post_code remains valid and submitted."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_unknown_required_custom_field_escalates_without_guessing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testUnknownRequiredStopsWithoutInventingIdentity"
+    ],
+    "rationale": "Unknown bespoke required answer is never fabricated. Native preserves requires_browser handoff without any POST, leaving browser semantics/model interpretation possible."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestGenericHandlerLogin.test_required_marketing_consent_is_not_accepted",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testRequiredMarketingFailsWithoutSubmission"
+    ],
+    "rationale": "Required marketing opt-in without a reviewed decline path remains terminal; no request sends acceptance."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_public_cross_origin_submission_allowed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testPublicCrossOriginGuestSubmission"
+    ],
+    "rationale": "Reviewed policy permits guest identity static form submission to public HTTPS cross-origin."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_https_to_http_downgrade_blocked",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testNavigationPivotsAndSocialRedirectsBlocked"
+    ],
+    "rationale": "HTTPS downgrade and public-to-private redirect pivots stop before next request."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_pivot_to_local_or_lan_blocked",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testActualIPv6AndHostnameDestinationBoundaries"
+    ],
+    "rationale": "IPv4 LAN/link-local and bracketed IPv6 loopback/ULA/link-local/unspecified, local/localhost boundaries prevent Persona POST; original private gateway remains allowed."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_portal_posting_to_its_own_gateway_allowed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testActualIPv6AndHostnameDestinationBoundaries"
+    ],
+    "rationale": "IPv4 LAN/link-local and bracketed IPv6 loopback/ULA/link-local/unspecified, local/localhost boundaries prevent Persona POST; original private gateway remains allowed."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_non_http_scheme_blocked",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testLoopbackNavigationRejected"
+    ],
+    "rationale": "Untrusted navigation is rejected before HTTP; non-HTTP scheme fixture is independently asserted by PortalLegacyAuditTests.testActualIPv6AndHostnameDestinationBoundaries."
+  },
+  {
+    "legacy_id": "test_generic_handler.TestDestinationPolicy.test_login_refuses_lan_pivot_without_sending",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testActualIPv6AndHostnameDestinationBoundaries"
+    ],
+    "rationale": "IPv4 LAN/link-local and bracketed IPv6 loopback/ULA/link-local/unspecified, local/localhost boundaries prevent Persona POST; original private gateway remains allowed."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_ssid_matches_tim_hortons",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_ssid_matches_case_and_spacing_variants",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_unknown_network_falls_back_to_generic_with_ssid_name",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_unknown_network_falls_back_to_generic_with_domain_name",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_fully_unknown_falls_back_to_generic_unknown_name",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_portal_domain_takes_precedence_over_ssid",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_wireless_social_domain_uses_provider_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_bt_wifi_domain_uses_provider_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_fydelia_domain_uses_provider_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_handlers_registry.TestResolvePrecedence.test_gateway_mac_used_only_when_domain_and_ssid_do_not_match",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testRegistrySSIDFallbackNamesAndPrecedence"
+    ],
+    "rationale": "Native PortalRegistry tests exact domain-before-SSID-before-case-insensitive-MAC ordering, Tim Hortons spacing/case, fallback name and anchored BT/Fydelia/WirelessSocial provider hosts."
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_constructs_restricted_network_auth_grant",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testNandosStrictLandingAndNetworkAuthHostnameBoundary"
+    ],
+    "rationale": "Exact Nando landing host, HTTPS .network-auth.com grant suffix and actual MAC-encoded continuation are checked; inert Next.js portalData cannot override landing parameters."
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_rejects_untrusted_grant_host",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testNandosStrictLandingAndNetworkAuthHostnameBoundary"
+    ],
+    "rationale": "Exact Nando landing host, HTTPS .network-auth.com grant suffix and actual MAC-encoded continuation are checked; inert Next.js portalData cannot override landing parameters."
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_rejects_non_nandos_landing_page",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testNandosStrictLandingAndNetworkAuthHostnameBoundary"
+    ],
+    "rationale": "Exact Nando landing host, HTTPS .network-auth.com grant suffix and actual MAC-encoded continuation are checked; inert Next.js portalData cannot override landing parameters."
+  },
+  {
+    "legacy_id": "test_nandos_handler.TestNandosConnectURL.test_generic_handler_completes_nandos_connect_flow",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testNandosStrictLandingAndNetworkAuthHostnameBoundary"
+    ],
+    "rationale": "Exact Nando landing host, HTTPS .network-auth.com grant suffix and actual MAC-encoded continuation are checked; inert Next.js portalData cannot override landing parameters."
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_unspecified_identifier_requires_help_but_described_details_do_not",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testPolicyLabelsAndOptionalChoicesNeverInventIdentifiers"
+    ],
+    "rationale": "Unexplained required identifiers and issued account numbers stop without POST; described identity fields and Santander customer-status semantics retain their separate mappings."
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_issued_numbers_never_become_customer_status",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testPolicyLabelsAndOptionalChoicesNeverInventIdentifiers"
+    ],
+    "rationale": "Unexplained required identifiers and issued account numbers stop without POST; described identity fields and Santander customer-status semantics retain their separate mappings."
+  },
+  {
+    "legacy_id": "test_portal_policy.PortalPolicyTests.test_social_labels_wrappers_and_redirects_are_blocked_before_navigation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalLegacyAuditTests.swift::testSocialWrappersAndGuestAlternative"
+    ],
+    "rationale": "Google/Apple/Facebook labels, direct OAuth and percent-encoded wrapper destinations stop before navigation; a separate free guest link proceeds."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_pret_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Each of five individual golden contracts checks every expected request method/URL/field, omitted marketing controls, native submitted outcome and provider routing; separate engine tests establish connectivity credit."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_boots_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Each of five individual golden contracts checks every expected request method/URL/field, omitted marketing controls, native submitted outcome and provider routing; separate engine tests establish connectivity credit."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_black_sheep_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Each of five individual golden contracts checks every expected request method/URL/field, omitted marketing controls, native submitted outcome and provider routing; separate engine tests establish connectivity credit."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_picturehouse_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Each of five individual golden contracts checks every expected request method/URL/field, omitted marketing controls, native submitted outcome and provider routing; separate engine tests establish connectivity credit."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueContracts.test_nandos_contract",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testFiveHistoricalVenueRequestContracts"
+    ],
+    "rationale": "Each of five individual golden contracts checks every expected request method/URL/field, omitted marketing controls, native submitted outcome and provider routing; separate engine tests establish connectivity credit."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_pret_routes_to_static_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyVenueEngineTests.swift::testFiveVenueContractsTraverseEngineAndReceiveIndependentCredit"
+    ],
+    "rationale": "The pret individual golden fixture traverses production PortalWorkflow through EngineCoordinator; accepted static requests and independent consensus earn credit without a browser handoff."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_boots_routes_to_static_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyVenueEngineTests.swift::testFiveVenueContractsTraverseEngineAndReceiveIndependentCredit"
+    ],
+    "rationale": "The boots individual golden fixture traverses production PortalWorkflow through EngineCoordinator; accepted static requests and independent consensus earn credit without a browser handoff."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_black_sheep_routes_to_static_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyVenueEngineTests.swift::testFiveVenueContractsTraverseEngineAndReceiveIndependentCredit"
+    ],
+    "rationale": "The black_sheep individual golden fixture traverses production PortalWorkflow through EngineCoordinator; accepted static requests and independent consensus earn credit without a browser handoff."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_picturehouse_routes_to_static_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyVenueEngineTests.swift::testFiveVenueContractsTraverseEngineAndReceiveIndependentCredit"
+    ],
+    "rationale": "The picturehouse individual golden fixture traverses production PortalWorkflow through EngineCoordinator; accepted static requests and independent consensus earn credit without a browser handoff."
+  },
+  {
+    "legacy_id": "test_venue_contracts.TestFiveVenueEngineRoutes.test_nandos_routes_to_static_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyVenueEngineTests.swift::testFiveVenueContractsTraverseEngineAndReceiveIndependentCredit"
+    ],
+    "rationale": "The nandos individual golden fixture traverses production PortalWorkflow through EngineCoordinator; accepted static requests and independent consensus earn credit without a browser handoff."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_extracts_embedded_journey_and_venue",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testJourneyDecoderIgnoresBracesInsideJSONString"
+    ],
+    "rationale": "Embedded journey JSON safely decoded even with quoted braces; original field structure retained."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_venue_name_falls_back_to_provider_venue",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessVenueFallbackAndReservedEmailSerialization"
+    ],
+    "rationale": "Missing SSID falls back to venue.name; reserved/malformed emails stop before any Persona request; spaced international configured phone serializes identical contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_reserved_addresses_require_private_relay",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessVenueFallbackAndReservedEmailSerialization"
+    ],
+    "rationale": "Missing SSID falls back to venue.name; reserved/malformed emails stop before any Persona request; spaced international configured phone serializes identical contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_profile_field_aliases_are_provider_wide_not_venue_specific",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessAllPhoneAliasesAndMetadataUseConfiguredContact"
+    ],
+    "rationale": "All four provider-wide mobile aliases and opaque custom42 described as phone are posted with exact configured E164 contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_profile_fields_use_provider_metadata_not_only_known_names",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessAllPhoneAliasesAndMetadataUseConfiguredContact"
+    ],
+    "rationale": "All four provider-wide mobile aliases and opaque custom42 described as phone are posted with exact configured E164 contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_validation_errors_support_wireless_social_list_shape",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testProfileListValidationCorrectsPhoneOnly"
+    ],
+    "rationale": "WirelessSocial validation list shape maps fieldName, corrects same-contact phone to national format, leaves accepted fname unchanged."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_phone_matches_provider_e164_serialisation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessVenueFallbackAndReservedEmailSerialization"
+    ],
+    "rationale": "Missing SSID falls back to venue.name; reserved/malformed emails stop before any Persona request; spaced international configured phone serializes identical contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_postauth_progress_includes_poststart_node",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testNewUserAliasesRequiredOnlyAndMarketingDeclined"
+    ],
+    "rationale": "New-user profile includes required values only, omits optional postcode and marketing consent, processes dataset decline and progress includes PostStart."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialParsing.test_extracts_meraki_external_grant_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testRelativeMerakiGrantAndHiddenOpaqueCredentials"
+    ],
+    "rationale": "Restricted external grant form decoded with actual username/password and decoded query, then posted to HTTPS network-auth reviewed login path; end follows grant."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_profile_retries_only_safe_formats_from_same_identity",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testProfileListValidationCorrectsPhoneOnly"
+    ],
+    "rationale": "WirelessSocial validation list shape maps fieldName, corrects same-contact phone to national format, leaves accepted fname unchanged."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_profile_reports_rejected_safe_phone_without_inventing_digits",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessPhoneExhaustionLeavesAvailableSuccessUnusedAndLearns"
+    ],
+    "rationale": "Only exact E164/national/0044 formats submitted; available fourth success stays unused. Legacy prefer_real_phone persisted flag cannot replace contact; phone policy records gateway."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_rejected_phone_never_replaced_by_generated_digits",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessPhoneExhaustionLeavesAvailableSuccessUnusedAndLearns"
+    ],
+    "rationale": "Only exact E164/national/0044 formats submitted; available fourth success stays unused. Legacy prefer_real_phone persisted flag cannot replace contact; phone policy records gateway."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_old_real_phone_preference_cannot_change_identity",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessPhoneExhaustionLeavesAvailableSuccessUnusedAndLearns"
+    ],
+    "rationale": "Only exact E164/national/0044 formats submitted; available fourth success stays unused. Legacy prefer_real_phone persisted flag cannot replace contact; phone policy records gateway."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_reserved_default_fails_before_identity_submission",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalProviderLegacyAuditTests.swift::testWirelessVenueFallbackAndReservedEmailSerialization"
+    ],
+    "rationale": "Missing SSID falls back to venue.name; reserved/malformed emails stop before any Persona request; spaced international configured phone serializes identical contact."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_completes_new_user_without_marketing_or_optional_postcode",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testNewUserAliasesRequiredOnlyAndMarketingDeclined"
+    ],
+    "rationale": "New-user profile includes required values only, omits optional postcode and marketing consent, processes dataset decline and progress includes PostStart."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_unknown_required_field_fails_closed",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testUnknownMetadataRequiredFieldFailsClosed"
+    ],
+    "rationale": "Required unknown provider metadata still stops before profile POST; dynamic unsafe reason suffix replaced with allowlisted unknown_required_field and hashed diagnostic names."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_existing_user_skips_registration_and_consent",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testWirelessReturningAccountSkipsRegistrationDatasets"
+    ],
+    "rationale": "Returning user request paths skip registration/profile and dataset consent; only auth, postauth and end."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_relative_meraki_grant_redirect_is_followed",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testRelativeMerakiGrantAndHiddenOpaqueCredentials"
+    ],
+    "rationale": "Restricted external grant form decoded with actual username/password and decoded query, then posted to HTTPS network-auth reviewed login path; end follows grant."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_meraki_external_grant_form_is_submitted",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testRelativeMerakiGrantAndHiddenOpaqueCredentials"
+    ],
+    "rationale": "Restricted external grant form decoded with actual username/password and decoded query, then posted to HTTPS network-auth reviewed login path; end follows grant."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_untrusted_external_grant_form_is_rejected",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testUntrustedExternalGrantFormNeverPosted"
+    ],
+    "rationale": "Attacker external grant host causes wireless_social_untrusted_grant_form and no credential POST."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_cross_origin_grant_redirect_is_rejected",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testUntrustedCrossOriginGrantNeverFetched"
+    ],
+    "rationale": "Cross-origin provider redirect rejected with wireless_social_untrusted_grant_redirect before target request."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_provider_email_validation_is_actionable",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testAuthEmailValidationRequiresPrivateRelay"
+    ],
+    "rationale": "Rejected auth email maps privacy_email_required with no invented address retry."
+  },
+  {
+    "legacy_id": "test_wireless_social_handler.TestWirelessSocialLogin.test_explicit_postauth_rejection_stops_before_end",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/WirelessSocialParityTests.swift::testExplicitPostauthRejectionStopsBeforeEnd"
+    ],
+    "rationale": "Explicit postauth success:false never requests end and never returns submitted candidate."
+  }
+]

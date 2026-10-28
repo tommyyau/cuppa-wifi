@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "boingo",
+      "name": "Boingo",
+      "hosts": [
+        "boingohotspot.net"
+      ],
+      "browserMarkers": [
+        "data-endpoint",
+        "login-static-page.js"
+      ],
+      "execution": "browser",
+      "actionHints": [
+        "get online",
+        "connect",
+        "continue"
+      ],
+      "fieldAliases": {
+        "firstname": "first_name",
+        "lastname": "last_name",
+        "emailaddress": "email"
+      }
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "hosts": [
+        "purpleportal.net",
+        "purple.ai"
+      ],
+      "browserMarkers": [],
+      "execution": "auto",
+      "actionHints": [
+        "use your email",
+        "get online",
+        "sign up"
+      ],
+      "fieldAliases": {}
+    },
+    {
+      "id": "wireless-social",
+      "name": "Wireless Social",
+      "hosts": [
+        "wifi.wireless-social.com"
+      ],
+      "browserMarkers": [],
+      "execution": "adapter",
+      "actionHints": [
+        "use your email",
+        "continue"
+      ],
+      "fieldAliases": {}
+    },
+    {
+      "id": "fydelia",
+      "name": "Fydelia",
+      "hosts": [
+        "fydelia.com"
+      ],
+      "browserMarkers": [],
+      "execution": "adapter",
+      "actionHints": [
+        "connect",
+        "continue"
+      ],
+      "fieldAliases": {}
+    },
+    {
+      "id": "bt",
+      "name": "BT Wi-Fi",
+      "hosts": [
+        "btwifi.com"
+      ],
+      "browserMarkers": [],
+      "execution": "adapter",
+      "actionHints": [
+        "get online",
+        "connect"
+      ],
+      "fieldAliases": {}
+    },
+    {
+      "id": "meraki",
+      "name": "Meraki",
+      "hosts": [
+        "network-auth.com"
+      ],
+      "browserMarkers": [],
+      "execution": "auto",
+      "actionHints": [
+        "continue",
+        "connect"
+      ],
+      "fieldAliases": {}
+    }
+  ]
+}

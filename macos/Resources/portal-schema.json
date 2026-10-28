@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "reasoning": {
+    "maxRequests": 12,
+    "maxFieldPasses": 3,
+    "numericTextIntents": ["first_name", "last_name", "full_name", "email", "address_line_1", "address_line_2", "city", "county", "country", "company", "occupation"]
+  },
+  "autocomplete": {
+    "email": "email",
+    "tel": "phone",
+    "tel-national": "phone",
+    "tel-country-code": "phone_country_code",
+    "given-name": "first_name",
+    "family-name": "last_name",
+    "name": "full_name",
+    "postal-code": "postcode",
+    "street-address": "address_line_1",
+    "address-line1": "address_line_1",
+    "address-line2": "address_line_2",
+    "address-level2": "city",
+    "address-level1": "county",
+    "country": "country",
+    "country-name": "country",
+    "honorific-prefix": "title",
+    "organization": "company",
+    "organization-title": "occupation",
+    "bday": "date_of_birth",
+    "bday-day": "birth_day",
+    "bday-month": "birth_month",
+    "bday-year": "birth_year",
+    "username": "username",
+    "new-username": "username",
+    "new-password": "password",
+    "current-password": "account_password",
+    "one-time-code": "verification_code",
+    "tel-local": "phone",
+    "tel-local-prefix": "phone",
+    "tel-local-suffix": "phone",
+    "tel-area-code": "phone",
+    "tel-extension": "phone"
+  },
+  "types": {
+    "email": "email",
+    "tel": "phone",
+    "password": "password"
+  },
+  "names": {
+    "emailaddress": "email",
+    "firstname": "first_name",
+    "fname": "first_name",
+    "givenname": "first_name",
+    "forename": "first_name",
+    "lastname": "last_name",
+    "lname": "last_name",
+    "surname": "last_name",
+    "familyname": "last_name",
+    "fullname": "full_name",
+    "mobilenumber": "phone",
+    "phonenumber": "phone",
+    "telephonenumber": "phone",
+    "dateofbirth": "date_of_birth",
+    "birthdate": "date_of_birth",
+    "dobday": "birth_day",
+    "dobmonth": "birth_month",
+    "dobyear": "birth_year",
+    "postalcode": "postcode",
+    "zipcode": "postcode",
+    "addressline1": "address_line_1",
+    "addressline2": "address_line_2",
+    "reasonforvisit": "reason_for_visit",
+    "customerstatus": "customer_status",
+    "email": "email",
+    "phone": "phone",
+    "postcode": "postcode",
+    "city": "city",
+    "county": "county",
+    "country": "country",
+    "title": "title",
+    "gender": "gender",
+    "age": "age",
+    "company": "company",
+    "occupation": "occupation",
+    "username": "username",
+    "password": "password",
+    "dob": "date_of_birth"
+  },
+  "patterns": [
+    {
+      "intent": "phone_country_code",
+      "pattern": "\\b(?:dial(?:l?ing)?|calling|country)[\\s_.-]*code\\b"
+    },
+    {
+      "intent": "verification_code",
+      "pattern": "one[\\s_.-]*time[\\s_.-]*code|verification[\\s_.-]*code|(?:^|[\\s_.-])otp(?:$|[\\s_.-])"
+    },
+    {
+      "intent": "email",
+      "pattern": "\\bemail\\b|e[\\s_.-]*mail|\\belectronic[\\s_.-]+mail\\b|\\bcourriel\\b"
+    },
+    {
+      "intent": "first_name",
+      "pattern": "\\bfirst\\b|fname|given[\\s_.-]*name|forename"
+    },
+    {
+      "intent": "last_name",
+      "pattern": "\\blast\\b|lname|surname|family[\\s_.-]*name"
+    },
+    {
+      "intent": "full_name",
+      "pattern": "full[\\s_.-]*name"
+    },
+    {
+      "intent": "phone",
+      "pattern": "phone|mobile|cell(?:ular)?|\\btel(?:ephone)?\\b|contact[\\s_.-]*number"
+    },
+    {
+      "intent": "birth_day",
+      "pattern": "(?:dob|birth)[\\s_.-]*day"
+    },
+    {
+      "intent": "birth_month",
+      "pattern": "(?:dob|birth)[\\s_.-]*month"
+    },
+    {
+      "intent": "birth_year",
+      "pattern": "(?:dob|birth)[\\s_.-]*year"
+    },
+    {
+      "intent": "date_of_birth",
+      "pattern": "dob|date[\\s_.-]*of[\\s_.-]*birth|\\bbday\\b|birth[\\s_.-]*date"
+    },
+    {
+      "intent": "age",
+      "pattern": "(?:^|[\\s_.-])age(?:$|[\\s_.-])|age[\\s_.-]*group"
+    },
+    {
+      "intent": "postcode",
+      "pattern": "post[\\s_.-]*code|postal[\\s_.-]*code|\\bzip\\b"
+    },
+    {
+      "intent": "address_line_2",
+      "pattern": "address[\\s_.-]*(?:line[\\s_.-]*)?2|address2"
+    },
+    {
+      "intent": "address_line_1",
+      "pattern": "address[\\s_.-]*(?:line[\\s_.-]*)?1|address1|street|\\baddress\\b"
+    },
+    {
+      "intent": "city",
+      "pattern": "place[\\s_.-]*of[\\s_.-]*birth|birth[\\s_.-]*place|city|town|locality|address[\\s_.-]*level[\\s_.-]*2|(?:^|[\\s_.-])location(?:$|[\\s_.-])"
+    },
+    {
+      "intent": "county",
+      "pattern": "county|state|province|region|address[\\s_.-]*level[\\s_.-]*1"
+    },
+    {
+      "intent": "country",
+      "pattern": "\\b(?:country(?:name|code)?|nation|nationality(?:code)?)\\b"
+    },
+    {
+      "intent": "occupation",
+      "pattern": "occupation|profession|job[\\s_.-]*title"
+    },
+    {
+      "intent": "title",
+      "pattern": "title|honou?rific|salutation"
+    },
+    {
+      "intent": "gender",
+      "pattern": "gender|\\bsex\\b"
+    },
+    {
+      "intent": "company",
+      "pattern": "company|organi[sz]ation|employer"
+    },
+    {
+      "intent": "reason_for_visit",
+      "pattern": "reason.*visit|visit.*reason|why.*visit"
+    },
+    {
+      "intent": "customer_status",
+      "pattern": "\\b(?:are\\b[^?]{0,60}\\byou\\b[^?]{0,60}\\b(?:customer|member)\\b|(?:customer|member)[\\s_.-]*status\\b|existing[\\s_.-]*(?:customer|member)\\b(?![\\s_.-]*(?:number|no\\b|id\\b|reference)))"
+    },
+    {
+      "intent": "username",
+      "pattern": "user[\\s_.-]*name|login[\\s_.-]*name"
+    },
+    {
+      "intent": "password",
+      "pattern": "password"
+    },
+    {
+      "intent": "full_name",
+      "pattern": "\\bname\\b"
+    }
+  ],
+  "compoundName": "\\b(?:name|names)\\s*(?:&|and|followed\\s+by)\\s*(?:surnames?|family\\s+names?)\\b|\\b(?:surnames?|family\\s+names?)\\s*(?:&|and|followed\\s+by)\\s*(?:name|names)\\b",
+  "specificFullName": "\\b(?:full|complete)[ _-]*names?\\b",
+  "descriptionAmbiguity": {
+    "address_line_1": {
+      "wording": "\\baddress\\b",
+      "specific": "\\b(?:street|road|house|building|postal|mailing|residential|home|billing|delivery|business|work|line[ _-]*1)\\b"
+    }
+  },
+  "consent": {
+    "marketing": "marketing|offers?\\b|newsletter|promo|communications|contact me|keep me (?:updated|informed)",
+    "optOut": "opt[ _-]*out|do not|don't|no (?:marketing|thanks)|unsubscribe|decline",
+    "terms": "terms|conditions|t&c|t and c|(?:^|[\\s_-])tnc(?:$|[\\s_-])|privacy|\\bagree\\b|accept"
+  },
+  "policy": {
+    "issuedIdentifier": "\\b(?:member(?:ship)?|customer|loyalty|account)[\\s_.-]*(?:number|no\\b|id(?:entifier)?\\b|reference)\\b|\\b(?:reference|identifier|number|credential)\\b.{0,60}\\b(?:issued|provided|assigned|reception|front[ -]*desk)\\b|\\b(?:issued|provided|assigned)\\b.{0,60}\\b(?:reference|identifier|credential)\\b",
+    "socialAction": "\\b(?:google|facebook|apple|microsoft|twitter|linkedin)\\b|\\boauth\\b|\\bsocial[ -]*(?:login|sign.?in|account)\\b",
+    "socialDestination": "accounts\\.google\\.com|appleid\\.apple\\.com|facebook\\.com/(?:dialog|login)|(?:^|[/_?&=-])(?:oauth(?:2)?|social[ _-]*(?:login|auth))(?:[/_?&=-]|$)|(?:login|auth|connect|continue)[/_-](?:google|facebook|apple|microsoft|twitter|linkedin)\\b",
+    "unknownIdentifier": "\\b(?:member(?:ship)?|customer|loyalty|account)\\b",
+    "unexplainedIdentifier": "\\b(?:identifier|identification|reference|credential)\\b"
+  }
+}

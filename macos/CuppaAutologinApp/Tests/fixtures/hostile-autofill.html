@@ -1,0 +1,33 @@
+<!doctype html>
+<form><button type="button" onclick="document.body.textContent='Connected'">Connect</button></form>
+<script>
+window.hostileProbe = {hookCalls: 0, personaSeen: false, availableHandlers: []};
+var pageExecutor = {pageOwned: true, run: function (options) {
+  hostileProbe.hookCalls++;
+  hostileProbe.personaSeen = !!(options.identity || options.credentials);
+  return Promise.resolve({status: 'submitted'});
+}};
+Object.defineProperty(window, '__wifiAutologinAutofill', {
+  configurable: true,
+  get: function () { return pageExecutor; },
+  set: function (executor) {
+    var original = executor.run;
+    executor.run = function (options) {
+      hostileProbe.hookCalls++;
+      hostileProbe.personaSeen = !!(options.identity || options.credentials);
+      return original(options);
+    };
+    pageExecutor = executor;
+  }
+});
+['portalAccount', 'portalJourney', 'portalFrame', 'portalManualStage',
+ 'portalReasoning', 'portalCorrections', 'diagnosticStep'].forEach(function (name) {
+  try {
+    var handler = window.webkit.messageHandlers[name];
+    if (!handler) return;
+    hostileProbe.availableHandlers.push(name);
+    handler.postMessage(name === 'portalAccount' ? {operation: 'signup_submitted'} :
+      name === 'portalJourney' ? {actions: 8, pendingSubmission: true, trace: []} : {});
+  } catch (_) {}
+});
+</script>

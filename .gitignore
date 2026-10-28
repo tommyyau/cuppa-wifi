@@ -1,0 +1,42 @@
+.DS_Store
+.claude/
+.swiftpm/
+**/.build/
+dist/
+*.app
+*.zip
+
+# Local environments, credentials, signing material, and crash reports.
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+credentials.json
+secrets/
+*.pem
+*.key
+*.p12
+*.mobileprovision
+*.cer
+*.crash
+*.ips
+
+# Local working files, kept out of the repo.
+SPEC.md
+recon/
+private/
+design_handoff_wifi_autologin_v2/
+
+# Runtime data: may contain portal tokens or fictional credentials.
+**/config/identity.env
+**/config/networks.ignore
+**/captures/
+**/.local-data/
+**/__pycache__/
+*.pyc
+*.log
+
+# Generated local portal evaluations and frozen build copies.
+qa/sealed-portal-suite/results/
+qa/sealed-portal-suite/.browser-build/

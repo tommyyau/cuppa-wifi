@@ -1,0 +1,22 @@
+{
+  "format": 1,
+  "maxCorrectionRounds": 3,
+  "phoneFormats": [
+    "national",
+    "e164",
+    "international_00",
+    "digits"
+  ],
+  "postcodeFormats": [
+    "spaced_upper",
+    "compact_upper",
+    "upper",
+    "compact"
+  ],
+  "dateFormats": [
+    "yyyy-mm-dd",
+    "dd/mm/yyyy",
+    "mm/dd/yyyy",
+    "dd-mm-yyyy"
+  ]
+}

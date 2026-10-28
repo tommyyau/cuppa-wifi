@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- Value-free reproduction of the captured Meraki forms and toggle behavior. -->
+<h1>Welcome to Vision Express Guest WiFi</h1>
+<div id="signin_form" class="formarea">
+  <form id="sign_in_form" action="/vision/login" method="post">
+    <input name="utf8" type="hidden" value="✓">
+    <input name="csrf" type="hidden" value="FIXTURE_CSRF">
+    <h3>EMAIL</h3><input id="email_field" name="email" type="text" required>
+    <h3>PASSWORD</h3><input id="password_field" name="password" type="password">
+    <label><input name="terms" type="checkbox" required>By ticking this box you agree to all terms and conditions.</label>
+    <input type="submit" name="commit" value="Sign In" id="sign_in">
+  </form>
+</div>
+<div class="form_links"><a id="create_account_link" href="#">Create an account</a></div>
+<div id="create_account_form" class="formarea" style="display:none">
+  <h2>If you don't have an account yet, complete this form:</h2>
+  <form id="splash_create_new_account_form" action="/vision/signup" method="post">
+    <input name="utf8" type="hidden" value="✓">
+    <input name="csrf" type="hidden" value="FIXTURE_CSRF">
+    <input type="hidden" name="continue_url" value="/vision/connected">
+    <h3>NAME</h3><input type="text" name="user[name]" id="user_name">
+    <h3>EMAIL</h3><input type="text" name="user[email]" id="user_email">
+    <h3>EMAIL (AGAIN)</h3><input type="text" name="user[email_confirmation]" id="user_email_confirmation">
+    <h3>PASSWORD</h3><input type="password" name="user[password]" id="user_password">
+    <h3>PASSWORD (AGAIN)</h3><input type="password" name="user[password_confirmation]" id="user_password_confirmation">
+    <input type="submit" name="commit" value="Create new account" id="sign_in">
+  </form>
+  <a id="signin_link" href="#">Sign in</a>
+</div>
+<script>
+document.getElementById('create_account_link').addEventListener('click',function(event){
+  event.preventDefault();document.getElementById('signin_form').style.display='none';
+  document.getElementById('create_account_form').style.display='block';
+});
+document.getElementById('signin_link').addEventListener('click',function(event){
+  event.preventDefault();document.getElementById('create_account_form').style.display='none';
+  document.getElementById('signin_form').style.display='block';
+});
+</script>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>CuppaAutologin</string>
+    <key>CFBundleIdentifier</key>
+    <string>io.github.tommyyau.wifi-autologin</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon.icns</string>
+    <key>CFBundleName</key>
+    <string>Cuppa Wi-Fi</string>
+    <key>CFBundleDisplayName</key>
+    <string>Cuppa Wi-Fi</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>2.0.3</string>
+    <key>CFBundleVersion</key>
+	<string>45</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2026 Cuppa Wi-Fi contributors. MIT licensed.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Cuppa Wi-Fi uses your location only because macOS requires permission to read the current Wi-Fi network name. Location coordinates are never collected or stored.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Cuppa Wi-Fi connects to the sign-in page provided by the Wi-Fi network so it can complete captive portal forms automatically.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

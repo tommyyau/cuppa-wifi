@@ -1,0 +1,1256 @@
+[
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_failure_reason_is_written_beside_manifest",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testCaptureDiagnosticReasonManifestDetailAndPermissions"
+    ],
+    "rationale": "Preserves reason, manifest and private typed failure detail; native diagnostic field identifiers are hashed and raw arbitrary labels omitted, matching value-free trace privacy while full private HTML remains captured."
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_safe_report_contains_structure_but_no_session_data",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testCaptureStructuredFormMetadataPreservesMeaningWithoutRawSecrets",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testSafeCaptureExactFieldShapeProviderHintURLAndPrivacyFlags"
+    ],
+    "rationale": "Preserves safe report contains structure but no session data; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_safe_report_extracts_provider_schema_and_rejected_field_only",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testCaptureJSONSchemaAndValidationNamesExcludeMessages"
+    ],
+    "rationale": "Preserves safe report extracts provider schema and rejected field only; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_capture.TestCaptureSession.test_failure_capture_does_not_count_as_success_capture",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testFailureCaptureDoesNotSuppressFirstSuccessfulCapture"
+    ],
+    "rationale": "Preserves failure capture does not count as success capture; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_detects_fills_and_verifies_fresh_registration",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testColdRegistrationPreservesFullPersonaAndConsent",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testNativeFixtureServerValidatesRegistrationAndIndependentGrant"
+    ],
+    "rationale": "Preserves detects fills and verifies fresh registration; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_completes_strict_multistep_portal_journey",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testColdStrictJourneyUsesFreshTokensLabelledFieldsAndTerms",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testHTTPRedirectCookiesAndChunkFraming"
+    ],
+    "rationale": "Preserves completes strict multistep portal journey; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_cold_join_integration.TestColdJoinIntegration.test_full_engine_records_automatic_login_after_strict_journey",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testColdStrictJourneyUsesFreshTokensLabelledFieldsAndTerms",
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkingTests.swift::testHTTPRedirectCookiesAndChunkFraming"
+    ],
+    "rationale": "Preserves full engine records automatic login after strict journey; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_emission_and_masking",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testDiagnosticScrubbingAndNoUnscopedEvent",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NativeJourneyIntegrationTests.swift::testIntegratedDiagnosticTraceKeepsOrderedFieldMeaningAndMasksValues"
+    ],
+    "rationale": "Preserves emission and masking; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_real_form_preparation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NativeJourneyIntegrationTests.swift::testIntegratedDiagnosticTraceKeepsOrderedFieldMeaningAndMasksValues",
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalStepPrivacyTests.swift::testStepsHaveUsefulSemanticCategoriesWithoutIdentityOrRawLabels"
+    ],
+    "rationale": "Preserves real form preparation; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_http_events_omit_values_and_url_tokens",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/NativeJourneyIntegrationTests.swift::testIntegratedDiagnosticTraceKeepsOrderedFieldMeaningAndMasksValues"
+    ],
+    "rationale": "Preserves http events omit values and url tokens; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_diagnostics.DiagnosticTests.test_no_events_outside_attempt",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testDiagnosticScrubbingAndNoUnscopedEvent"
+    ],
+    "rationale": "Preserves no events outside attempt; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_missing_file_is_empty",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testMissingIgnoreFileAndCaseInsensitiveComments"
+    ],
+    "rationale": "Preserves missing file is empty; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_parses_macs_labels_comments_and_case",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testMissingIgnoreFileAndCaseInsensitiveComments"
+    ],
+    "rationale": "Preserves parses macs labels comments and case; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestParseIgnoreFile.test_is_ignored_mac_case_insensitive_and_none_safe",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testMissingIgnoreFileAndCaseInsensitiveComments"
+    ],
+    "rationale": "Preserves is ignored mac case insensitive and none safe; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestAddIgnore.test_append_then_duplicate_is_idempotent",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testIgnoreCurrentAppendIsIdempotentAndLabelCannotAddAnotherRow"
+    ],
+    "rationale": "Preserves append then duplicate is idempotent; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_iphone_hotspot_range",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHotspotRangesAndInvalidAddresses"
+    ],
+    "rationale": "Preserves iphone hotspot range; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_android_hotspot_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHotspotRangesAndInvalidAddresses"
+    ],
+    "rationale": "Preserves android hotspot gateway; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestHotspotDetection.test_normal_and_invalid_gateways",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHotspotRangesAndInvalidAddresses"
+    ],
+    "rationale": "Preserves normal and invalid gateways; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestIgnoreCurrentCommand.test_idempotent_add_of_current_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testIgnoreCurrentAppendIsIdempotentAndLabelCannotAddAnotherRow"
+    ],
+    "rationale": "Preserves idempotent add of current gateway; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_ignore.TestIgnoreCurrentCommand.test_fails_cleanly_without_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testIgnoreCurrentWithoutGatewayDoesNotCreateFile"
+    ],
+    "rationale": "Preserves fails cleanly without gateway; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_unknown_until_remembered_then_persists",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testPhonePolicyPersistenceIdempotenceAndScope"
+    ],
+    "rationale": "Preserves unknown until remembered then persists; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_remember_is_idempotent",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testPhonePolicyPersistenceIdempotenceAndScope"
+    ],
+    "rationale": "Preserves remember is idempotent; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_empty_key_is_never_stored",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testEmptyAndCorruptPhonePolicyRemainUnknown"
+    ],
+    "rationale": "Preserves empty key is never stored; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_phone_policy.TestPhonePolicy.test_missing_or_corrupt_file_reads_as_empty",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testEmptyAndCorruptPhonePolicyRemainUnknown"
+    ],
+    "rationale": "Preserves missing or corrupt file reads as empty; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_unavailable_portal_can_be_retried_after_provider_repair",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testPortalUnavailableVerdictExpiresAfterShortRecoveryWindow"
+    ],
+    "rationale": "Preserves unavailable portal can be retried after provider repair; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_network_recovery_finishes_progress_and_routine_polls_leave_it_unchanged",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testProgressRecoveryFinishesOnceAndRoutinePollPreservesBytes"
+    ],
+    "rationale": "Preserves network recovery finishes progress and routine polls leave it unchanged; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_online_poll_preserves_portal_journey_and_tolerates_missing_or_invalid_progress",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testProgressMissingInvalidFutureAndPortalPhasesArePreserved"
+    ],
+    "rationale": "Preserves online poll preserves portal journey and tolerates missing or invalid progress; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_new_attempt_resets_history_and_does_not_store_arbitrary_details",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testProgressBoundsHistoryResetsAttemptAndRejectsArbitraryReason"
+    ],
+    "rationale": "Preserves new attempt resets history and does not store arbitrary details; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_progress.TestPortalProgress.test_bounded_history_and_browser_handoff_remains_active",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testProgressBoundsHistoryResetsAttemptAndRejectsArbitraryReason"
+    ],
+    "rationale": "Preserves bounded history and browser handoff remains active; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_shared_descriptor_corpus",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testCompleteSharedDescriptorCorpus"
+    ],
+    "rationale": "Preserves shared descriptor corpus; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_provider_matching_is_domain_bounded",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testProviderAliasesAndDomainBoundaries"
+    ],
+    "rationale": "Preserves provider matching is domain bounded; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_provider_aliases",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testProviderAliasesAndDomainBoundaries"
+    ],
+    "rationale": "Preserves provider aliases; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_rotating_csrf_does_not_change_schema",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testSchemaStableAcrossTokensButNotActions"
+    ],
+    "rationale": "Preserves rotating csrf does not change schema; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_optional_otp_and_payment_copy_does_not_block_identity_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testDormantChallengeDoesNotBlockOrdinaryForm"
+    ],
+    "rationale": "Preserves optional otp and payment copy does not block identity form; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_required_challenge_still_blocks",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testOTPBoundary"
+    ],
+    "rationale": "Preserves required challenge still blocks; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestSharedSemantics.test_opt_out_is_not_required_marketing",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testOptOutCheckboxAndTermsWithoutOptIn"
+    ],
+    "rationale": "Preserves opt out is not required marketing; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_landing_never_submits_search_or_follows_signup_links",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testUnavailablePageNeverPostsSearchOrFollowsSignup"
+    ],
+    "rationale": "Preserves error landing never submits search or follows signup links; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_search_only_page_is_not_a_portal_but_search_sidebar_does_not_hide_real_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testSearchSidebarDoesNotHideRealForm"
+    ],
+    "rationale": "Preserves search only page is not a portal but search sidebar does not hide real form; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_after_submission_is_not_treated_as_another_form",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testUnavailableResponseAfterPostStopsFurtherActions"
+    ],
+    "rationale": "Preserves error after submission is not treated as another form; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_soft_error_after_grant_requires_independent_internet_confirmation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testSoftErrorGrantNeedsIndependentConnectivity"
+    ],
+    "rationale": "Preserves soft error after grant requires independent internet confirmation; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_error_after_validation_correction_stops_without_more_fields",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testUnavailableCorrectionResponseStopsFurtherActions"
+    ],
+    "rationale": "Preserves error after validation correction stops without more fields; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_airport_escalates_before_any_submission",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testAirportJavaScriptHandoffBeforePost"
+    ],
+    "rationale": "Preserves airport portal escalation before any submission; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_unfamiliar_javascript_form_escalates",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testDataEndpointGenericHandoff"
+    ],
+    "rationale": "Preserves unfamiliar javascript form escalates; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_normal_get_form_and_inline_validation_remain_static",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testOrdinaryGETFormRemainsStatic"
+    ],
+    "rationale": "Preserves normal get form and inline validation remain static; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_six_distinct_static_steps_and_fresh_tokens",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentPortalContractTests.swift::testSixDistinctStaticStagesKeepFreshTokens"
+    ],
+    "rationale": "Preserves six distinct static steps and fresh tokens; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestFirstVisitRouting.test_verified_browser_strategy_reused_on_unfamiliar_venue",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalPersistenceParityTests.swift::testVerifiedBrowserStrategyOnlySameSchemaAndFreshHost"
+    ],
+    "rationale": "Preserves verified browser strategy reused on unfamiliar venue; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_learning_requires_verification_and_expires",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalPersistenceParityTests.swift::testVerifiedBrowserStrategyOnlySameSchemaAndFreshHost",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testVerifiedBrowserLearningRequiresMatchingHandoffSignature"
+    ],
+    "rationale": "Preserves learning requires verification and expires; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_local_reasoning_metrics_are_bounded_and_value_free",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testStructuralReportStripsSecretSentinelsAndBoundsCounts",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testReportBooleanDoesNotBecomeAnActionCount",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testReasoningCountersRejectNegativeStringAndBooleanValues"
+    ],
+    "rationale": "Native report bounds reasoning requests/decisions at 12 rather than legacy 6, rejects Boolean/string counters and retains structural metadata while removing values; accepted larger bounded budget tested explicitly."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_cookie_handoff_is_private_and_bounded",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testHandoffCarriesSessionAndClampsBudgets"
+    ],
+    "rationale": "Preserves cookie handoff is private and bounded; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVerifiedLearningAndReports.test_reports_keep_manual_separate_and_strip_values",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testAssistedAndUnsupportedMetricsRemainSeparate",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testStructuralReportStripsSecretSentinelsAndBoundsCounts",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testStructuralReportRejectsExternalAndSymlinkPaths"
+    ],
+    "rationale": "Preserves reports keep manual separate and strip values; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVisitMeasurements.test_first_visit_and_returning_verified_counts",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testFirstVisitMetricsAndStructuralTimingRetainOnlyReviewedFields",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testVisitCountsAndSerializedJourneysHidePrivateVenueFingerprint"
+    ],
+    "rationale": "Preserves first visit and returning verified counts; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestVisitMeasurements.test_structural_report_preserves_action_timing_and_rejection",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testFirstVisitMetricsAndStructuralTimingRetainOnlyReviewedFields",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testStructuralReportRetainsExactRejectedFieldWithoutValue"
+    ],
+    "rationale": "Preserves structural report preserves action timing and rejection; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestMetadataCompatibility.test_native_types_win_over_conflicting_identity_hints",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalWorkflowTests.swift::testFieldContextAndNativeTypePrecedence"
+    ],
+    "rationale": "Preserves native types win over conflicting identity hints; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_portal_robustness.TestMetadataCompatibility.test_telephone_autocomplete_variants_still_resolve",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaPortalsTests/PortalParityTests.swift::testCompleteSharedDescriptorCorpus"
+    ],
+    "rationale": "Preserves telephone autocomplete variants still resolve; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_online_join_records_check_and_connection_once",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOnlineJoinTimestampAndRoutinePollAreDistinct"
+    ],
+    "rationale": "Preserves online join records check and connection once; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_network_fingerprint_is_persisted",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testEnginePersistsFingerprintAndLandingVenue"
+    ],
+    "rationale": "Preserves network fingerprint is persisted; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_changed_dhcp_domain_clears_venue_state",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testDHCPChangeSeparatesSharedGatewayVenues"
+    ],
+    "rationale": "Preserves changed dhcp domain clears venue state; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_new_gateway_clears_previous_venue_state",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testNetworkSwitchClearsOldVenueAndLoginEvidence"
+    ],
+    "rationale": "Preserves new gateway clears previous venue state; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_new_ssid_clears_stale_venue_when_gateway_is_unavailable",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testSSIDChangeWithoutGatewayClearsOldVenue"
+    ],
+    "rationale": "Preserves new ssid clears stale venue when gateway is unavailable; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_transient_missing_ssid_does_not_clear_known_venue",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testRedactedSSIDDoesNotEraseKnownSession"
+    ],
+    "rationale": "Preserves transient missing ssid does not clear known venue; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_handler_can_identify_venue_after_landing_page",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testEnginePersistsFingerprintAndLandingVenue"
+    ],
+    "rationale": "Preserves handler can identify venue after landing page; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_cold_join_uses_scoped_wifi_route_and_transport",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaNetworkingTests/NetworkParityTests.swift::testInspectorNoDefaultRouteStaleKeyAndScopedRouteMAC",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testVerifiedGrantSurvivesStaleWebsheet"
+    ],
+    "rationale": "Preserves cold join uses scoped wifi route and transport; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_verified_login_not_vetoed_by_open_websheet",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testVerifiedGrantSurvivesStaleWebsheet"
+    ],
+    "rationale": "Preserves verified login not vetoed by open websheet; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_success_survives_late_gateway_discovery_and_stale_websheet",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testLateGatewayDiscoveryAttachesToVerifiedLogin",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testVerifiedGrantSurvivesStaleWebsheet"
+    ],
+    "rationale": "Preserves success survives late gateway discovery and stale websheet; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_notify_while_staying_online",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOnlineJoinTimestampAndRoutinePollAreDistinct"
+    ],
+    "rationale": "Preserves no notify while staying online; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_notifies_on_captive_transition_and_success",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testCaptiveThenSuccessNotificationsFireOnceAndHealthyPollIsQuiet"
+    ],
+    "rationale": "Preserves notifies on captive transition and success; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_repeat_notify_once_already_online_again",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testCaptiveThenSuccessNotificationsFireOnceAndHealthyPollIsQuiet"
+    ],
+    "rationale": "Preserves no repeat notify once already online again; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNotifyOnTransitionOnly.test_no_network_never_notifies",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testNoNetworkNeverSendsActivityNotification"
+    ],
+    "rationale": "Preserves no network never notifies; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_online_recovery_appears_in_activity_without_spamming_healthy_polls",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOnlineRecoveryTraceAndProgressAreNotRepeatedByHealthyPoll"
+    ],
+    "rationale": "Preserves online recovery appears in activity without spamming healthy polls; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_online_probe_completes_activity_after_join_recovery_or_stale_check",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOnlineRecoveryTraceAndProgressAreNotRepeatedByHealthyPoll",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testProgressRecoveryFinishesOnceAndRoutinePollPreservesBytes"
+    ],
+    "rationale": "Preserves online probe completes activity after join recovery or stale check; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_unreachable_network_reports_evidence_without_starting_form_or_radio_recovery",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testNoNetworkDiagnosisDoesNotAttemptFormOrResetRadio",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testRepeatedNoNetworkDiagnosisRetainsItsFirstObservation"
+    ],
+    "rationale": "Preserves unreachable network reports evidence without starting form or radio recovery; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_a_portal_discovered_without_dns_enters_normal_login_and_verification",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testNoDNSDiagnosisPortalContinuesNormalFlow"
+    ],
+    "rationale": "Preserves a portal discovered without dns enters normal login and verification; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkDiagnosis.test_network_switch_discards_the_old_redirect_and_evidence",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testDiagnosisNetworkChangeDiscardsEvidenceAndRedirect"
+    ],
+    "rationale": "Preserves network switch discards the old redirect and evidence; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_consecutive_failures_increment",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testConsecutiveFailureIncrementThenSuccessResets"
+    ],
+    "rationale": "Preserves consecutive failures increment; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_handler_exception_is_captured_with_actionable_reason",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testPortalTransportFailureProducesActionableCapture"
+    ],
+    "rationale": "Swift PortalHandling.login is nonthrowing; provider I/O failures become typed failed PortalAttempt with actionable reason and private capture. Python arbitrary handler RuntimeError cannot be expressed in native protocol, whose Swift runtime traps are not recoverable."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_give_up_notification_fires_once_at_threshold",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testFailureGiveUpMarkerPersistsAcrossFollowupWithoutReset"
+    ],
+    "rationale": "Preserves give up notification fires once at threshold; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFailureCapsAndCapture.test_success_resets_failure_count",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testConsecutiveFailureIncrementThenSuccessResets"
+    ],
+    "rationale": "Preserves success resets failure count; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_failure_runs_sweep_when_rate_limit_allows",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOrdinaryFailureSweepsImmediatelyAndSuccessNeverSweeps"
+    ],
+    "rationale": "Preserves failure runs sweep when rate limit allows; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_transient_first_failure_skips_forensic_sweep",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testTransientFailureSweepsOnlyAfterSecondFailure"
+    ],
+    "rationale": "Preserves transient first failure skips forensic sweep; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_transient_failure_sweeps_once_clearly_stuck",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testTransientFailureSweepsOnlyAfterSecondFailure"
+    ],
+    "rationale": "Preserves transient failure sweeps once clearly stuck; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_js_portal_discovered_by_sweep_is_handed_to_webview",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testForensicJSAndCNARecoveryProduceScopedBrowserHandoff"
+    ],
+    "rationale": "Preserves js portal discovered by sweep is handed to webview; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_cna_portal_discovered_by_sweep_is_handed_to_webview",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testForensicJSAndCNARecoveryProduceScopedBrowserHandoff"
+    ],
+    "rationale": "Preserves cna portal discovered by sweep is handed to webview; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_failure_skips_sweep_when_rate_limited",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/AncillaryContractTests.swift::testForensicRateLimitUsesPrivateMarkerAndRejectsFutureTime",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testNilSweepDoesNotCrashOrInventHandoff"
+    ],
+    "rationale": "Preserves failure skips sweep when rate limited; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_sweep_failure_does_not_crash_the_cycle",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testNilSweepDoesNotCrashOrInventHandoff"
+    ],
+    "rationale": "Preserves sweep failure does not crash the cycle; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestForensicsWiring.test_success_never_sweeps",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testOrdinaryFailureSweepsImmediatelyAndSuccessNeverSweeps"
+    ],
+    "rationale": "Preserves success never sweeps; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_first_success_for_new_fingerprint_is_captured",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testSubmittedActionRequiresIndependentTwoEndpointVerification",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testFirstVerifiedStaticSuccessCreatesSuccessCaptureArtifact"
+    ],
+    "rationale": "Preserves first success for new fingerprint is captured; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_failure_capture_dir_does_not_suppress_success_capture",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testFailureCaptureDoesNotSuppressFirstSuccessfulCapture"
+    ],
+    "rationale": "Preserves failure capture dir does not suppress success capture; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_existing_success_capture_is_not_recaptured",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testSuccessCapturedOnceButEveryFailureStillCaptured"
+    ],
+    "rationale": "Preserves existing success capture is not recaptured; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_gateway_discovered_portal_is_passed_to_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testGatewayAndCNADiscoveryReachPortalBeforeProviderResolution"
+    ],
+    "rationale": "Preserves gateway discovered portal is passed to handler; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_cna_discovery_resolves_wireless_social_before_handler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testGatewayAndCNADiscoveryReachPortalBeforeProviderResolution"
+    ],
+    "rationale": "Preserves cna discovery resolves wireless social before handler; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestSuccessCaptureOncePerVenue.test_failure_still_captured_even_with_existing_capture_dir",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testSuccessCapturedOnceButEveryFailureStillCaptured"
+    ],
+    "rationale": "Preserves failure still captured even with existing capture dir; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_is_distinct_without_failure_count_or_reassociation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnsupportedVerdictStopsFollowupWithoutFailureOrRecovery"
+    ],
+    "rationale": "Preserves is distinct without failure count or reassociation; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_unavailable_page_stays_terminal_on_followup_checks_without_radio_reset",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnavailablePageFollowupKeepsActionableTerminalProgress"
+    ],
+    "rationale": "Preserves unavailable page stays terminal on followup checks without radio reset; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_notifies_portal_and_unsupported_only_once_per_fingerprint",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnsupportedCaptureAndNotificationOncePerFingerprintAndNewVenueRearms"
+    ],
+    "rationale": "Preserves notifies portal and unsupported only once per fingerprint; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_new_fingerprint_notifies_again",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnsupportedCaptureAndNotificationOncePerFingerprintAndNewVenueRearms"
+    ],
+    "rationale": "Preserves new fingerprint notifies again; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_captures_once_per_venue_fingerprint",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnsupportedCaptureAndNotificationOncePerFingerprintAndNewVenueRearms"
+    ],
+    "rationale": "Preserves captures once per venue fingerprint; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_recovery_notifies_back_online",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnsupportedRecoveryNotifiesOnceThenHealthyPollIsQuiet"
+    ],
+    "rationale": "Preserves recovery notifies back online; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestUnsupportedOutcome.test_captcha_and_other_reasons_also_map_to_unsupported",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testAllReviewedUnsupportedReasonsRemainTerminalWithoutRadioRecovery"
+    ],
+    "rationale": "Preserves captcha and other reasons also map to unsupported; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_gateway_mac_in_ignore_list_is_dormant_without_probe",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testIgnoredGatewayNeverSendsProbeOrPortalAction"
+    ],
+    "rationale": "Preserves gateway mac in ignore list is dormant without probe; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_iphone_hotspot_gateway_is_dormant",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testPersonalHotspotAndKnownNonWifiRouteAreDormant"
+    ],
+    "rationale": "Preserves iphone hotspot gateway is dormant; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_android_hotspot_gateway_is_dormant",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testAndroidHotspotAndUserOptOut"
+    ],
+    "rationale": "Preserves android hotspot gateway is dormant; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_ignore_hotspots_false_probes_normally",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testAndroidHotspotAndUserOptOut"
+    ],
+    "rationale": "Preserves ignore hotspots false probes normally; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_non_wifi_default_route_is_dormant",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testPersonalHotspotAndKnownNonWifiRouteAreDormant"
+    ],
+    "rationale": "Preserves non wifi default route is dormant; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_wifi_detection_failure_does_not_go_dormant",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testInterfaceEnumerationFailureDoesNotInventDormancy"
+    ],
+    "rationale": "Preserves wifi detection failure does not go dormant; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDormancy.test_ignored_does_not_disturb_transition_notifications",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testIgnoredInterludeDoesNotBecomeRecoveryNotification"
+    ],
+    "rationale": "Preserves ignored does not disturb transition notifications; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassocRateLimit.test_fires_at_threshold_then_rate_limited_then_rearms",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testReassociationRateLimitRearmsAfterSuccessAndWindow"
+    ],
+    "rationale": "Preserves fires at threshold then rate limited then rearms; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassocRateLimit.test_disabled_by_identity_flag",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testIdentityDisablesReassociation"
+    ],
+    "rationale": "Preserves disabled by identity flag; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestReassociateFunction.test_power_cycles_via_posix_spawn_runner",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testInjectedPowerCycleUsesOffWaitOnWithoutRealRadio"
+    ],
+    "rationale": "Preserves power cycles via posix spawn runner; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestLockSingleInstance.test_second_acquire_fails_while_first_held",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testLockRejectsConcurrentOwnerAndReleases"
+    ],
+    "rationale": "Preserves second acquire fails while first held; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_shared_mac_classification",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testSharedMACCorpusAndUniqueFingerprintPriority"
+    ],
+    "rationale": "Preserves shared mac classification; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_unique_mac_still_wins_over_shared_provider_domain",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testSharedMACCorpusAndUniqueFingerprintPriority"
+    ],
+    "rationale": "Preserves unique mac still wins over shared provider domain; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestNetworkFingerprint.test_shared_mac_defers_to_portal_then_ssid",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testSharedMACCorpusAndUniqueFingerprintPriority",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testSharedGatewayCannotBeFingerprintFallback"
+    ],
+    "rationale": "Preserves shared mac defers to portal then ssid; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_retries_while_captive_then_stops_on_online",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testFastRetryStopsAfterRecoveredThirdCycle"
+    ],
+    "rationale": "Preserves retries while captive then stops on online; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_no_retry_when_first_result_is_terminal",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testOrdinaryOnlineCheckDoesNotEarnAutomaticLoginCredit"
+    ],
+    "rationale": "Preserves no retry when first result is terminal; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestFastRetryLoop.test_no_retry_on_unsupported_portal",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnsupportedVerdictStopsFollowupWithoutFailureOrRecovery"
+    ],
+    "rationale": "Preserves no retry on unsupported portal; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestPhonePolicyLearning.test_phone_history_never_changes_configured_identity",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testPhoneHistoryDoesNotReplacePersonaAcrossRevisits"
+    ],
+    "rationale": "Preserves phone history never changes configured identity; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_follows_gateway_redirect_to_login",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testGatewayAndCNADiscoveryReachPortalBeforeProviderResolution",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testGatewayURLHandlesIPv4IPv6AndMissingAddress"
+    ],
+    "rationale": "Preserves follows gateway redirect to login; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_no_gateway_ip_returns_none",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testGatewayURLHandlesIPv4IPv6AndMissingAddress"
+    ],
+    "rationale": "Preserves no gateway ip returns none; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_silent_gateway_returns_none",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testSilentGatewayDiscoveryFallsBackWithoutCrashing"
+    ],
+    "rationale": "Preserves silent gateway returns none; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_state_machine.TestDiscoverGatewayPortal.test_unfollowed_redirect_uses_location_header",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testGatewayAndCNADiscoveryReachPortalBeforeProviderResolution"
+    ],
+    "rationale": "Preserves unfollowed redirect uses location header; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_report_gathers_reason_hops_forensics_and_log",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testTriagePrivateReportIncludesReasonHopsForensicsAndScopedLogs"
+    ],
+    "rationale": "Preserves report gathers reason hops forensics and log; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_substring_selector_matches_venue",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testTriageSubstringAndNoMatchListKnownVenues"
+    ],
+    "rationale": "Preserves substring selector matches venue; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_venue_name_resolves_via_log",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/AncillaryContractTests.swift::testTriageVenueNameResolvesLogAndIncludesPrivateServerExplanation"
+    ],
+    "rationale": "Preserves venue name resolves via log; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_no_match_lists_known_venues",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyRemainingParityTests.swift::testTriageSubstringAndNoMatchListKnownVenues"
+    ],
+    "rationale": "Preserves no match lists known venues; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_list_failures_is_one_row_per_venue_newest_first",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/AncillaryContractTests.swift::testTriageTimelineIncludesBothVenuesAndReasons"
+    ],
+    "rationale": "Preserves list failures is one row per venue newest first; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_list_failures_empty_is_graceful",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/AncillaryContractTests.swift::testTriageEmptyAndUnknownCommandsStayReadOnly"
+    ],
+    "rationale": "Preserves list failures empty is graceful; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_triage.TestTriage.test_empty_state_is_graceful",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/AncillaryContractTests.swift::testTriageEmptyAndUnknownCommandsStayReadOnly"
+    ],
+    "rationale": "Preserves empty state is graceful; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_writes_expected_json_shape",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testHandoffCarriesSessionAndClampsBudgets",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHandoffNullShapeReplacementAndDeadlineAfterSlowAttempt"
+    ],
+    "rationale": "Preserves writes expected json shape; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_write_creates_private_file_without_temporary_leftover",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testPrivateAtomicReplacementAndNoTemporaryLeftovers",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testHandoffCarriesSessionAndClampsBudgets"
+    ],
+    "rationale": "Preserves write creates private file without temporary leftover; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_browser_deadline_starts_after_slow_http_attempt",
+    "status": "intentional_change",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHandoffNullShapeReplacementAndDeadlineAfterSlowAttempt"
+    ],
+    "rationale": "Native written_at records handoff availability after static work; deadline is written_at+90. Legacy permitted an earlier caller-written timestamp while separately computing deadline from current clock. Native deadline preserves full browser budget and timestamp consistently marks handoff creation."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_none_fingerprint_and_capture_path_round_trip_as_null",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHandoffNullShapeReplacementAndDeadlineAfterSlowAttempt"
+    ],
+    "rationale": "Preserves none fingerprint and capture path round trip as null; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_overwrite_replaces_previous_record",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyPersistenceParityTests.swift::testHandoffNullShapeReplacementAndDeadlineAfterSlowAttempt"
+    ],
+    "rationale": "Preserves overwrite replaces previous record; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_active_handoff_is_fresh_reviewed_and_fingerprint_scoped",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testHandoffCarriesSessionAndClampsBudgets"
+    ],
+    "rationale": "Preserves active handoff is fresh reviewed and fingerprint scoped; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWriteHandoff.test_unsupported_record_matches_only_fresh_fingerprint",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testUnsupportedOutcomeIsScopedAndExpires"
+    ],
+    "rationale": "Preserves unsupported record matches only fresh fingerprint; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_js_render_failure_writes_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testBrowserHandoffStopsRetryAndCarriesCookie"
+    ],
+    "rationale": "Preserves js render failure writes handoff; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_optimistic_redirect_without_form_routes_to_webview",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testZeroActionCaptiveCandidateRoutesToBrowserWithCapture"
+    ],
+    "rationale": "Preserves optimistic redirect without form routes to webview; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_other_failure_reasons_do_not_write_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testNilSweepDoesNotCrashOrInventHandoff"
+    ],
+    "rationale": "Preserves other failure reasons do not write handoff; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_ambiguous_meraki_grant_writes_reviewed_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testReviewedMerakiHandoffPreservesReasonAndSuppressesDuplicateAction"
+    ],
+    "rationale": "Preserves ambiguous meraki grant writes reviewed handoff; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_fresh_handoff_suppresses_duplicate_static_action",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testPendingBrowserSuppressesDuplicateStaticAction"
+    ],
+    "rationale": "Preserves fresh handoff suppresses duplicate static action; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_unsupported_failure_prepares_assistance_without_automation",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/PersistenceBoundaryTests.swift::testManualUnsupportedHandoffNeverStartsAutomation"
+    ],
+    "rationale": "Preserves unsupported failure prepares assistance without automation; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_js_render_failure_still_increments_consecutive_failures",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testBrowserHandoffStopsRetryAndCarriesCookie"
+    ],
+    "rationale": "Preserves js render failure still increments consecutive failures; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_pending_browser_journey_is_not_rebuilt_by_scheduler",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testPendingBrowserSuppressesDuplicateStaticAction"
+    ],
+    "rationale": "Preserves pending browser journey is not rebuilt by scheduler; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_success_after_js_render_clears_stale_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testSuccessAfterBrowserJourneyClearsStaleHandoff"
+    ],
+    "rationale": "Preserves success after js render clears stale handoff; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_matching_webview_unsupported_record_stops_static_retries",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnsupportedVerdictStopsFollowupWithoutFailureOrRecovery"
+    ],
+    "rationale": "Preserves matching webview unsupported record stops static retries; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_shared_provider_decision_does_not_cross_gateways",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testUnsupportedDecisionCannotCrossGatewayOnEngineCycle"
+    ],
+    "rationale": "Preserves shared provider decision does not cross gateways; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestMainEmitsHandoffOnlyForJsRenderFailure.test_static_unsupported_result_blocks_the_next_cycle",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnsupportedVerdictStopsFollowupWithoutFailureOrRecovery"
+    ],
+    "rationale": "Preserves static unsupported result blocks the next cycle; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_assisted_completion_never_gets_auto_login_credit",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testAssistedBrowserCompletionDoesNotEarnAutomaticCreditOrLearning"
+    ],
+    "rationale": "Preserves assisted completion never gets auto login credit; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_browser_learning_requires_verified_matching_signature",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testVerifiedBrowserLearningRequiresMatchingHandoffSignature",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testVerifiedBrowserWithMatchingSignatureLearnsAndClearsPendingWork",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testFailedBrowserConsensusUsesThreeCyclesAndNeverLearnsOrCredits"
+    ],
+    "rationale": "Preserves browser learning requires verified matching signature; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_requires_independent_online_probe",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testBrowserCompletionRequiresConsensusAndRecordsNotVerified",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testBrowserCompletionRejectsUnknownGateway",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testFailedBrowserConsensusUsesThreeCyclesAndNeverLearnsOrCredits"
+    ],
+    "rationale": "Preserves complete requires independent online probe; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_persists_verified_success_and_clears_handoff",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/LegacyEngineParityTests.swift::testBrowserResultClearsHandoffAndPersistsRequestedVenueAndTimes"
+    ],
+    "rationale": "Preserves complete persists verified success and clears handoff; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_complete_rejects_stale_fingerprint_or_changed_gateway",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testBrowserCompletionRejectsFingerprintBeforeAnyProbe",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testBrowserCompletionDiscardsNetworkChangeDuringProbe",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/IndependentAuditClosureTests.swift::testStaleFingerprintAndChangedGatewayRetainCaptiveStateAndHandoff"
+    ],
+    "rationale": "Preserves complete rejects stale fingerprint or changed gateway; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_unsupported_outcome_is_fingerprint_scoped",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testKnownUnsupportedUpdatesStateWithoutConnectivityProbe",
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnsupportedOutcomeCannotCrossGateway"
+    ],
+    "rationale": "Preserves unsupported outcome is fingerprint scoped; exact native assertions exercise this behavioral contract with isolated dependencies."
+  },
+  {
+    "legacy_id": "test_webview_handoff.TestWebViewOutcomeCommands.test_unknown_unsupported_reason_is_rejected",
+    "status": "covered",
+    "native_tests": [
+      "macos/CuppaAutologinApp/Tests/CuppaEngineTests/EngineAdversarialTests.swift::testUnknownUnsupportedReasonCannotChangeState"
+    ],
+    "rationale": "Preserves unknown unsupported reason is rejected; exact native assertions exercise this behavioral contract with isolated dependencies."
+  }
+]
