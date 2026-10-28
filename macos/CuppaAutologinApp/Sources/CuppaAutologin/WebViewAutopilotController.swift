@@ -585,69 +585,81 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
         let evaluatedNavigation = navigationCount
         Task { [weak self, weak webView] in
             guard let self, let webView, !self.finished else { return }
-            do {
-                // An unknown subframe URL must never inherit main-frame authorization.
-                let targetURL = frame == nil ? (webView.url ?? self.portalURL) : frame.flatMap { self.portalURL(for: $0) }
-                let suppliedCredentials = targetURL.map { self.credentialsFor($0) } ?? [:]
-                var arguments = PortalAutofillPayload.make(identity: self.identity, credentials: suppliedCredentials,
-                                                          isSubframe: frame?.isMainFrame == false,
-                                                          frameOrigin: targetURL.map { self.origin(of: $0) },
-                                                          mainOrigin: self.origin(of: webView.url ?? self.portalURL),
-                                                          // Explicit account permission never expands Persona permission.
-                                                          signupOrigin: self.credentials == nil ? self.signupOrigin : nil)
-                arguments.merge(["schema": self.schema, "profiles": self.profiles,
-                    "expectedFrameURL": targetURL.flatMap { ["http", "https"].contains($0.scheme ?? "") ? $0.absoluteString : nil } ?? "",
-                    "correctionLadder": self.correctionLadder, "journey": self.journey.dictionary,
-                    "maximumActions": max(0, 8 - (self.handoff?.previousActions ?? 0)),
-                    "corrections": targetURL.flatMap { self.corrections[self.origin(of: $0)] } ?? [:],
-                    "deadline": self.deadline.timeIntervalSince1970 * 1000,
-                    "startedAt": self.startedAt.timeIntervalSince1970 * 1000]) { _, new in new }
-                let raw = try await webView.callAsyncJavaScript(Self.guardedAutofillScript, arguments: arguments,
-                    in: frame, contentWorld: Self.autofillWorld)
-                guard !self.finished, self.evaluationID == currentEvaluation, evaluatedNavigation == self.navigationCount else { return }
-                self.evaluationInFlight = false
-                guard let result = WebViewAutopilotResult.decode(raw) else {
-                    self.finish(.failed("Portal returned an invalid result")); return
-                }
-        self.lastResult = result
-                publishProgress("form_result", "Form inspection finished: \(result.status.rawValue)")
-                self.journey = result.journey
-                if result.status == .noForm, !self.frameCandidates.isEmpty {
-                    let nextFrame = self.frameCandidates.removeFirst()
-                    self.runAutofill(in: webView, frame: nextFrame)
-                    return
-                }
-                if (result.status == .noForm || result.status == .needsMore), webView.isLoading,
-                   self.journey.pendingSubmission != true {
-                    // Late frames/scripts may introduce the first usable
-                    // controls. Keep the same deadline and action budget.
-                    self.waitingForLoadedDocument = true
-                    publishProgress("browser_load", "Waiting for the portal form to become ready")
-                    return
-                }
-                switch result.status {
-                case .submitted: self.finish(.submitted(result.venue))
-                case .unsupported: self.finish(.unsupported(result.detail))
-                case .noForm where self.journey.pendingSubmission == true:
-                    self.finish(.submitted(result.venue)) // Candidate only; the engine performs the dual probes.
-                case .needsMore, .noForm: self.finish(.failed(result.detail.isEmpty ? "Portal needs attention" : result.detail))
-                }
-            } catch {
-                guard !self.finished, self.evaluationID == currentEvaluation else { return }
-                self.evaluationInFlight = false
-                if webView.isLoading || self.navigationCount != evaluatedNavigation { return }
-                if self.journey.pendingSubmission == true {
-                    if !self.frameCandidates.isEmpty {
-                        self.runAutofill(in: webView, frame: self.frameCandidates.removeFirst())
-                    } else {
-                        self.finish(.submitted(self.lastResult?.venue))
-                    }
-                    return
-                }
-                self.diagnostics.failureCode = (error as NSError).code
-                self.failureReason = "browser_script_failed"
-                self.finish(.failed("Portal script could not complete. See Activity for details."))
+            await self.evaluateAutofill(in: webView, frame: frame, currentEvaluation: currentEvaluation,
+                                        evaluatedNavigation: evaluatedNavigation)
+        }
+    }
+
+    private func evaluateAutofill(in webView: WKWebView, frame: WKFrameInfo?, currentEvaluation: UUID,
+                                  evaluatedNavigation: Int) async {
+        do {
+            // An unknown subframe URL must never inherit main-frame authorization.
+            let targetURL: URL? = frame == nil ? (webView.url ?? self.portalURL) : frame.flatMap { self.portalURL(for: $0) }
+            let suppliedCredentials: [String: Any] = targetURL.map { self.credentialsFor($0) } ?? [:]
+            var arguments: [String: Any] = PortalAutofillPayload.make(identity: self.identity, credentials: suppliedCredentials,
+                                                      isSubframe: frame?.isMainFrame == false,
+                                                      frameOrigin: targetURL.map { self.origin(of: $0) },
+                                                      mainOrigin: self.origin(of: webView.url ?? self.portalURL),
+                                                      // Explicit account permission never expands Persona permission.
+                                                      signupOrigin: self.credentials == nil ? self.signupOrigin : nil)
+            let expectedFrameURL: String = targetURL.flatMap { (url: URL) -> String? in
+                ["http", "https"].contains(url.scheme ?? "") ? url.absoluteString : nil
+            } ?? ""
+            let maximumActions: Int = max(0, 8 - (self.handoff?.previousActions ?? 0))
+            let frameCorrections: [String: [String]] = targetURL.flatMap { self.corrections[self.origin(of: $0)] } ?? [:]
+            let evaluationArguments: [String: Any] = ["schema": self.schema, "profiles": self.profiles,
+                "expectedFrameURL": expectedFrameURL,
+                "correctionLadder": self.correctionLadder, "journey": self.journey.dictionary,
+                "maximumActions": maximumActions,
+                "corrections": frameCorrections,
+                "deadline": self.deadline.timeIntervalSince1970 * 1000,
+                "startedAt": self.startedAt.timeIntervalSince1970 * 1000]
+            arguments.merge(evaluationArguments) { _, new in new }
+            let raw: Any? = try await webView.callAsyncJavaScript(Self.guardedAutofillScript, arguments: arguments,
+                in: frame, contentWorld: Self.autofillWorld)
+            guard !self.finished, self.evaluationID == currentEvaluation, evaluatedNavigation == self.navigationCount else { return }
+            self.evaluationInFlight = false
+            guard let result = WebViewAutopilotResult.decode(raw) else {
+                self.finish(.failed("Portal returned an invalid result")); return
             }
+            self.lastResult = result
+            publishProgress("form_result", "Form inspection finished: \(result.status.rawValue)")
+            self.journey = result.journey
+            if result.status == .noForm, !self.frameCandidates.isEmpty {
+                let nextFrame = self.frameCandidates.removeFirst()
+                self.runAutofill(in: webView, frame: nextFrame)
+                return
+            }
+            if (result.status == .noForm || result.status == .needsMore), webView.isLoading,
+               self.journey.pendingSubmission != true {
+                // Late frames/scripts may introduce the first usable
+                // controls. Keep the same deadline and action budget.
+                self.waitingForLoadedDocument = true
+                publishProgress("browser_load", "Waiting for the portal form to become ready")
+                return
+            }
+            switch result.status {
+            case .submitted: self.finish(.submitted(result.venue))
+            case .unsupported: self.finish(.unsupported(result.detail))
+            case .noForm where self.journey.pendingSubmission == true:
+                self.finish(.submitted(result.venue)) // Candidate only; the engine performs the dual probes.
+            case .needsMore, .noForm: self.finish(.failed(result.detail.isEmpty ? "Portal needs attention" : result.detail))
+            }
+        } catch {
+            guard !self.finished, self.evaluationID == currentEvaluation else { return }
+            self.evaluationInFlight = false
+            if webView.isLoading || self.navigationCount != evaluatedNavigation { return }
+            if self.journey.pendingSubmission == true {
+                if !self.frameCandidates.isEmpty {
+                    self.runAutofill(in: webView, frame: self.frameCandidates.removeFirst())
+                } else {
+                    self.finish(.submitted(self.lastResult?.venue))
+                }
+                return
+            }
+            self.diagnostics.failureCode = (error as NSError).code
+            self.failureReason = "browser_script_failed"
+            self.finish(.failed("Portal script could not complete. See Activity for details."))
         }
     }
 
