@@ -30,6 +30,11 @@ The cup steams when you are.
 2. **Cuppa reads the sign-in page.** Simple rules first; Apple's on-device AI for the awkward bits, before you're online.
 3. **It checks real internet access.** When the checks pass, the cup steams.
 
+**One cup, with refills.** Your order keeps its original start time and total
+time online when the Wi-Fi session expires. Each verified reconnection adds a
+refill, with its time and how long the previous cup lasted, in the receipt and
+Activity. Time offline pauses the total. Joining another venue starts a new order.
+
 <p align="center">
   <img src="docs/images/live-activity.png" width="380" alt="Activity tab showing connection progress">
   <img src="docs/images/live-help.png" width="370" alt="Help tab: questions such as how automatic sign-in works and whether the Apple model works before you're online">

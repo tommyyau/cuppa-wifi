@@ -12,6 +12,7 @@ Keep Cuppa Wi-Fi running with monitoring enabled, then join the venue Wi-Fi.
 | Required human step | OTP, CAPTCHA, issued credentials, payment or required marketing stops for assistance. A manual completion remains recorded as assisted. |
 | Competing connection | With another connection active, captive Wi-Fi traffic still uses Wi-Fi. A working Ethernet/VPN route must not falsely confirm the venue grant. |
 | Rejoin and popup cleanup | After disconnecting and returning, confirm the current network is rechecked, failures do not carry over from another venue, and an obsolete macOS captive popup closes only after access is verified. |
+| Session expiry and refills | Let guest access expire. After verified reconnection, the original order time and accumulated online time remain, and exactly one refill records the previous cup's duration. Time offline pauses the total. Healthy checks and failed retries must not add refills. |
 
 One venue may cover several scenarios. If it stalls, retain the app's local
 Activity and diagnostics with the approximate time and venue name. Raw captures
@@ -32,6 +33,13 @@ and the local monitoring service was disabled. These are connectivity and
 service recovery observations on an already connected network, not proof of
 automatic sign-in. Synthetic regressions cover proxy categorisation and
 disabled-service recovery.
+
+The receipt previously reset its timer after a verified renewal because it used
+the latest connection timestamp. A separate persisted order now retains the
+original start, accumulated online time and refill history. Synthetic tests
+cover one-hour and two-hour renewals, assisted recovery, failed verification,
+duplicate completion, app reloads and venue changes. A fresh live expiry with
+this accounting remains a separate field check.
 
 Keep visit times, branch locations, device addresses and raw session details
 in private diagnostics, outside this repository.

@@ -1,4 +1,5 @@
 import AppKit
+import CuppaCore
 import Foundation
 
 @main
@@ -14,6 +15,22 @@ enum StatusModelRegression {
             runner: { _, _, _ in ProcessResult(status: 1, output: "", error: "not loaded") })
         let model = StatusModel(serviceOperations: service, defaults: defaults)
         var state = AgentState.unknown
+        state.lastResult = "ONLINE"
+        var order = ConnectionOrder(startedAt: 1_000)
+        order.interrupt(at: 8_200)
+        order.reconnect(at: 8_230, automatic: true)
+        state.connectionOrder = order
+        state.lastConnectionTimestamp = 8_230
+        model.configureForVisualPreview(state: state, serviceLoaded: false)
+        precondition(model.timeConnected(at: Date(timeIntervalSince1970: 8_250)) == "2h 0m 20s")
+        precondition(model.refillCount == 1)
+        order.interrupt(at: 8_250)
+        state.connectionOrder = order
+        state.lastResult = "CAPTIVE"
+        model.configureForVisualPreview(state: state, serviceLoaded: false)
+        precondition(model.timeConnected(at: Date(timeIntervalSince1970: 8_500)) == "2h 0m 20s")
+        precondition(model.refillCount == 1)
+        state = .unknown
         state.lastResult = "ONLINE"
         model.configureForVisualPreview(state: state, serviceLoaded: false)
         let original = model.portalIdentity

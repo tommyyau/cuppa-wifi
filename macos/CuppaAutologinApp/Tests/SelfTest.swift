@@ -84,6 +84,21 @@ enum SelfTest {
         precondition(state.lastLoginGatewayMac == nil)
         precondition(state.consecutiveFailures == 0)
         precondition(state.networkDiagnostic == nil)
+        precondition(state.connectionOrder == nil)
+        let refilled = try AgentStateLoader.decode(Data("""
+        {"last_result":"ONLINE","consecutive_failures":0,"connection_order":{
+          "startedAt":1000,"onlineSince":8230,"onlineSeconds":7200,
+          "previousCupSeconds":7200,"refillCount":1,"refills":[
+            {"number":1,"timestamp":8230,"previousCupSeconds":7200,"automatic":true}]}}
+        """.utf8))
+        precondition(refilled.connectionOrder?.startedAt == 1000)
+        precondition(refilled.connectionOrder?.refillCount == 1)
+        let refillStep = DiagnosticStep(attempt: "refill", phase: "refill", title: "Refill #1",
+            detail: "Automatically reconnected. Previous cup lasted 2h 0m 0s.", status: "ok")
+        let refillLog = "DIAGNOSTIC_STEP " + String(data: try JSONEncoder().encode(refillStep), encoding: .utf8)!
+        let refillEvents = ActivityLog.parse(refillLog)
+        precondition(refillEvents.count == 1 && refillEvents[0].category == .connection)
+        precondition(refillEvents[0].title == "Refill #1")
         let offline = try AgentStateLoader.decode(Data("""
         {"last_result":"NO_NETWORK","consecutive_failures":0,"network_diagnostic":{
           "reason":"network_path_unavailable","title":"Likely network problem",

@@ -158,6 +158,19 @@ v2 writes `engine_version: 2`. First launch replaces the background command with
 the same native app executable while preserving saved intervals and monitoring
 preferences. A legacy per-copy Persona is migrated only if shared data is absent.
 
+`connection_order` stores the current visit's original start, accumulated online
+time and refill history. Captive/no-network observations pause its timer;
+verified access resumes it and records exactly one refill. Static renewals and
+browser handoffs share this state under the engine lock. Healthy polls and
+duplicate browser completions do not create refills. A known network identity
+change clears the order; temporarily unavailable SSIDs do not. App restarts
+retain it. The count and total persist while the most recent 64 refill rows are
+kept, and refill events also appear in Activity. An assisted or externally
+restored connection is labelled separately and cannot earn automatic-login
+credit. Existing `last_connection_ts` retains its per-connection meaning for
+speed-test freshness. Older state starts with its last known connection time;
+missing earlier refills are not guessed.
+
 Private writes create mode-0600 temporary files before any sensitive bytes and
 atomically rename them. Captures/directories are private. State, handoff and
 browser operations share the same lock. Raw captures may contain tokens and

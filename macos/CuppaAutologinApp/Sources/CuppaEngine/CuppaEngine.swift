@@ -120,6 +120,7 @@ public actor CuppaEngine {
         if let reason = NetworkIdentity.dormancy(
             network: network, identity: identity, ignoreText: ignored)
         {
+            state.noteConnectionInterrupted(now: started)
             state.result = "IGNORED"
             state.fields.removeValue(forKey: "network_diagnostic")
             try state.save(paths)
@@ -146,6 +147,7 @@ public actor CuppaEngine {
                     state: .captive, redirectURL: url, source: "dns-independent-discovery",
                     errors: probe.errors)
             } else {
+                state.noteConnectionInterrupted(now: now())
                 state.result = "NO_NETWORK"
                 state.failures = 0
                 state.fields["network_diagnostic"] = report
@@ -166,7 +168,7 @@ public actor CuppaEngine {
         guard await unchanged(network) else { return try networkChanged(&state) }
         state.fields.removeValue(forKey: "network_diagnostic")
         if probe.state == .online {
-            state.markOnline(
+            let refill = state.markOnline(
                 network: network, now: now(), automatedLogin: false, newConnection: changed)
             handoffs.clear()
             evidence.confirmAccess(now: now())
@@ -181,9 +183,14 @@ public actor CuppaEngine {
                     "activity notification: Cuppa Wi-Fi — back online", level: "DEBUG", now: now())
             }
             try state.save(paths)
+            recordRefill(refill)
             return 0
         }
 
+        // Preserve the order before attempting a renewal, including successful
+        // static renewals that finish within this same monitoring cycle.
+        state.noteConnectionInterrupted(now: now())
+        try state.save(paths)
         var portalURL = probe.redirectURL
         if portalURL == nil, let url = NativeNetworkRecovery.gatewayURL(network.gatewayIP) {
             if let response = try? await client.send(HTTPRequest(url: url, timeout: 3)) {
@@ -300,16 +307,17 @@ public actor CuppaEngine {
         {
             // Access may have been granted externally. Preserve connectivity truth
             // without crediting an automatic login or learning an unexecuted strategy.
-            state.markOnline(network: network, now: now(), automatedLogin: false)
+            let refill = state.markOnline(network: network, now: now(), automatedLogin: false)
             handoffs.clear()
             evidence.progress(
                 "connected", title: "Internet access confirmed",
                 detail: "No automatic portal action was required.", now: now())
             try state.save(paths)
+            recordRefill(refill)
             return 0
         }
         if success {
-            state.markOnline(network: network, now: now(), automatedLogin: true)
+            let refill = state.markOnline(network: network, now: now(), automatedLogin: true)
             evidence.progress(
                 "connected", title: "Internet access confirmed", actions: attempt.actions,
                 now: now())
@@ -329,6 +337,7 @@ public actor CuppaEngine {
             evidence.log(
                 "activity notification: Cuppa Wi-Fi — back online", level: "DEBUG", now: now())
             try state.save(paths)
+            recordRefill(refill)
             return 0
         }
         if attempt.outcome == .submitted {
@@ -468,6 +477,7 @@ public actor CuppaEngine {
             _ = evidence.outcome(report: report, verified: false, assisted: assisted, now: now())
             try? handoffs.stop(
                 reason: "connectivity_unverified", fingerprint: state.fingerprint, now: now())
+            state.noteConnectionInterrupted(now: now())
             state.result = "CAPTIVE"
             state.failures = 0
             try? state.save(paths)
@@ -481,9 +491,10 @@ public actor CuppaEngine {
                 state.fields["venue"] = clean
             }
         }
-        state.markOnline(
+        let refill = state.markOnline(
             network: network, now: now(), automatedLogin: !assisted, newConnection: true)
         do { try state.save(paths) } catch { return 1 }
+        recordRefill(refill)
         let savedReport = evidence.outcome(
             report: report, verified: true, assisted: assisted, now: now())
         if let savedReport, savedReport["source"] as? String == "automatic",
@@ -521,6 +532,7 @@ public actor CuppaEngine {
         do {
             try handoffs.stop(reason: reason, fingerprint: fingerprint, now: now())
             PrivateFile.remove(paths.handoff)
+            state.noteConnectionInterrupted(now: now())
             state.result = "UNSUPPORTED"
             state.failures = 0
             state.fields["last_notified_event"] = "unsupported:\(fingerprint)"
@@ -535,6 +547,7 @@ public actor CuppaEngine {
         NetworkIdentity.sameConnection(network, await inspector.current())
     }
     private func networkChanged(_ state: inout EngineState) throws -> Int32 {
+        state.noteConnectionInterrupted(now: now())
         state.fields.removeValue(forKey: "network_diagnostic")
         state.result = "UNKNOWN"
         handoffs.clear()
@@ -545,6 +558,15 @@ public actor CuppaEngine {
                 "Discarded the old network result. Checking the new connection on the next monitoring cycle.",
             reason: "network_changed", now: now())
         return 0
+    }
+    private func recordRefill(_ refill: ConnectionRefill?) {
+        guard let refill else { return }
+        let seconds = max(0, Int(refill.previousCupSeconds))
+        let duration = "\(seconds / 3600)h \((seconds % 3600) / 60)m \(seconds % 60)s"
+        evidence.trace(attempt: "refill-\(refill.timestamp)", phase: "refill",
+            title: "Refill #\(refill.number)",
+            detail: "\(refill.automatic ? "Automatically reconnected" : "Internet access restored"). Previous cup lasted \(duration).",
+            now: refill.timestamp)
     }
     private func rememberPhoneRejection(_ key: String) {
         PhonePolicyStore(path: paths.root.appendingPathComponent("phone_policy.json")).remember(key)

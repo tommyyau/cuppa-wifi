@@ -73,6 +73,13 @@ struct StatusView: View {
                         .monospacedDigit()
                 }
                 GridRow {
+                    Text("Refills")
+                        .foregroundStyle(.secondary)
+                    Text("\(model.refillCount)")
+                        .monospacedDigit()
+                        .help("Verified reconnects during this order. Routine checks do not count.")
+                }
+                GridRow {
                     Text(model.monitoringFactLabel)
                         .foregroundStyle(.secondary)
                     Text(model.monitoringCountdown(at: context.date))

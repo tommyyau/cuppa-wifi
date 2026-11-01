@@ -603,6 +603,11 @@ final class StatusModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func timeConnected(at date: Date = Date()) -> String {
+        if let order = state.connectionOrder {
+            return ConnectionDurationFormatter.string(
+                from: Date(timeIntervalSince1970: 0),
+                to: Date(timeIntervalSince1970: order.connectedSeconds(at: date.timeIntervalSince1970)))
+        }
         guard state.lastResult == "ONLINE",
               let timestamp = state.lastConnectionTimestamp
         else {
@@ -612,6 +617,21 @@ final class StatusModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             from: Date(timeIntervalSince1970: timestamp),
             to: date
         )
+    }
+
+    var refillCount: Int { state.connectionOrder?.refillCount ?? 0 }
+
+    func receiptOrderTime(at date: Date = Date()) -> String {
+        guard let timestamp = state.connectionOrder?.startedAt ?? state.lastConnectionTimestamp
+        else { return "--" }
+        return receiptTime(timestamp, at: date)
+    }
+
+    func receiptTime(_ timestamp: TimeInterval, at date: Date = Date()) -> String {
+        let instant = Date(timeIntervalSince1970: timestamp)
+        let formatter = DateFormatter()
+        formatter.dateFormat = Calendar.current.isDate(instant, inSameDayAs: date) ? "HH:mm" : "d MMM HH:mm"
+        return formatter.string(from: instant)
     }
 
     var receiptVenueTitle: String {

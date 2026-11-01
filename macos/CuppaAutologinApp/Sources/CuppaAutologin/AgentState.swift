@@ -1,3 +1,4 @@
+import CuppaCore
 import Foundation
 
 enum NetworkNameCache {
@@ -102,6 +103,7 @@ struct AgentState: Codable, Equatable {
     var consecutiveFailures: Int
     var lastReassociationTimestamp: TimeInterval?
     var networkDiagnostic: NetworkDiagnostic? = nil
+    var connectionOrder: ConnectionOrder? = nil
 
     enum CodingKeys: String, CodingKey {
         case ssid
@@ -117,6 +119,7 @@ struct AgentState: Codable, Equatable {
         case consecutiveFailures = "consecutive_failures"
         case lastReassociationTimestamp = "last_reassoc_ts"
         case networkDiagnostic = "network_diagnostic"
+        case connectionOrder = "connection_order"
     }
 
     static let unknown = AgentState(

@@ -1,4 +1,5 @@
 import AppKit
+import CuppaCore
 import CuppaNetworking
 import SwiftUI
 
@@ -204,6 +205,36 @@ enum VisualPreview {
             PopoverRootView(model: model),
             to: outputDirectory.appendingPathComponent("quit-receipt.png")
         )
+        let orderStart = Date().addingTimeInterval(-14_700).timeIntervalSince1970
+        var order = ConnectionOrder(startedAt: orderStart)
+        order.interrupt(at: orderStart + 7_200)
+        order.reconnect(at: orderStart + 7_215, automatic: true)
+        order.interrupt(at: orderStart + 14_415)
+        order.reconnect(at: orderStart + 14_430, automatic: true)
+        var refillState = sampleState(lastResult: "ONLINE")
+        refillState.venue = "Example Coffee"
+        refillState.ssid = "Example Guest 5G"
+        refillState.lastConnectionTimestamp = order.onlineSince
+        refillState.connectionOrder = order
+        model.configureForVisualPreview(state: refillState, serviceLoaded: true, speedMeasurement: speed)
+        model.selectTab(.status)
+        try render(PopoverRootView(model: model), to: outputDirectory.appendingPathComponent("status-refills.png"))
+        model.presentQuitReceipt()
+        try render(PopoverRootView(model: model), to: outputDirectory.appendingPathComponent("quit-receipt-refills.png"))
+        order.interrupt(at: orderStart + 14_680)
+        refillState.connectionOrder = order
+        refillState.lastResult = "CAPTIVE"
+        model.configureForVisualPreview(state: refillState, serviceLoaded: true)
+        model.presentQuitReceipt()
+        try render(PopoverRootView(model: model), to: outputDirectory.appendingPathComponent("quit-receipt-reconnecting.png"))
+        for offset in 1...70 {
+            order.reconnect(at: orderStart + 14_700 + Double(offset * 100), automatic: true)
+            order.interrupt(at: orderStart + 14_790 + Double(offset * 100))
+        }
+        refillState.connectionOrder = order
+        model.configureForVisualPreview(state: refillState, serviceLoaded: true)
+        model.presentQuitReceipt()
+        try render(PopoverRootView(model: model), to: outputDirectory.appendingPathComponent("quit-receipt-many-refills.png"))
 
         try render(
             CafeWiFiIcon(isConnected: true)

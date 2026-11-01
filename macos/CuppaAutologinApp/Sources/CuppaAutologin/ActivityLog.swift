@@ -34,16 +34,16 @@ enum ActivityLog {
         for (index, rawLine) in text.split(separator: "\n").enumerated() {
             let line = String(rawLine)
             if let range = line.range(of: "DIAGNOSTIC_STEP ") {
-                // Keep useful speed outcomes in the ordinary history; full traces
+                // Keep speed outcomes and verified refills in ordinary history; full traces
                 // and intermediate measurement steps belong in Troubleshooting.
                 if let data = String(line[range.upperBound...]).data(using: .utf8),
                    let raw = try? JSONDecoder().decode(DiagnosticStep.self, from: data),
-                   raw.phase == "quality", raw.status != "running", raw.title != "What this means" {
+                   ["quality", "refill"].contains(raw.phase), raw.status != "running", raw.title != "What this means" {
                     let step = DiagnosticTrace.sanitized(raw)
                     events.append(ActivityEvent(id: step.id, timestamp: step.timestamp,
                         occurredAt: step.occurredAt, title: step.title, detail: step.detail,
                         kind: step.status == "ok" ? .success : .attention,
-                        category: .quality, gatewayMac: nil))
+                        category: raw.phase == "refill" ? .connection : .quality, gatewayMac: nil))
                 }
                 continue
             }

@@ -23,3 +23,16 @@ For a release, also inspect production UI previews, verify the bundle signature
 and running executable, and perform the [venue acceptance](FIELD_TEST.md)
 scenarios. Report local builds, hosted CI, actual inference and live venue
 checks separately. No signed or notarised public download is provided yet.
+
+## Order and refill accounting
+
+`ConnectionOrderTests` exercises persisted engine state across repeated
+two-hour renewals, a one-hour assisted renewal, outages, failed and duplicate
+browser completions, venue changes, legacy-state migration and bounded history.
+Existing connection timestamps retain their speed-test freshness semantics.
+
+UI/state regressions cover decoding, the paused total and refill Activity events.
+`make ui-previews` renders receipts with zero, two and many refills, plus an
+interrupted connection and the Status count. Inspect those production views
+alongside the [live expiry scenario](FIELD_TEST.md); fixture and preview results
+do not establish a new live renewal.

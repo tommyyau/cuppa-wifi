@@ -26,12 +26,44 @@ public struct EngineState {
     public var fingerprint: String? {
         NetworkIdentity.fingerprint(network, portalDomain: fields["portal_domain"] as? String)
     }
+    public var connectionOrder: ConnectionOrder? {
+        get {
+            guard let value = fields["connection_order"],
+                let data = try? JSONSerialization.data(withJSONObject: value)
+            else { return nil }
+            return try? JSONDecoder().decode(ConnectionOrder.self, from: data)
+        }
+        set {
+            fields["connection_order"] = newValue.flatMap { order in
+                (try? JSONEncoder().encode(order)).flatMap { try? JSONSerialization.jsonObject(with: $0) }
+            }
+        }
+    }
+    private mutating func migrateConnectionOrder(now: TimeInterval) {
+        guard connectionOrder == nil,
+            let start = fields["last_connection_ts"] as? Double,
+            start.isFinite, start >= 0, start <= now
+        else { return }
+        var order = ConnectionOrder(startedAt: start)
+        if result != "ONLINE" {
+            order.interrupt(at: min(now, fields["last_check_ts"] as? Double ?? now))
+        }
+        connectionOrder = order
+    }
+    public mutating func noteConnectionInterrupted(now: TimeInterval) {
+        migrateConnectionOrder(now: now)
+        guard var order = connectionOrder else { return }
+        order.interrupt(at: now)
+        connectionOrder = order
+    }
     public mutating func begin(network: NetworkSnapshot, now: TimeInterval) -> Bool {
+        migrateConnectionOrder(now: now)
         let changed = NetworkIdentity.changed(from: self.network, to: network)
         if changed {
             for key in [
                 "ssid", "venue", "portal_domain", "last_connection_ts", "last_login_ts",
                 "last_login_gateway_mac", "last_notified_event", "network_diagnostic",
+                "connection_order",
             ] { fields.removeValue(forKey: key) }
             failures = 0
             result = "UNKNOWN"
@@ -51,10 +83,14 @@ public struct EngineState {
         fields["last_check_ts"] = now
         return changed
     }
-    public mutating func markOnline(
+    @discardableResult public mutating func markOnline(
         network: NetworkSnapshot, now: TimeInterval, automatedLogin: Bool,
         newConnection: Bool = false
-    ) {
+    ) -> ConnectionRefill? {
+        migrateConnectionOrder(now: now)
+        var order = connectionOrder ?? ConnectionOrder(startedAt: now)
+        let refill = order.reconnect(at: now, automatic: automatedLogin)
+        connectionOrder = order
         let previous = result
         result = "ONLINE"
         failures = 0
@@ -73,6 +109,7 @@ public struct EngineState {
             fields["last_login_gateway_mac"] = network.gatewayMAC
             fields["gateway_mac"] = network.gatewayMAC
         }
+        return refill
     }
     public static func load(_ paths: EnginePaths) -> Self {
         .init(fields: PrivateFile.object(at: paths.state) ?? [:])

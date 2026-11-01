@@ -40,7 +40,7 @@ struct QuitReceiptView: View {
                 .frame(maxWidth: .infinity)
             }
             .padding(14)
-            .frame(width: 252)
+            .frame(width: 300)
             .background(CoffeeTheme.surface)
             .clipShape(RoundedRectangle(cornerRadius: 11))
             .overlay {
@@ -66,9 +66,39 @@ struct QuitReceiptView: View {
                 dashedRule
 
                 ReceiptLine(
-                    label: "time online",
+                    label: "ordered",
+                    value: model.receiptOrderTime(at: context.date)
+                )
+                ReceiptLine(
+                    label: "1 cup",
                     value: model.timeConnected(at: context.date)
                 )
+                .padding(.top, 6)
+                ReceiptLine(label: "refills", value: String(model.refillCount))
+                    .padding(.top, 6)
+
+                if let refills = model.state.connectionOrder?.refills, !refills.isEmpty {
+                    dashedRule
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 8) {
+                            if model.refillCount > refills.count {
+                                Text("Latest \(refills.count) of \(model.refillCount) refills")
+                                    .foregroundStyle(.secondary)
+                            }
+                            ForEach(refills) { refill in
+                                VStack(alignment: .leading, spacing: 2) {
+                                    ReceiptLine(label: "refill \(refill.number)",
+                                        value: model.receiptTime(refill.timestamp, at: context.date))
+                                    Text("\(refill.automatic ? "auto" : "restored") · after \(ConnectionDurationFormatter.string(from: Date(timeIntervalSince1970: 0), to: Date(timeIntervalSince1970: refill.previousCupSeconds)))")
+                                        .font(.system(size: 10, design: .monospaced))
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .frame(height: min(CGFloat(refills.count) * 36, 108))
+                }
                 dashedRule
 
                 ReceiptLine(
