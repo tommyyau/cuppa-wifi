@@ -33,6 +33,23 @@ final class PortalNavigationParityTests: XCTestCase {
         XCTAssertEqual(result.hops.count, 2)
         XCTAssertNil(result.hops.last?.response)
     }
+    func testMerakiGrantRedirectWithForbiddenLandingRemainsVerificationCandidate() async {
+        let entry = "https://eu.network-auth.com/splash/fixture/"
+        let landing = "https://venue.example/welcome"
+        let grant = entry + "grant?continue_url=https%3A%2F%2Fvenue.example%2Fwelcome"
+        let html = "<a href='\(grant)'>Continue to the Internet</a>"
+        let client = MockHTTP([
+            h.response(html, entry),
+            HTTPResponse(url: URL(string: grant)!, status: 302, headers: ["Location": landing]),
+            HTTPResponse(url: URL(string: landing)!, status: 403),
+        ])
+        let result = await h.workflow(client).login(
+            url: URL(string: entry)!, identity: h.identity, network: NetworkSnapshot())
+        XCTAssertEqual(result.outcome, .submitted)
+        XCTAssertEqual(result.actions, 1)
+        XCTAssertTrue(result.pendingSubmission)
+        XCTAssertEqual(result.hops.last?.response?.status, 403)
+    }
     func testArbitraryFailedConnectLinkDoesNotBecomeTrustedGrant() async {
         let client = MockHTTP([
             h.response("<a href='/grant?continue_url=https://example.net'>Connect</a>")

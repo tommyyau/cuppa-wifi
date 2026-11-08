@@ -467,13 +467,23 @@ actor PortalSession {
                     submitted = true
                     recordAction(method: "GET")
                 }
+                let merakiGrant = trustedMerakiGrant(landing: response.url, target: target)
+                let grantHop = hops.count
                 do { response = try await request(target) } catch {
-                    if trustedMerakiGrant(landing: response.url, target: target) {
+                    if merakiGrant {
                         return result(.browser, "meraki_grant_transport_ambiguous")
                     }
                     throw error
                 }
                 guard (200..<400).contains(response.status) else {
+                    // A trusted grant can redirect to a public landing page that
+                    // rejects the request. Let the independent probes decide.
+                    if isAction && merakiGrant && response.url.host != target.host,
+                        let grant = hops[grantHop].response,
+                        [301, 302, 303, 307, 308].contains(grant.status)
+                    {
+                        return result(.submitted)
+                    }
                     return result(.failed, "portal_navigation_failed")
                 }
                 if isAction && matches("(?:^|/)grant$", target.path) { return result(.submitted) }

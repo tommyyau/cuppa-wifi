@@ -449,6 +449,23 @@ public actor CuppaEngine {
         return 0
     }
 
+    /// The browser already holds the attempt lock. Check access without
+    /// changing its handoff, diagnostics, or saved connection state.
+    public func browserHasInternet(fingerprint: String, interface: String) async -> Bool {
+        let state = EngineState.load(paths)
+        guard state.fingerprint == fingerprint else { return false }
+        let network = await inspector.current()
+        guard network.interface == interface,
+            NetworkIdentity.fingerprint(network, portalDomain: state.fields["portal_domain"] as? String)
+                == fingerprint,
+            !NetworkIdentity.changed(from: state.network, to: network)
+        else { return false }
+        let result = await ConnectivityProbe(client: clientFactory(network)).check(
+            requireConsensus: true)
+        guard result.state == .online, !Task.isCancelled else { return false }
+        return await unchanged(network)
+    }
+
     public func completeBrowser(
         fingerprint: String? = nil, venue: String? = nil, report: URL? = nil, assisted: Bool = false
     ) async -> Int32 {

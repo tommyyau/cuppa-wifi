@@ -38,6 +38,8 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
     private let correctionLadder: [String: Any]
     private let handoff: WebViewHandoffRecord?
     private let completion: @MainActor (Outcome) -> Void
+    private let checkAccess: (@MainActor () async -> Bool)?
+    private var accessCheckTask: Task<Void, Never>?
     private let progress: (@MainActor (PortalDiagnostics) -> Void)?
     private let logger = Logger(subsystem: "io.github.tommyyau.wifi-autologin", category: "portal")
     private var diagnostics = PortalDiagnostics(startedAt: Date().timeIntervalSince1970,
@@ -105,6 +107,7 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
           browserResolver: PortalBrowserTransport.Resolver? = nil,
           progress: (@MainActor (PortalDiagnostics) -> Void)? = nil,
           networkSSID: String? = nil,
+          checkAccess: (@MainActor () async -> Bool)? = nil,
           completion: @escaping @MainActor (Outcome) -> Void) {
         let resources = correctionLadderURL.deletingLastPathComponent()
         func json(_ url: URL) -> [String: Any]? {
@@ -137,6 +140,7 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
         self.deadline = min(Date().addingTimeInterval(90), Date(timeIntervalSince1970: handoff?.deadline ?? Date().addingTimeInterval(90).timeIntervalSince1970))
         self.diagnosticsURL = diagnosticsDirectory?.appendingPathComponent(UUID().uuidString + ".json")
         self.completion = completion
+        self.checkAccess = checkAccess
         self.progress = progress
         super.init()
         if let saved = handoff?.corrections { corrections[origin(of: portalURL)] = saved }
@@ -276,6 +280,8 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
 
     func discard() {
         finished = true
+        accessCheckTask?.cancel()
+        accessCheckTask = nil
         timeoutTask?.cancel()
         timeoutTask = nil
         navigationRetryTask?.cancel()
@@ -332,6 +338,7 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
             corrections[origin(of: url)] = values
         } else if message.name == "portalJourney", let value = PortalJourney.decode(message.body) {
             journey = value
+            startAccessChecks()
             publishProgress("form_action", "Form step \(value.actions): \(value.trace.last?.outcome == "corrected" ? "trying a validation correction" : "waiting for the portal response")")
         } else if message.name == "portalManualStage", assisted,
                   let raw = message.body as? [String: Any], JSONSerialization.isValidJSONObject(raw),
@@ -355,6 +362,24 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
                 evaluationInFlight = false
                 frameCandidates.removeAll()
                 runAutofill(in: webView, frame: message.frameInfo)
+            }
+        }
+    }
+
+    private func startAccessChecks() {
+        guard let checkAccess, !assisted, accessCheckTask == nil,
+            journey.pendingSubmission == true, journey.actions > 0 else { return }
+        accessCheckTask = Task { [weak self] in
+            while let self, !self.finished, !Task.isCancelled {
+                let online = await checkAccess()
+                guard !self.finished, !Task.isCancelled else { return }
+                if online {
+                    self.trace("probe", "Internet access detected while the portal was loading")
+                    self.finish(.submitted(self.lastResult?.venue))
+                    self.webView?.stopLoading()
+                    return
+                }
+                try? await Task.sleep(for: .seconds(2))
             }
         }
     }
@@ -779,6 +804,8 @@ final class WebViewAutopilotController: NSObject, WKNavigationDelegate, WKScript
     private func finish(_ outcome: Outcome) {
         guard !finished else { return }
         finished = true
+        accessCheckTask?.cancel()
+        accessCheckTask = nil
         timeoutTask?.cancel()
         timeoutTask = nil
         navigationRetryTask?.cancel()

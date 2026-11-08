@@ -41,6 +41,21 @@ private actor JourneyOracle: HTTPClient, NetworkInspecting {
     func observed() -> [HTTPRequest] { requests }
 }
 extension LegacyRemainingParityTests {
+    func testBrowserAccessProbeIsScopedAndLeavesCaptiveStateUntouched() async throws {
+        let oracle = JourneyOracle([])
+        let network = await oracle.current()
+        let fingerprint = try XCTUnwrap(NetworkIdentity.fingerprint(network))
+        try EngineState(fields: ["last_result": "CAPTIVE", "gateway_mac": fingerprint]).save(paths)
+        let engine = engine(oracle)
+        let wrongNetwork = await engine.browserHasInternet(fingerprint: "other", interface: "en0")
+        let wrongInterface = await engine.browserHasInternet(fingerprint: fingerprint, interface: "en1")
+        let online = await engine.browserHasInternet(fingerprint: fingerprint, interface: "en0")
+        XCTAssertFalse(wrongNetwork)
+        XCTAssertFalse(wrongInterface)
+        XCTAssertTrue(online)
+        XCTAssertEqual(EngineState.load(paths).result, "CAPTIVE")
+    }
+
     func testHTTPServerErrorNeverEarnsAutomaticCreditFromUnrelatedOnlineAccess() async {
         let oracle = JourneyOracle(
             [page(ordinary), page(unavailable, path: "/grant", status: 503)], grant: true)

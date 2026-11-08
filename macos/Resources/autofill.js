@@ -506,6 +506,17 @@
     return true;
   }
 
+  function hasVisibleCheckboxLabel(el) {
+    if (el.tagName !== "INPUT" || el.type !== "checkbox") return false;
+    return toArray(el.labels || []).some(function(label) {
+      if (label.control !== el || !isVisible(label)) return false;
+      // Styled controls can use an empty label as the visible toggle.
+      // Require an explicit consent classification before touching those.
+      var identifier = [el.getAttribute("name"), el.id].join(" ");
+      return textOf(label).trim() || isConsentLabel(identifier) || isMarketingLabel(identifier);
+    });
+  }
+
   function findLabelFor(id, doc) {
     if (!id) return null;
     var labels = doc.querySelectorAll("label");
@@ -685,7 +696,9 @@
 
   function consentFor(el, doc) {
     var descriptor = describeField(el, doc);
-    var label = descriptor.label + " " + descriptor.fieldset, cls = classifyField(descriptor);
+    var label = descriptor.label + " " + descriptor.fieldset;
+    if (!isVisible(el)) label += " " + descriptor.name + " " + descriptor.id;
+    var cls = classifyField(descriptor);
     if (cls === 'unknown' && !isConsentLabel(label) && !isMarketingLabel(label)) {
       label += " " + contextualCheckboxLabel(el);
     }
@@ -821,7 +834,9 @@
 
   function workflowGate(doc, scope) {
     scope = scope || chooseForm(doc) || doc.body || doc;
-    var fields = collectFormFields(scope).filter(function (el) { return isVisible(el) && isEnabled(el); });
+    var fields = collectFormFields(scope).filter(function (el) {
+      return isEnabled(el) && (isVisible(el) || hasVisibleCheckboxLabel(el));
+    });
     var visibleText=textOf(doc.body || doc);
     var credentials=authorizedCredentials.get(doc);
     var accountKind=accountFormKind(doc,scope);
@@ -1005,7 +1020,7 @@
     for (var i = 0; i < fields.length; i++) {
       var el = fields[i];
       if (onlyFields && !onlyFields.has(el)) continue;
-      if (!isVisible(el) || !isEnabled(el)) continue;
+      if (!isEnabled(el) || (!isVisible(el) && !hasVisibleCheckboxLabel(el))) continue;
       var tag = (el.tagName || "").toUpperCase();
       var typeAttr = (el.getAttribute("type") || "").toLowerCase();
       var role = (el.getAttribute("role") || "").toLowerCase();

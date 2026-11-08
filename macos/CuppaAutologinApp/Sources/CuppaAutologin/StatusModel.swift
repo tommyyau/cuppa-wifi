@@ -1095,6 +1095,7 @@ final class StatusModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         ) else {
             return
         }
+        let engine = CuppaEngine(resources: SystemPaths.resources)
         guard let controller = WebViewAutopilotController(
             portalURL: portalURL,
             identity: portalIdentity,
@@ -1111,6 +1112,10 @@ final class StatusModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 record.save(to: SystemPaths.portalProgress)
             },
             networkSSID: state.ssid,
+            checkAccess: {
+                guard let interface = record.networkInterface else { return false }
+                return await engine.browserHasInternet(fingerprint: fingerprint, interface: interface)
+            },
             completion: { [weak self] outcome in
                 guard let self, let completed = self.webViewAutopilot else { return }
                 self.assistedPortal = completed

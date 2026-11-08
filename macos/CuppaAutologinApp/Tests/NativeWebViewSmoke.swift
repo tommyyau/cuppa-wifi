@@ -31,6 +31,7 @@ enum NativeWebViewSmoke {
         var expectedJourneyActions = 2
         var inspectAccountOperation = false
         var staleFrameBoundary = false
+        var verifyBeforePageSettles = false
     }
 
     private static var controller: WebViewAutopilotController?
@@ -51,6 +52,19 @@ enum NativeWebViewSmoke {
 
     private static var scenarios = [
         Scenario(
+            name: "verified access ends a stalled post-submit page",
+            html: """
+            <!doctype html><title>Guest Wi-Fi</title>
+            <form><input name="email" type="email" required>
+              <button type="button" onclick="if(this.form.email.value){
+                this.disabled=true; setTimeout(() => document.title='Access granted', 300);
+              }">Get online</button></form>
+            """,
+            expected: .submitted,
+            deterministicBypass: true,
+            verifyBeforePageSettles: true
+        ),
+        Scenario(
             name: "consent-only portal preserves hidden defaults",
             html: """
             <!doctype html><h1>Welcome to guest Wi-Fi</h1>
@@ -69,6 +83,34 @@ enum NativeWebViewSmoke {
               if(form.email.value==='guest@example.com' && form.fname.value==='Splash'
                   && form.baseurl.value==='server-issued-grant' && form.tnc.checked)
                 document.body.textContent='Connected';
+              else failSmokeTest();
+            }
+            </script>
+            """,
+            expected: .submitted,
+            deterministicBypass: true
+        ),
+        Scenario(
+            name: "styled registration checkboxes use their visible labels",
+            html: """
+            <!doctype html><h1>Free guest Wi-Fi</h1>
+            <style>input[type=checkbox] { display: none }</style>
+            <form onsubmit="finish(this); return false;">
+              <label>First name <input name="firstname" required></label>
+              <label>Last name <input name="lastname" required></label>
+              <label>Email address <input name="email" type="email" required></label>
+              <input name="accept_terms" id="choice1" type="checkbox">
+              <label for="choice1"></label><span>Accept terms and conditions</span>
+              <input name="choice2" id="choice2" type="checkbox" checked>
+              <label for="choice2">Send me marketing offers</label>
+              <button type="submit">Get online</button>
+            </form>
+            <script>
+            \(failureScript)
+            function finish(form) {
+              if (form.firstname.value && form.lastname.value && form.email.value
+                  && form.accept_terms.checked && !form.choice2.checked)
+                document.body.textContent = 'Connected';
               else failSmokeTest();
             }
             </script>
@@ -652,6 +694,9 @@ enum NativeWebViewSmoke {
                 guard ["portal.example.test", "10.254.254.254"].contains(host) else { throw CocoaError(.fileReadNoSuchFile) }
                 return ["127.0.0.1"]
             } : nil,
+            checkAccess: scenario.verifyBeforePageSettles ? {
+                controller?.webView?.title == "Access granted"
+            } : nil,
             completion: { outcome in
                 validate(outcome, for: scenario)
             }
@@ -668,6 +713,14 @@ enum NativeWebViewSmoke {
     ) {
         if case .submitted = outcome {
             guard let view = controller?.webView else { fail("Missing retained browser") }
+            if scenario.verifyBeforePageSettles {
+                let log = (try? String(contentsOf: lockDirectory.appendingPathComponent("diagnostic-trace.log"), encoding: .utf8)) ?? ""
+                guard view.title == "Access granted",
+                      log.contains("Internet access detected while the portal was loading")
+                else { fail("\(scenario.name): browser did not finish from the early probe") }
+                validateOutcome(outcome, for: scenario)
+                return
+            }
             // A candidate submission alone is not a passing fixture. Assert
             // the grant marker, including the active frame, independently.
             view.evaluateJavaScript("""
