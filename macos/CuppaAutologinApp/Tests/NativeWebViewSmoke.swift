@@ -264,6 +264,30 @@ enum NativeWebViewSmoke {
             expected: .unsupported("sms_verification")
         ),
         Scenario(
+            name: "delayed module renders TfL-style consent",
+            html: """
+            <!doctype html><main id="app"></main>
+            <script type="module">
+              const app = document.getElementById("app");
+              setTimeout(() => {
+                app.innerHTML = `
+                  <form>
+                    <label><input type="checkbox" name="terms" required>
+                      I confirm that I have read, understood and accept the terms and conditions.
+                    </label>
+                    <button type="submit">Connect to WiFi</button>
+                  </form>`;
+                const form = app.querySelector("form");
+                form.addEventListener("submit", event => {
+                  event.preventDefault();
+                  if (form.elements.terms.checked) app.textContent = "Connected";
+                });
+              }, 10500);
+            </script>
+            """,
+            expected: .submitted
+        ),
+        Scenario(
             name: "delayed SPA form",
             html: """
             <!doctype html><form id="empty-template"></form>

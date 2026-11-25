@@ -2035,7 +2035,14 @@
     var initialBoundary=workflowGate(doc);
     var guestAlternative=initialBoundary === 'account_credentials_required' && findSubmitCandidates(doc.body || doc).some(function(el){return /guest|free|use (?:your )?email|sign\s*up|create.*account|register|log\s*in|sign\s*in/i.test(textOf(el) || el.value || '')});
     if(initialBoundary && !guestAlternative)return Promise.resolve(finish('unsupported',initialBoundary));
-    return waitForReady(doc, remaining(readiness),!!reasoner).then(function (ready) {
+    // A module can retry a failed import and mount the first form after the
+    // load event. Keep watching the main document within the shared deadline.
+    var initialReadiness = readiness;
+    if (context.actions === 0 && !context.pendingSubmission && doc.defaultView &&
+        doc.defaultView === doc.defaultView.top && doc.querySelector('script[type="module"]')) {
+      initialReadiness = Math.max(readiness, 18000);
+    }
+    return waitForReady(doc, remaining(initialReadiness),!!reasoner).then(function (ready) {
       return ready ? step() : finish("no_form", "Timed out waiting for an eligible portal stage");
     });
   }
